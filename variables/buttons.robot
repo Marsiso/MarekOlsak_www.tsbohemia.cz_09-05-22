@@ -7,10 +7,5 @@ ${popUpBtnSaveSettingsXPath}            //*[contains(concat(' ',normalize-space(
 
 # Main navigation panel
 ${mainNavPnlDropDownMenuBtnXPath}       //*[@class='middle']//*[@data-menu-main]
-${mainNavPnlElectroBtnXPath}            //*[@id='i6sub_44669']//*[contains(concat(' ',normalize-space(@class),' '),'category-toggle')]
-${mainNavPnlHouseHoldBtnXPath}          //*[@id='i6sub_6082']//*[contains(concat(' ',normalize-space(@class),' '),'category-toggle')]
-${mainNavPnlHobbyBtnXPath}              //*[@id='i6sub_44670']//*[contains(concat(' ',normalize-space(@class),' '),'category-toggle')]
-${mainNavPnlSportBtnXPath}              //*[@id='i6sub_44671']//*[contains(concat(' ',normalize-space(@class),' '),'category-toggle')]
-${mainNavPnlDrugStoreBtnXPath}          //*[@id='i6sub_44672']//*[contains(concat(' ',normalize-space(@class),' '),'category-toggle')]
 ${mainNavPnlCurrency}                   //*[@data-currency-dropdown]//*[@data-currency-dropdown-toggle]
 

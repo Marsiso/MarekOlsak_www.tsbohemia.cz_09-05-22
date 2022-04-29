@@ -15,7 +15,7 @@ Resource         ../variables/buttons.robot
 Resource         ../variables/browser.robot
 Resource         ../variables/images.robot
 Resource         ../variables/drivers.robot
-Resource         ../variables/listItems.robot
+Resource         ../variables/lists.robot
 Resource         ../variables/screenshots.robot
 Resource         ../variables/viewPorts.robot
 Resource         ../keyWords/preConditions.robot
@@ -27,28 +27,26 @@ TC0301 Brand functionality
     [tags]                                                                  testCase                            elements
     Open web browser at domain's homepage and hide cookies popUp            ${browser}                          ${urlHomePage}
     ...                                                                     ${driverPath}                       ${popUpBtnAgreeXPath}
-    Check main navigation panel brand functionality                         ${mainNavPanelLogoXPath}            ${electroDropdownXPath}
-    ...                                                                     ${householdDropdownXPath}           ${hobbyDropdownXPath}
-    ...                                                                     ${sportDropdownXPath}               ${drugstoreDropdownXPath}
+    Check main navigation panel brand functionality                         ${mainNavPanelLogoXPath}            ${categoriesListXPath}
 
 TC0302 Link's subSelection visibility during state mouse: hover
     [tags]                                                                  testCase                            subSelection
-    Check link's subSelection visibility during state mouse: hover          ${notebookImgXPath}                 ${electroDropdownXPath}
+    Check link's subSelection visibility during state mouse: hover          ${notebookImgXPath}                 ${categoriesListXPath}
 
 TC0303 Link's subSelection visibility during state mouse: hover
     [tags]                                                                  testCase                            subSelection
-    Check link's subSelection visibility during state mouse: hover          ${notebookImgXPath}                 ${electroDropdownXPath}
+    Check link's subSelection visibility during state mouse: hover          ${notebookImgXPath}                 ${categoriesListXPath}
 
 TC0304 Categories visibility during mobile's viewport size
     [tags]                                                                  testCase                            dropdown
     Check categories visibility during mobile's viewport size               ${mobileViewPortWidth}              ${mainNavPnlDropDownMenuBtnXPath}
-    ...                                                                     ${mainNavPnlElectroBtnXPath}        ${mainNavPnlHouseHoldBtnXPath}
-    ...                                                                     ${mainNavPnlHobbyBtnXPath}          ${mainNavPnlSportBtnXPath}
-    ...                                                                     ${mainNavPnlDrugStoreBtnXPath}      ${screenshotDirectory}
+    ...                                                                     ${categoriesListXPath}              ${screenshotDirectory}
 
-TC0305 Visiblity of dropdown items when button is toggled
+TC0305 Visiblity of dropdown items when menu item is toggled
     [tags]                                                                  testCase                            dropdown
-    Check visiblity of dropdown items when button is toggled                ${mainNavPnlElectroBtnXPath}        ${mainNavPnlHouseHoldBtnXPath}
-    ...                                                                     ${mainNavPnlHobbyBtnXPath}          ${mainNavPnlSportBtnXPath}
-    ...                                                                     ${mainNavPnlDrugStoreBtnXPath}      ${screenshotDirectory}
+    Check visiblity of dropdown items when menu item is toggled             ${categoriesListXPath}              ${screenshotDirectory}
+
+TC0306 Visiblity of dropdown items when previous menu item is toggled
+    [tags]                                                                  testCase                            dropdown
+    Check visiblity of dropdown items when previous menu item is toggled    ${categoriesListXPath}              ${screenshotDirectory}
     [teardown]                                                              Run keywords                        Close web browser and clear cache
