@@ -27,7 +27,7 @@ TC0301 Brand functionality
     [tags]                                                                  testCase                            elements
     Open web browser at domain's homepage and hide cookies popUp            ${browser}                          ${urlHomePage}
     ...                                                                     ${driverPath}                       ${popUpBtnAgreeXPath}
-    Check main navigation panel brand functionality                         ${mainNavPanelLogoXPath}            ${categoriesListXPath}
+    Check main navigation panel brand functionality                         ${mainNavPanelLogoLinkXPath}        ${categoriesListXPath}
 
 TC0302 Link's subSelection visibility during state mouse: hover
     [tags]                                                                  testCase                            subSelection

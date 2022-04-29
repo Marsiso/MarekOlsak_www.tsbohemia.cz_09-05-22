@@ -21,15 +21,15 @@ TC0101 popUp visibility during domain's visit
     [tags]                                              testCase                     container
     Open web browser and visit domain's homepage        ${browser}                   ${urlHomePage}
     ...                                                 ${driverPath}
-    Check popUp visibility during domain's visit        ${cookiesPopUpDivXPath}      ${popUpTitleXPath}          ${popUpDescriptionXPath}
-    ...                                                 ${popUpLinkLearnMoreXPath}   ${popUpBtnAgreeXPath}       ${popUpBtnSettingsXPath}
+    Check popUp visibility during domain's visit        ${cookiesPopUpDivXPath}      ${popUpBtnAgreeXPath}    ${popUpDescriptionXPath}
+    ...                                                 ${popUpLearnMoreLinkXPath}   ${popUpTitleXPath}       ${popUpBtnSettingsXPath}
     [teardown]                                          Run keywords                 Close web browser and clear cache
 
 TC0102 hypertext link learn more
     [tags]                                              testCase                     link
     Open web browser and visit domain's homepage        ${browser}                   ${urlHomePage}
     ...                                                 ${driverPath}
-    Check link learn more                               ${popUpLinkLearnMoreXPath}
+    Check link learn more                               ${popUpLearnMoreLinkXPath}
 
 TC0103 Button agree functionality
     [tags]                                              testCase                     button

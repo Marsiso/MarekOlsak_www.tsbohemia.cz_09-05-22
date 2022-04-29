@@ -1,24 +1,17 @@
 *** Keywords ***
 Check popUp visibility during domain's visit
-    [arguments]                                 ${containerXPath}           ${titleXPath}               ${descriptionXPath}
-    ...                                         ${linkXPath}                ${agreeBtnXPath}            ${settingsBtnXPath}
+    [arguments]                                 ${containerXPath}           ${agreeBtnXPath}            @{elements}
 
-    Page should contain element                 ${containerXPath}
-    Page should contain element                 ${titleXPath}
-    Page should contain element                 ${descriptionXPath}
-    Page should contain element                 ${linkXPath}
-    Page should contain element                 ${agreeBtnXPath}
-    Page should contain element                 ${settingsBtnXPath}
+    FOR                                         ${element}                  IN                          @{elements}
+        Wait until element is visible           ${element}
+    END
 
     ${url}=                                     Get location
     Go to                                       ${url}
 
-    Element should be visible                   ${containerXPath}
-    Element should be visible                   ${titleXPath}
-    Element should be visible                   ${descriptionXPath}
-    Element should be visible                   ${linkXPath}
-    Element should be visible                   ${agreeBtnXPath}
-    Element should be visible                   ${settingsBtnXPath}
+    FOR                                         ${element}                  IN                          @{elements}
+        Wait until element is visible           ${element}
+    END
 
     Wait until element is visible               ${containerXPath}
     Click Button                                ${agreeBtnXPath}
