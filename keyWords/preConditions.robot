@@ -1,23 +1,44 @@
 *** Keywords ***
 Open chrome browser
-    Create webdriver                                Chrome                          executable_path=C:\\Users\\m_ols\\PycharmProjects\\MarekOlsak_www.tsbohemia.cz_09_05_22\\drivers\\chromedriver.exe
+    [arguments]                                     ${driverPath}
+    Create webdriver                                Chrome                          executable_path=${driverPath}
 
 Open edge browser
-    Create webdriver                                Edge                            executable_path=
+    [arguments]                                     ${driverPath}
+    Create webdriver                                Edge                            executable_path=${driverPath}
 
 Open ie browser
-    Create webdriver                                IE                              executable_path=
+    [arguments]                                     ${driverPath}
+    Create webdriver                                IE                              executable_path=${driverPath}
 
 Manually manage to bypass captcha
     Sleep                                           15
 
 Open web browser and visit domain's homepage
     [arguments]                                     ${browserName}                  ${url}
-    Run keyword if                                  "${browserName}" == "Chrome"    Open chrome browser
-    Run keyword if                                  "${browserName}" == "Edge"      Open edge browser
-    Run keyword if                                  "${browserName}" == "IE"        Open ie browser
+    ...                                             ${driverPath}
+    Run keyword if                                  "${browserName}" == "Chrome"    Open chrome browser     ${driverPath}
+    Run keyword if                                  "${browserName}" == "Edge"      Open edge browser       ${driverPath}
+    Run keyword if                                  "${browserName}" == "IE"        Open ie browser         ${driverPath}
     Maximize browser window
     Go to                                           ${url}
     Manually manage to bypass captcha
     Set selenium speed                              0.5
 
+Open web browser at domain's homepage and hide cookies popUp
+    [arguments]                                     ${browserName}                  ${url}
+    ...                                             ${driverPath}                   ${button}
+    Run keyword if                                  "${browserName}" == "Chrome"    Open chrome browser     ${driverPath}
+    Run keyword if                                  "${browserName}" == "Edge"      Open edge browser       ${driverPath}
+    Run keyword if                                  "${browserName}" == "IE"        Open ie browser         ${driverPath}
+    Maximize browser window
+    Go to                                           ${url}
+    Manually manage to bypass captcha
+    Set selenium speed                              0.5
+    Wait until element is visible                   ${button}
+    Click button                                    ${button}
+    Wait until element is not visible               ${button}
+
+On test teardown
+    Run keyword if test failed                      Log                            Precondtions have not been met
+    ...                                             WARN

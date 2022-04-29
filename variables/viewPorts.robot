@@ -1,0 +1,2 @@
+*** Variables ***
+${mobileViewPortWidth}          800

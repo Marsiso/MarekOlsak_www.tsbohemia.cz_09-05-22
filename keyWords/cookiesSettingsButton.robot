@@ -3,7 +3,6 @@ Check new popUp window visibility
     [arguments]                                 ${prevContainerXPath}               ${newContainerXPath}
     ...                                         ${settingsBtnXPath}                 ${declineCookiesBtnXPath}
     ...                                         ${saveSettingsBtnXPath}
-    ...                                         ${cookiesSettingTabXPath}           ${aboutCookiesTabXPath}
 
     # New popUp window should have invalid XPath till button Cookies settings is pressed which prompts
     # dynamic changes to the element which makes it visible due to newly added class ch-2-visible
@@ -17,9 +16,6 @@ Check new popUp window visibility
     # and thus XPath becomes invalid and element hidden
     Page should not contain element             ${prevContainerXPath}
     Page should contain element                 ${newContainerXPath}
-
-    Wait until element is visible               ${cookiesSettingTabXPath}
-    Wait until element is visible               ${aboutCookiesTabXPath}
 
     Wait until element is visible               ${declineCookiesBtnXPath}
     Wait until element is visible               ${saveSettingsBtnXPath}
