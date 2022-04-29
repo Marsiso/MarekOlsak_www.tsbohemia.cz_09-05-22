@@ -36,9 +36,10 @@ TC0502 Valid user name and password validation
     ...                                                                     popUp
     Open web browser at domain's homepage and hide cookies popUp            ${browser}                          ${urlHomePage}
     ...                                                                     ${driverPath}                       ${popUpBtnAgreeXPath}
-    ${result}=          Validate users credentials                          ${userLoginPopUpNameInputXPath}     ${validUserName}
+    ${result}=      Validate users credentials                              ${userLoginPopUpNameInputXPath}     ${validUserName}
     ...                                                                     ${userLoginPopUpPasswdInputXPath}   ${validPassword}
-    ...                                                                     ${userLoginPopUpLoginXPath}         ${userAccountLogoLinkXPath}
+    ...                                                                     ${userAccountLogoLinkXPath}         ${userLoginPopUpLoginXPath}
+    ...                                                                     ${accountIsNotLoggedInXPath}        ${accountIsLoggedInXPath}
     Should be equal                                                         ${result}                           ${True}
     [teardown]                                                              Close web browser and clear cache
 
@@ -47,8 +48,9 @@ TC0503 Valid user name and invalid password validation
     ...                                                                     popUp
     Open web browser at domain's homepage and hide cookies popUp            ${browser}                          ${urlHomePage}
     ...                                                                     ${driverPath}                       ${popUpBtnAgreeXPath}
-    ${result}=          Validate users credentials                          ${userLoginPopUpNameInputXPath}     ${validUserName}
+    ${result}=      Validate users credentials                              ${userLoginPopUpNameInputXPath}     ${validUserName}
     ...                                                                     ${userLoginPopUpPasswdInputXPath}   ${invalidPassword}
-    ...                                                                     ${userLoginPopUpLoginXPath}         ${userAccountLogoLinkXPath}
+    ...                                                                     ${userAccountLogoLinkXPath}         ${userLoginPopUpLoginXPath}
+    ...                                                                     ${accountIsNotLoggedInXPath}        ${accountIsLoggedInXPath}
     Should be equal                                                         ${result}                           ${False}
     [teardown]                                                              Close web browser and clear cache

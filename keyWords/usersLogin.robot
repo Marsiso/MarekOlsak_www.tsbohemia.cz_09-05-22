@@ -10,32 +10,63 @@ Check popUp visibility after link click
     END
 
 Validate users credentials
-    [arguments]                             ${loginUserNameInputForm}       ${loginUserName}
-    ...                                     ${loginPasswordInputForm}       ${loginPassword}
-    ...                                     ${userAccountLink}              ${loginButton}
-    ...                                     ${}
+    [arguments]                             ${userNameForm}                 ${userName}
+    ...                                     ${passwordForm}                 ${password}
+    ...                                     ${accountLogo}                  ${logInBtn}
+    ...                                     ${logedOutDiv}                  ${logedInDiv}
 
-    Wait until element is visible           ${userAccountLink}
-    Click element                           ${userAccountLink}
+    # Check if page containes valid container for loggedOut user
+    ${bool1}=                               Run Keyword And Return Status
+    ...                                     Page should not contain element     ${logedInDiv}
+    ${bool2}=                               Run Keyword And Return Status
+    ...                                     Page should contain element         ${logedOutDiv}
 
-    # Clear text field
-    Clear element text                      ${loginUserNameInputForm}
-    Clear element text                      ${loginPasswordInputForm}
+    TRY
+        Should be equal                     ${bool1}                        ${bool2}
+        Should be equal                     ${bool1}                        ${True}
+    EXCEPT
+        Log to console                      || User should not be logged in!! ||                    format=*^60
+        Fail
+    END
 
-    # Type input
-    Input text                              ${loginUserNameInputForm}       ${loginUserName}
-    Input password                          ${loginPasswordInputForm}       ${loginPassword}
+    # Open logIn form
+    TRY
+        Wait until element is visible       ${accountLogo}
+        Click element                       ${accountLogo}
+    EXCEPT
+        Log to console                      || Failed locating the login form!! ||                 format=*^60
+        Fail
+    END
 
-    # Try to log in
-    Click element                           ${loginButton}
+    # Log in process
+    TRY
+       # Clear credentials
+        Clear element text                  ${userNameForm}
+        Clear element text                  ${passwordForm}
 
-    # Check if logOff link is present
-    ${bool}=                                Run Keyword And Return Status
-    ...                                     Page should not contain         ${userAccountLink}
+        # Fill in credentials
+        Input text                          ${userNameForm}                 ${userName}
+        Input password                      ${passwordForm}                 ${password}
+
+        # Try to log in
+        Click element                       ${logInBtn}
+    EXCEPT
+        Log to console                      || Failed filling in credentials!! ||                   format=*^60
+        Return from keyword                 ${True}
+    END
+
+    # Check if page containes valid container for loggedIn user
+    ${bool1}=                               Run Keyword And Return Status
+    ...                                     Page should contain element         ${logedInDiv}
+    ${bool2}=                               Run Keyword And Return Status
+    ...                                     Page should not contain element     ${logedOutDiv}
 
     # Return True if credentials validation was successful else False & restore init state
-    IF                                      ${bool}
+    TRY
+        Should be equal                     ${bool1}                        ${bool2}
+        Should be equal                     ${bool1}                        ${True}
         Return from keyword                 ${True}
-    ELSE
+    EXCEPT
+        Log to console                      || Page does not contain logged in user elements!! ||   format=*^60
         Return from keyword                 ${False}
     END
