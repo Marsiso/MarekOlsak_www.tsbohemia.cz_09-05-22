@@ -12,3 +12,7 @@ ${mainNavPnlCurrency}                   //*[@data-currency-dropdown]//*[@data-cu
 # Reset password
 ${sendResetPasswdEmailBtnXPath}         //tr[@class='btncell']//a[@title='Odeslat'][@href='#']
 
+# Registeration form
+${regFormBtnXPath}                      //*[contains(concat(' ',normalize-space(@class),' '),'btnn')][contains(concat(' ',normalize-space(@class),' '),'register')]//a[@title='Potvrdit']
+
+
