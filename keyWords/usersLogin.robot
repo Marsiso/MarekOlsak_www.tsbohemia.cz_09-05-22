@@ -70,3 +70,55 @@ Validate users credentials
         Log to console                      || Page does not contain logged in user elements!! ||   format=*^60
         Return from keyword                 ${False}
     END
+
+Check link forgotten password functionality
+    [arguments]                             ${accLogo}                      ${link}
+    ...                                     ${emailForm}                    ${sendBtn}
+    ...                                     ${failMsg}                      ${succMsg}
+    ...                                     ${url}                          ${email}
+
+    # Navigate to the forgotten password formn
+    Go to                                   ${url}
+    Wait until element is visible           ${accLogo}
+    Click element                           ${accLogo}
+    Wait until element is visible           ${link}
+    Click element                           ${link}
+    Element should be visible               ${emailForm}
+
+    # Email form
+    TRY
+       # Clear credentials
+        Clear element text                  ${emailForm}
+
+        # Fill in credentials
+        Input text                          ${emailForm}                    ${email}
+
+        # Try to send reset password link to your email
+        Click element                       ${sendBtn}
+    EXCEPT
+        Log to console                      || Failed filling in credentials!! ||                   format=*^60
+        Return from keyword                 ${True}
+    END
+
+    # Check if email is valid
+    TRY
+        Wait until element is visible       ${succMsg}
+        Return from keyword                 ${True}
+    EXCEPT
+        # Email does not exist which triggers exception
+        Log to console                      || Email does not exist!! ||                            format=*^60
+
+        # Check if invalid email message is displayed
+        TRY
+            Wait until element is visible   ${failMsg}
+            Return from keyword             ${False}
+        EXCEPT
+            # Both kinds of messages do not exist
+            Log to console                  || Unexpectet error has occured!! ||                   format=*^60
+        END
+    END
+
+    Return from keyword                     ${False}
+
+Check link user registration functionality
+    [arguments]

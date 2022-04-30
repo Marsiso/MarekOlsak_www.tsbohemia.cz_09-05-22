@@ -9,3 +9,6 @@ ${popUpBtnSaveSettingsXPath}            //*[contains(concat(' ',normalize-space(
 ${mainNavPnlDropDownMenuBtnXPath}       //*[@class='middle']//*[@data-menu-main]
 ${mainNavPnlCurrency}                   //*[@data-currency-dropdown]//*[@data-currency-dropdown-toggle]
 
+# Reset password
+${sendResetPasswdEmailBtnXPath}         //tr[@class='btncell']//a[@title='Odeslat'][@href='#']
+

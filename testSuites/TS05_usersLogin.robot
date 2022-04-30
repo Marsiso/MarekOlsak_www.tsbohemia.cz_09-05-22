@@ -33,7 +33,7 @@ TC0501 PopUp visibility after link click
 
 TC0502 Valid user name and password validation
     [tags]                                                                  testCase                            login
-    ...                                                                     popUp
+    ...                                                                     popUp                               inputForm
     Open web browser at domain's homepage and hide cookies popUp            ${browser}                          ${urlHomePage}
     ...                                                                     ${driverPath}                       ${popUpBtnAgreeXPath}
     ${result}=      Validate users credentials                              ${userLoginPopUpNameInputXPath}     ${validUserName}
@@ -45,7 +45,7 @@ TC0502 Valid user name and password validation
 
 TC0503 Valid user name and invalid password validation
     [tags]                                                                  testCase                            login
-    ...                                                                     popUp
+    ...                                                                     popUp                               inputForm
     Open web browser at domain's homepage and hide cookies popUp            ${browser}                          ${urlHomePage}
     ...                                                                     ${driverPath}                       ${popUpBtnAgreeXPath}
     ${result}=      Validate users credentials                              ${userLoginPopUpNameInputXPath}     ${validUserName}
@@ -53,4 +53,22 @@ TC0503 Valid user name and invalid password validation
     ...                                                                     ${userAccountLogoLinkXPath}         ${userLoginPopUpLoginXPath}
     ...                                                                     ${accountIsNotLoggedInXPath}        ${accountIsLoggedInXPath}
     Should be equal                                                         ${result}                           ${False}
+
+TC0504 Link forgotten password functionality with invalid email adress
+    [tags]                                                                  testCase                            email
+    ...                                                                     inputForm
+    ${result}=      Check link forgotten password functionality             ${userAccountLogoLinkXPath}         ${userLoginPopUpForgotPasswdLinkXPath}
+    ...                                                                     ${resetPassViaEmailInputXPath}      ${sendResetPasswdEmailBtnXPath}
+    ...                                                                     ${emailNotFoundMsgXPath}            ${emailFoundMshXPath}
+    ...                                                                     ${urlHomePage}                      ${invalidUserName}
+    Should be equal                                                         ${result}                           ${False}
+
+TC0505 Link forgotten password functionality with valid email adress
+    [tags]                                                                  testCase                            email
+    ...                                                                     inputForm
+    ${result}=      Check link forgotten password functionality             ${userAccountLogoLinkXPath}         ${userLoginPopUpForgotPasswdLinkXPath}
+    ...                                                                     ${resetPassViaEmailInputXPath}      ${sendResetPasswdEmailBtnXPath}
+    ...                                                                     ${emailNotFoundMsgXPath}            ${emailFoundMshXPath}
+    ...                                                                     ${urlHomePage}                      ${validUserName}
+    Should be equal                                                         ${result}                           ${True}
     [teardown]                                                              Close web browser and clear cache

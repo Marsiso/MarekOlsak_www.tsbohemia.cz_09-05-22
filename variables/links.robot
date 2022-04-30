@@ -7,6 +7,6 @@ ${mainNavPanelLogoLinkXPath}            //*[@class='middle']//*[@class='logo']
 
 # User account
 ${userAccountLogoLinkXPath}             //a[@href="javascript:toggleLoginPop();"]
-${userLoginPopUpForgotPasswdLinkXPath}  //a[@href="/?cls=catalog&xsl=xcompany&catalogs=forcompany"]
-${userLoginPopUpRegistrationLinkXPath}  //a[@href="javascript:document.location.href='default.asp?exec=inc/incnewpswd.asp'"]
+${userLoginPopUpForgotPasswdLinkXPath}  //a[@href="javascript:document.location.href='default.asp?exec=inc/incnewpswd.asp'"]
+${userLoginPopUpRegistrationLinkXPath}  //a[@href="/?cls=catalog&xsl=xcompany&catalogs=forcompany"]
 ${userLoginDropDownLogOffLinkXPath}     //a[@href="javascript:clearSessionCookie();document.location.href='/default.asp?cls=login&action=logoff'"][@class='logout']
