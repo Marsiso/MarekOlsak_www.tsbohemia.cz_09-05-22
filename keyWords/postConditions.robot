@@ -16,3 +16,10 @@ Move log files
     Move file                   ../log.html         ../logs/${date.year}_${date.month}_${date.day}_${date.hour}_${date.minute}_${name}_log.html
     Move file                   ../output.xml       ../logs/${date.year}_${date.month}_${date.day}_${date.hour}_${date.minute}_${name}_output.xml
     Move file                   ../report.html      ../logs/${date.year}_${date.month}_${date.day}_${date.hour}_${date.minute}_${name}_report.html
+
+Cease following testcase evaluation when testcase fails
+    [arguments]   ${status}
+    IF   ${status}==${False}
+       Close web browser and clear cache
+       Fatal Error   msg=Test suite's test case failed. Following evaluation will be terminated and browser will undergo cleanup and will be closed.
+    END

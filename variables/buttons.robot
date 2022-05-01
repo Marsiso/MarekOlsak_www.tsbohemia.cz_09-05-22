@@ -15,4 +15,7 @@ ${sendResetPasswdEmailBtnXPath}         //tr[@class='btncell']//a[@title='Odesla
 # Registeration form
 ${regFormBtnXPath}                      //*[contains(concat(' ',normalize-space(@class),' '),'btnn')][contains(concat(' ',normalize-space(@class),' '),'register')]//a[@title='Potvrdit']
 
+# Localization
+${localizationFormSaveBtnXPath}   //p/button[contains(concat(' ',normalize-space(@class),' '),'currency-dropdown__button')][contains(concat(' ',normalize-space(@class),' '),'as-link')]
+
 

@@ -9,5 +9,6 @@ ${userInvlaidLoginMessageXPath}     //div[contains(concat(' ',normalize-space(@c
 ${emailNotFoundMsgXPath}            //lng[@id="2"][text()='Zadaný e-mail není registrován, zkuste zadat jiný e-mail nebo si vytvořte novou registraci.']
 ${emailFoundMshXPath}               //div[@class='cnt'][contains(text(),'Odkaz pro obnovení hesla byl zaslán na e-mail :')][contains(text(),'mara.olsik@gmail.com')]
 
-# User
+# Sortiment filtering
+${notebooksCatalogItemsCounterMsgXPath}   //div[@id='pagetext']/p[@class='reccount']
 

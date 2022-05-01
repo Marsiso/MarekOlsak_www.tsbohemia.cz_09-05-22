@@ -21,14 +21,14 @@ Resource         ../keyWords/usersRegistration.robot
 TC0601 Registration form type selection via radio
     [tags]                                                                  testCase                            elements
     ...                                                                     radio
-    Open web browser at domain's homepage and hide cookies popUp            ${browser}                          ${urlHomePage}
+    Open web browser at domain's homepage and hide cookies popUp         ${browser}                          ${urlHomePage}
     ...                                                                     ${driverPath}                       ${popUpBtnAgreeXPath}
-    Check registration form type selection via radio funcionality           ${userAccountLogoLinkXPath}         ${userLoginPopUpRegistrationLinkXPath}
-    ...                                                                     ${commonRegElementNames}            ${companyRegElementNames}
-    ...                                                                     ${customerRadioXPath}               ${companyRadioXPath}
+    Check registration form type selection via radio funcionality              ${userAccountLogoLinkXPath}        ${userLoginPopUpRegistrationLinkXPath}
+    ...                                                                     ${commonRegElementNames}        ${companyRegElementNames}
+    ...                                                                     ${customerRadioXPath}             ${companyRadioXPath}
     ...                                                                     ${regFormBtnXPath}
 
 TC0602 Country selection via comboBox
     [tags]                                                                  testCase                            comboBox
-    Check country selection via comboBox functionality                      ${regFormCountriesCmbBoxXPath}
+    Check country selection via comboBox functionality                       ${regFormCountriesCmbBoxXPath}
     [teardown]                                                              Close web browser and clear cache

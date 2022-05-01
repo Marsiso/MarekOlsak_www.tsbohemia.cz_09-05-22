@@ -10,3 +10,6 @@ ${userAccountLogoLinkXPath}             //a[@href="javascript:toggleLoginPop();"
 ${userLoginPopUpForgotPasswdLinkXPath}  //a[@href="javascript:document.location.href='default.asp?exec=inc/incnewpswd.asp'"]
 ${userLoginPopUpRegistrationLinkXPath}  //a[@href="/?cls=catalog&xsl=xcompany&catalogs=forcompany"]
 ${userLoginDropDownLogOffLinkXPath}     //a[@href="javascript:clearSessionCookie();document.location.href='/default.asp?cls=login&action=logoff'"][@class='logout']
+
+# Catalog items
+${notebooksCatalogItemsNamesLinksXPath}   //div[@id='productlistjx']//div[@id='gallarea']//div[@class='prodbox']/h2/a[@title]
