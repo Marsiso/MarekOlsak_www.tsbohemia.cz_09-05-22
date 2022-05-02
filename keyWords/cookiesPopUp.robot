@@ -1,41 +1,54 @@
 *** Keywords ***
 Check popUp visibility during domain's visit
-    [arguments]                                 ${containerXPath}           ${agreeBtnXPath}            @{elements}
+    [arguments]   ${button}   @{elements}
 
-    FOR                                         ${element}                  IN                          @{elements}
-        Wait until element is visible           ${element}
+    # Check if element is present in DOM and is visible
+    FOR   ${element}   IN   @{elements}
+       Wait until page contains element   ${element}
+       Wait until element is visible   ${element}
+       Comment   Cookies form element is present and visible
+       Log   ${element}
     END
 
-    ${url}=                                     Get location
-    Go to                                       ${url}
+    # Agree with cookies and make popUp hidden and disabled
+    Click Button   ${button}
 
-    FOR                                         ${element}                  IN                          @{elements}
-        Wait until element is visible           ${element}
-    END
-
-    Wait until element is visible               ${containerXPath}
-    Click Button                                ${agreeBtnXPath}
-    Go to                                       ${url}
-
-    Page should not contain element             ${containerXPath}
+    # Check if popUp is still present in the DOM
+    ${bool}=   Run keyword and return status   Wait until page does not contain element   ${form}
+    Pass execution if   ${bool}   Page does not contain cookies popUp element!
+    ${bool}=   Run keyword and return status   Wait until element is not visible   ${form}
+    Pass execution if   ${bool}   Cookies popUp element is not visible!
+    Fail   PopUp is still visible and present in DOM!
 
 Check link learn more
-    [arguments]                                 ${linkXPath}
+    [arguments]   ${link}
 
-    ${url}=                                     Get location
-    Wait until element is visible               ${linkXPath}
-    Click link                                  ${linkXPath}
-    Location should be                          ${url}cookies.htm
+    # Get and log current url adress
+    ${url}=   Get location
+    Comment   Currently visited web page's URL adress
+    Log   ${url}
+    Wait until element is visible   ${link}
+
+    # Click link
+    Click link   ${link}
+
+    # Get new url adress and log it
+    ${newUrl}=   Get location
+    Comment   Currently visited web page's URL adress
+    Log   ${newUrl}
+
+    # Compare current url adress with expected url adress
+    Location should be   ${url}cookies.htm
 
 Check button agree functionality
-    [arguments]                                 ${containerXPath}           ${btnXPath}
+    [arguments]   ${form}   ${button}
 
-    Wait until element is visible               ${btnXPath}
+    Wait until element is visible   ${button}
 
-    &{cookiesPrev}=                             Get cookies                 as_dict=True
-    Log dictionary                              dictionary=&{cookiesPrev}   level=INFO
+    &{cookiesPrev}=   Get cookies   as_dict=True
+    Log dictionary   dictionary=&{cookiesPrev}   level=INFO
 
-    Click element                               ${btnXPath}
+    Click element   ${button}
     Page should not contain element             ${containerXPath}
 
     &{cookiesNew}=                              Get cookies                 as_dict=True

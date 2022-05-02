@@ -17,23 +17,20 @@ Resource         ../keyWords/postConditions.robot
 Resource         ../keyWords/cookiesPopUp.robot
 
 *** Test Cases ***
-TC0101 popUp visibility during domain's visit
-    [tags]                                              testCase                     container
-    Open web browser and visit domain's homepage        ${browser}                   ${urlHomePage}
-    ...                                                 ${driverPath}
-    Check popUp visibility during domain's visit        ${cookiesPopUpDivXPath}      ${popUpBtnAgreeXPath}    ${popUpDescriptionXPath}
-    ...                                                 ${popUpLearnMoreLinkXPath}   ${popUpTitleXPath}       ${popUpBtnSettingsXPath}
-    [teardown]                                          Run keywords                 Close web browser and clear cache
+TC0101 PopUp visibility during domain's visit
+    [tags]   testCase   container
+    Open web browser and visit domain's homepage   ${browser}   ${urlHomePage}   ${driverPath}
+    Check popUp visibility during domain's visit   ${popUpBtnAgreeXPath}   ${popUpDescriptionXPath}
+    ...   ${popUpLearnMoreLinkXPath}   ${popUpTitleXPath}   ${popUpBtnSettingsXPath}
+    [teardown]   Run keywords   Close web browser and clear cache
 
-TC0102 hypertext link learn more
-    [tags]                                              testCase                     link
-    Open web browser and visit domain's homepage        ${browser}                   ${urlHomePage}
-    ...                                                 ${driverPath}
-    Check link learn more                               ${popUpLearnMoreLinkXPath}
+TC0102 Hypertext link learn more
+    [tags]   testCase   link
+    Open web browser and visit domain's homepage   ${browser}   ${urlHomePage}   ${driverPath}
+    Check link learn more   ${popUpLearnMoreLinkXPath}
 
 TC0103 Button agree functionality
-    [tags]                                              testCase                     button
-    Open web browser and visit domain's homepage        ${browser}                   ${urlHomePage}
-    ...                                                 ${driverPath}
-    Check button agree functionality                    ${cookiesPopUpDivXPath}      ${popUpBtnAgreeXPath}
-    [teardown]                                          Run keywords                 Close web browser and clear cache
+    [tags]   testCase   button
+    Open web browser and visit domain's homepage   ${browser}   ${urlHomePage}   ${driverPath}
+    Check button agree functionality   ${cookiesPopUpDivXPath}   ${popUpBtnAgreeXPath}
+    [teardown]   Run keywords   Close web browser and clear cache
