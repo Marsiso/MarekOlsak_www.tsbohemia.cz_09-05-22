@@ -18,19 +18,18 @@ Resource         ../keyWords/cookiesPopUp.robot
 
 *** Test Cases ***
 TC0101 PopUp visibility during domain's visit
-    [tags]   testCase   container
+    [tags]   testCase   container   cookies
     Open web browser and visit domain's homepage   ${browser}   ${urlHomePage}   ${driverPath}
-    Check popUp visibility during domain's visit   ${popUpBtnAgreeXPath}   ${popUpDescriptionXPath}
-    ...   ${popUpLearnMoreLinkXPath}   ${popUpTitleXPath}   ${popUpBtnSettingsXPath}
+    Check popUp visibility during domain's visit   ${cookiesAgreeBtnXPath}   ${cookiesDescriptionText0}
+    ...   ${cookiesLearnMoreLinkXPath}   ${popUpBtnSettingsXPath}
     [teardown]   Run keywords   Close web browser and clear cache
 
 TC0102 Hypertext link learn more
-    [tags]   testCase   link
+    [tags]   testCase   link   cookies
     Open web browser and visit domain's homepage   ${browser}   ${urlHomePage}   ${driverPath}
-    Check link learn more   ${popUpLearnMoreLinkXPath}
+    Check link learn more   ${cookiesLearnMoreLinkXPath}   ${cookiesDescriptionText1}   ${cookiesDescriptionText2}
 
 TC0103 Button agree functionality
-    [tags]   testCase   button
-    Open web browser and visit domain's homepage   ${browser}   ${urlHomePage}   ${driverPath}
-    Check button agree functionality   ${cookiesPopUpDivXPath}   ${popUpBtnAgreeXPath}
+    [tags]   testCase   button   cookies
+    Check button agree functionality   ${cookiesDivXPath}   ${cookiesAgreeBtnXPath}
     [teardown]   Run keywords   Close web browser and clear cache

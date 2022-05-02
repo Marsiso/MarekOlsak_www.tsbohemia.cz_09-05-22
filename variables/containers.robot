@@ -1,7 +1,7 @@
 *** Variables ***
 # Cookies popUp
-${cookiesPopUpDivXPath}             //*[contains(concat(' ',normalize-space(@class),' '),'ch2-dialog')][contains(concat(' ',normalize-space(@class),' '),'ch2-visible')][@role="dialog"]
-${settingsPopUpDivXPath}            //*[contains(concat(' ',normalize-space(@class),' '),'ch2-settings')][contains(concat(' ',normalize-space(@class),' '),'ch2-visible')][@role="dialog"]
+${cookiesDivXPath}   //*[contains(concat(' ',normalize-space(@class),' '),'ch2-dialog')][contains(concat(' ',normalize-space(@class),' '),'ch2-visible')][@role="dialog"]
+${settingsPopUpDivXPath}   //*[contains(concat(' ',normalize-space(@class),' '),'ch2-settings')][contains(concat(' ',normalize-space(@class),' '),'ch2-visible')][@role="dialog"]
 
 # User account login popUp
 ${userLoginPopUpXPath}              //div[contains(concat(' ',normalize-space(@class),' '),'tabformcont')][contains(concat(' ',normalize-space(@class),' '),'logincont')][contains(concat(' ',normalize-space(@class),' '),'frmauth')]
