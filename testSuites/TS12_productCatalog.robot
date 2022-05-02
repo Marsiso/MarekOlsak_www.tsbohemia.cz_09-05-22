@@ -30,19 +30,19 @@ Resource         ../keyWords/productCatalog.robot
  #    ${status}=   Run keyword and return status   Check price slider interactability   ${notebooksURL}   ${notebooksPriceSliderXPath}   ${notebooksCatalogItemsCounterMsgXPath}
  #    [teardown]   Cease following testcase evaluation when testcase fails   ${status}
  #
- #TC1202 Lower and upper price limitations data updates
+ #TC1202 Lower and upper price bounds
  #    [tags]   testCase   data
  #    ${status}=   Run keyword and return status   Check lower and upper price limitations data updates   ${notebooksPriceSliderXPath}
  #    ...   ${notebooksPriceSliderLowerPriceXPath}   ${notebooksPriceSliderUpperPriceXPath}   ${notebooksCatalogItemsCounterMsgXPath}
  #    [teardown]   Cease following testcase evaluation when testcase fails   ${status}
  #
- #TC1203 The lower limit value passing the upper limit value
+ #TC1203 Lower limit over upper
  #    [tags]   testCase   data
  #    Try to pass the upper limit by raising the lower limit   ${notebooksPriceSliderXPath}
  #    ...   ${notebooksPriceSliderLowerPriceXPath}   ${notebooksPriceSliderUpperPriceXPath}   ${notebooksCatalogItemsCounterMsgXPath}
  #    [teardown]   Close web browser and clear cache
  #
- #TC1204 Trigger catalog data update when price limitations changed
+ #TC1204 Catalog update when price limitation changed
  #    [tags]   testCase   data   filter
  #    Open web browser at domain's homepage and hide cookies popUp   ${browser}   ${urlHomePage}   ${driverPath}
  #    ...   ${popUpBtnAgreeXPath}
@@ -50,7 +50,7 @@ Resource         ../keyWords/productCatalog.robot
  #    ...   ${notebooksPriceSliderXPath}   ${notebooksCatalogDivXPath}   ${notebooksCatalogItemsCounterMsgXPath}
  #    [teardown]   Cease following testcase evaluation when testcase fails   ${status}
  #
- #TC1205 Trigger catalog data update when price limitations changed
+ #TC1205 Catalog data update when price localization changed
  #    [tags]   testCase   data   filter
  #    Check catalog data updates when localization changed   ${notebooksCatalogItemsDivsXPath}
  #    ...   ${currencyMenuLogoDivXPath}   ${currencySelectionXPath}   ${localizationFormSaveBtnXPath}
