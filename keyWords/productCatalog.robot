@@ -495,3 +495,32 @@ Sort catalog data by id in ascending order and compare their values
           ${prevId}=   Set variable   ${id}
        END
     END
+
+Sort catalog data by availability
+    [arguments]   ${catalog}   ${filter}   ${value}
+
+    # Choose catalog filter
+    Select from list by value   ${filter}   ${value}
+    Scroll element into view and set focus   ${filter}
+
+    # Get list of catalog items
+    @{items}=   Get webelements   ${catalog}
+    ${len}=   Get length   ${items}
+
+    # Compare catalog item price tags
+    FOR   ${i}   IN RANGE   0   ${len - 1}
+       # Get new item data
+       ${data}=   Get Element Attribute   ${items}[${i}]  data-price
+       ${id}=   Scrap data id from string   ${data}
+       IF   ${i} == 0
+          ${prevId}=   Set variable   ${id}
+       ELSE
+          Log   ${prevId}
+          Log   ${id}
+          # Compare two values
+          Should be true   ${prevId} < ${id}
+
+          # Set new previous data
+          ${prevId}=   Set variable   ${id}
+       END
+    END

@@ -83,4 +83,9 @@ TC1210 Sort by age in ascending order
      [tags]   testCase   data   sort   filter
      Sort catalog data by id in ascending order and compare their values  ${notebooksCatalogItemsDivsXPath}
      ...   ${sortFilterSelectionXPath}   ${sortByAgeFilterValue}
+
+TC1211 Sort by availibility
+     [tags]   testCase   data   sort   filter
+     Sort catalog data by id in ascending order and compare their values  ${notebooksCatalogItemsDivsXPath}
+     ...   ${shopListXPath}
      [teardown]   Close web browser and clear cache

@@ -14,9 +14,9 @@ Check popUp visibility during domain's visit
     Click Button   ${button}
 
     # Check if popUp is still present in the DOM
-    ${bool}=   Run keyword and return status   Wait until page does not contain element   ${form}
+    ${bool}=   Run keyword and return status   Wait until page does not contain element   ${button}
     Pass execution if   ${bool}   Page does not contain cookies popUp element!
-    ${bool}=   Run keyword and return status   Wait until element is not visible   ${form}
+    ${bool}=   Run keyword and return status   Wait until element is not visible   ${button}
     Pass execution if   ${bool}   Cookies popUp element is not visible!
     Fail   PopUp is still visible and present in DOM!
 
@@ -49,7 +49,7 @@ Check button agree functionality
     Log dictionary   dictionary=&{cookiesPrev}   level=INFO
 
     Click element   ${button}
-    Page should not contain element             ${containerXPath}
+    Page should not contain element             ${form}
 
     &{cookiesNew}=                              Get cookies                 as_dict=True
     Log dictionary                              dictionary=&{cookiesNew}    level=INFO
@@ -69,3 +69,4 @@ Check button agree functionality
     END
 
     Log list                                    list_=${diff}               level=INFO
+
