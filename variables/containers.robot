@@ -9,12 +9,18 @@ ${userLoginPopUpLoginXPath}         //div[contains(concat(' ',normalize-space(@c
 ${accountIsLoggedInXPath}           //div[@id='bodyout'][@data-logged="1"]
 ${accountIsNotLoggedInXPath}        //div[@id='bodyout'][@data-logged="0"]
 
-# Notebook catalog
-#${notebooksCatalogDivXPath}   //div[@id='productlistjx']//div[@id='gallarea']
+# Catalog items
 ${notebooksCatalogItemsIDsDivXPath}   //div[@id='prodidlist']
-${notebooksCatalogDivXPath}   //div[@id='productlistjx']//div[@id='gallarea']//div[@class='prodbox']
-${notebooksCatalogItemsDivsXPath}   //div[@id='productlistjx']//div[@id='gallarea']//div[@class='prodbox']//div[@data-price]
+${notebooksCatalogDivXPath}   //*[@id='gallarea']//*[@class='prodbox']
+${catalogItemsDivsXPath}   //*[@id='gallarea']//*[@class='prodbox']//div[@data-price]
 ${notebooksCatalogPageCounterDivXPath}   //div[@id='infpagination']
 
 # Localization
 ${currencyMenuLogoDivXPath}   //div[@id='currency-dropdown'][contains(concat(' ',normalize-space(@class),' '),'currency-dropdown')]
+
+# Catalog filtering
+${manufacturersAndParametersToogleDivXPath}   //*[@id='fltrparamshdr']
+${manufacturersAndParametersGuideDivXPath}   //*[@id='categoryparams']//*[contains(text(),'      Průvodce výběrem')]
+${manufacturersAndParametersAcerXPath}   //*[@class='param val'][.//span[contains(text(),'ACER')]]/div
+${manufacturersAndParametersDisplayBtnDivXPath}   //*[@id='go_filter']
+${filterListDivXPath}   //*[@id='act_filter_scaid']

@@ -19,7 +19,7 @@ Move log files
 
 Cease following testcase evaluation when testcase fails
     [arguments]   ${status}
-    IF   ${status}==${False}
+    IF   ${status} == ${False}
        Close web browser and clear cache
        Fatal Error   msg=Test suite's test case failed. Following evaluation will be terminated and browser will undergo cleanup and will be closed.
     END

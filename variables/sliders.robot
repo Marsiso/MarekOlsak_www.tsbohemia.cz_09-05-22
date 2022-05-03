@@ -1,5 +1,5 @@
 *** Variables ***
 # Sortiment filtering
-${notebooksPriceSliderXPath}   //div[@id='slider-range']
-${notebooksPriceSliderLowerPriceXPath}   //span[@id='stipricedeafrominfo']
-${notebooksPriceSliderUpperPriceXPath}   //span[@id='stipricedeatoinfo']
+${priceSliderXPath}   //div[@id='slider-range']
+${priceSliderLowerPriceXPath}   //span[@id='stipricedeafrominfo']
+${priceSliderUpperPriceXPath}   //span[@id='stipricedeatoinfo']

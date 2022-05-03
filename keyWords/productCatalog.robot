@@ -88,20 +88,17 @@ Scrap data id from string
 
 Scroll element into view and set focus
     [arguments]   ${element}
-    Wait until page contains element   ${element}   timeout=10
-    Wait until element is visible   ${element}   timeout=10
+    Wait until keyword succeeds   30 seconds   5 seconds   Wait until element is visible   ${element}
     Execute Javascript   window.scrollTo(0,0);
     Mouse over   //div[@id='head_menu']
 
 Check price slider interactability
-    [arguments]   ${url}   ${slider}   ${counter}
+    [arguments]   ${slider}   ${counter}
 
     # Prerequisite elements
-    Go to   ${url}
-    Page should contain element   ${slider}
-    Wait until element is visible   ${slider}
-    Element should be visible   ${slider}/span[1]
-    Element should be visible   ${slider}/span[2]
+    Wait until keyword succeeds   30 seconds   5 seconds   Wait until element is visible   ${slider}
+    Wait until element is visible   ${slider}/span[1]
+    Wait until element is visible   ${slider}/span[2]
 
     # Get horizontal position of sliders
     ${leftX}=   Get horizontal position   ${slider}/span[1]
@@ -112,7 +109,7 @@ Check price slider interactability
     ${offset}=   Evaluate   ${range} / 20
     ${offset}=   Convert to integer   ${offset}
 
-    FOR   ${num}   IN   1   2   2   2   1   1   1   1   2   2
+    FOR   ${num}   IN   1   2   2   1
        # Drag and drop slider and bring them closer
        IF   ${num} == 1
           Drag and drop by offset   ${slider}/span[${num}]   ${offset}   0
@@ -132,7 +129,7 @@ Check price slider interactability
     # Calculate new range
     ${range}=   Evaluate   ${rightX} - ${leftX}
 
-    FOR   ${num}   IN   1   2   2   2   1
+    FOR   ${num}   IN   1   2   2   1
        # Drag and drop slider and further them
        IF   ${num} == 1
           Drag and drop by offset   ${slider}/span[${num}]   -${offset}   0
@@ -232,14 +229,7 @@ Try to pass the upper limit by raising the lower limit
 
 
 Check catalog data updates when price limit changed
-    [arguments]   ${url}   ${slider}   ${catalog}   ${counter}
-
-    # Go to the notebooks page
-    Go to   ${url}
-    Page should contain element   ${slider}
-    Wait until element is visible   ${slider}
-    Element should be visible   ${slider}/span[1]
-    Element should be visible   ${slider}/span[2]
+    [arguments]   ${slider}   ${catalog}   ${counter}
 
     # Get horizontal position of sliders
     ${leftX}=   Get horizontal position   ${slider}/span[1]
@@ -290,12 +280,6 @@ Check catalog data updates when price limit changed
 
     # Return status
     Pass execution if   ${displayed} > 1   Unable to verify catalog data updates due to low amout of test data.
-#    IF   ${displayed} > 1
-#       Return from keyword
-#    ELSE
-#       Comment   Unable to verify catalog data updates due to low amout of test data.
-#       FAIL
-#    END
 
 Check catalog data updates when localization changed
     [arguments]   ${catalog}   ${form}   ${localization}   ${save}   ${counter}
@@ -346,17 +330,13 @@ Check catalog data updates when localization changed
     END
 
 Sort catalog data by price in ascending order and compare their values
-    [arguments]   ${url}   ${catalog}   ${filter}   ${value}
-
-    # Go to catalogs webpage
-    Go to   ${url}
+    [arguments]   ${catalog}   ${filter}   ${value}
 
     # Choose catalog filter
     Select from list by value   ${filter}   ${value}
     Scroll element into view and set focus   ${filter}
 
     # Get list of catalog items
-    #Sleep   10 seconds
     @{items}=   Get webelements   ${catalog}
     ${len}=   Get length   ${items}
 
@@ -496,31 +476,46 @@ Sort catalog data by id in ascending order and compare their values
        END
     END
 
-Sort catalog data by availability
-    [arguments]   ${catalog}   ${filter}   ${value}
+Sort catalog data by availability on branch office
+    [arguments]   ${branchesBtn}   ${branches}   ${counter}
 
     # Choose catalog filter
-    Select from list by value   ${filter}   ${value}
-    Scroll element into view and set focus   ${filter}
+    Scroll element into view and set focus   ${branchesBtn}
+    Click element   ${branchesBtn}
 
     # Get list of catalog items
-    @{items}=   Get webelements   ${catalog}
-    ${len}=   Get length   ${items}
+    @{branches}=   Get webelements   ${branches}
+    ${len}=   Get length   ${branches}
 
     # Compare catalog item price tags
-    FOR   ${i}   IN RANGE   0   ${len - 1}
-       # Get new item data
-       ${data}=   Get Element Attribute   ${items}[${i}]  data-price
-       ${id}=   Scrap data id from string   ${data}
-       IF   ${i} == 0
-          ${prevId}=   Set variable   ${id}
+    FOR   ${i}   IN RANGE   1   ${len}
+       Wait until keyword succeeds   30 seconds   5 seconds   Click element   ${branches}[${i}]
+       Scroll element into view and set focus   ${counter}
+       ${string}=   Get text   ${counter}
+       IF   ${i} == 1
+          ${prevNumber}=   Convert to integer   ${string}
        ELSE
-          Log   ${prevId}
-          Log   ${id}
-          # Compare two values
-          Should be true   ${prevId} < ${id}
-
-          # Set new previous data
-          ${prevId}=   Set variable   ${id}
+          ${number}=   Convert to integer   ${string}
+          Should be true   ${number} >= ${prevNumber}
        END
     END
+
+Sort catalog data by manufacturer and parameters
+    [arguments]   ${toogleButton}   ${guideSection}   ${acer}   ${filter}
+    ...   ${itemNames}   ${itemNotes}   ${displayButton}   ${counter}
+
+    # Toogle manufacturer and parameters window
+    Scroll element into view   ${toogleButton}
+    Click element   ${toogleButton}
+    Wait until keyword succeeds   30 seconds   5 seconds   Wait until element is visible   ${acer}
+
+    # Check manufacturer
+    Scroll element into view   ${acer}
+    Click element   ${acer}
+    Wait until keyword succeeds   30 seconds   5 seconds   Wait until element is visible   ${filter}
+    ${string}=   Get text   ${acer}
+    Log   ${string}
+
+    # Apply filter
+    Scroll element into view   ${displayButton}
+    Click element   ${displayButton}

@@ -15,5 +15,5 @@ ${sortByNameAplhabeticallyZAFilterValue}   stiplname_desc
 ${sortByAgeFilterValue}   stic
 
 # ComboBox for filtering catalog items by availibility
-${shopListXPath}   //div[@id='availfilteron']
-${shopListItemsXPath}   //div[@id='idavailfilterblock']/div[@class='stckitem']/input[@value][@onclick]
+${branchListXPath}   //div[@id='availfilteron']
+${branchListItemsXPath}   //*[@class='stckitem']
