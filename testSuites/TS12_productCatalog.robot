@@ -36,56 +36,81 @@ TC1201 Price slider interactability
 
 TC1202 Lower and upper price bounds
      [tags]   testCase   data
+     Open web browser at domain's homepage and hide cookies popUp
+     ...   ${browser}   ${notebooksURL}   ${driverPath}   ${popUpBtnAgreeXPath}
      Check lower and upper price limitations data updates   ${priceSliderXPath}   ${priceSliderLowerPriceXPath}
      ...   ${priceSliderUpperPriceXPath}   ${catalogItemsCounterXPath}
+     [teardown]   Close web browser and clear cache
 
 TC1203 Lower limit over upper
      [tags]   testCase   data
+     Open web browser at domain's homepage and hide cookies popUp
+     ...   ${browser}   ${notebooksURL}   ${driverPath}   ${popUpBtnAgreeXPath}
      Try to pass the upper limit by raising the lower limit   ${priceSliderXPath}   ${priceSliderLowerPriceXPath}
      ...   ${priceSliderUpperPriceXPath}   ${catalogItemsCounterXPath}
-     [teardown]   Run keywords   Close web browser and clear cache   AND   Open web browser at domain's homepage and hide cookies popUp
-     ...   ${browser}   ${notebooksURL}   ${driverPath}   ${popUpBtnAgreeXPath}
+     [teardown]   Close web browser and clear cache
 
 TC1204 Catalog update when price limitation changed
      [tags]   testCase   data   filter
+     Open web browser at domain's homepage and hide cookies popUp
+     ...   ${browser}   ${notebooksURL}   ${driverPath}   ${popUpBtnAgreeXPath}
      Check catalog data updates when price limit changed   ${priceSliderXPath}
      ...   ${notebooksCatalogDivXPath}   ${catalogItemsCounterXPath}
+     [teardown]   Close web browser and clear cache
 
 TC1205 Catalog data update when price localization changed
      [tags]   testCase   data   filter
+     Open web browser at domain's homepage and hide cookies popUp
+     ...   ${browser}   ${notebooksURL}   ${driverPath}   ${popUpBtnAgreeXPath}
      Check catalog data updates when localization changed   ${catalogItemsDivsXPath}
      ...   ${currencyMenuLogoDivXPath}   ${currencySelectionXPath}   ${localizationFormSaveBtnXPath}
      ...   ${catalogItemsCounterXPath}
-      [teardown]   Run keywords   Close web browser and clear cache   AND   Open web browser at domain's homepage and hide cookies popUp
-     ...   ${browser}   ${notebooksURL}   ${driverPath}   ${popUpBtnAgreeXPath}
+     [teardown]   Close web browser and clear cache
 
 TC1206 Sort by price in ascending order
      [tags]   testCase   data   sort   filter
+     Open web browser at domain's homepage and hide cookies popUp
+     ...   ${browser}   ${notebooksURL}   ${driverPath}   ${popUpBtnAgreeXPath}
      Sort catalog data by price in ascending order and compare their values  ${catalogItemsDivsXPath}
      ...   ${sortFilterSelectionXPath}   ${sortPriceAscendingFilterValue}
+     [teardown]   Close web browser and clear cache
 
 TC1207 Sort by price in descending order
      [tags]   testCase   data   sort   filter
+     Open web browser at domain's homepage and hide cookies popUp
+     ...   ${browser}   ${notebooksURL}   ${driverPath}   ${popUpBtnAgreeXPath}
      Sort catalog data by price in descending order and compare their values  ${catalogItemsDivsXPath}
      ...   ${sortFilterSelectionXPath}   ${sortPriceDescendingFilterValue}
+     [teardown]   Close web browser and clear cache
 
 TC1208 Sort catalog data by name in alphabetical order AZ and compare their values
      [tags]   testCase   data   sort   filter
+     Open web browser at domain's homepage and hide cookies popUp
+     ...   ${browser}   ${notebooksURL}   ${driverPath}   ${popUpBtnAgreeXPath}
      Sort catalog data by name in alphabetical order AZ and compare their values  ${catalogItemsNamesLinksXPath}
      ...   ${sortFilterSelectionXPath}   ${sortByNameAplhabeticallyAZFilterValue}
+     [teardown]   Close web browser and clear cache
 
 TC1209 Sort catalog data by name in alphabetical order ZA
      [tags]   testCase   data   sort   filter
+     Open web browser at domain's homepage and hide cookies popUp
+     ...   ${browser}   ${notebooksURL}   ${driverPath}   ${popUpBtnAgreeXPath}
      Sort catalog data by name in alphabetical order ZA and compare their values  ${catalogItemsNamesLinksXPath}
      ...   ${sortFilterSelectionXPath}   ${sortByNameAplhabeticallyZAFilterValue}
+     [teardown]   Close web browser and clear cache
 
 TC1210 Sort catalog data by age in ascending order
      [tags]   testCase   data   sort   filter
+     Open web browser at domain's homepage and hide cookies popUp
+     ...   ${browser}   ${notebooksURL}   ${driverPath}   ${popUpBtnAgreeXPath}
      Sort catalog data by id in ascending order and compare their values  ${catalogItemsDivsXPath}
      ...   ${sortFilterSelectionXPath}   ${sortByAgeFilterValue}
+     [teardown]   Close web browser and clear cache
 
 TC1211 Sort catalog data by availibility on branch office
      [tags]   testCase   data   sort   filter
+     Open web browser at domain's homepage and hide cookies popUp
+     ...   ${browser}   ${notebooksURL}   ${driverPath}   ${popUpBtnAgreeXPath}
      Sort catalog data by availability on branch office  ${branchListXPath}   ${branchListItemsXPath}   ${catalogItemsCounterXPath}
      [teardown]   Close web browser and clear cache
 

@@ -22,4 +22,6 @@ Cease following testcase evaluation when testcase fails
     IF   ${status} == ${False}
        Close web browser and clear cache
        Fatal Error   msg=Test suite's test case failed. Following evaluation will be terminated and browser will undergo cleanup and will be closed.
+    ELSE
+       Close web browser and clear cache
     END
