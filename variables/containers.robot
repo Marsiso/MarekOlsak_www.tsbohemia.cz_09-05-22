@@ -24,3 +24,4 @@ ${manufacturersAndParametersGuideDivXPath}   //*[@id='categoryparams']//*[contai
 ${manufacturersAndParametersAcerXPath}   //*[@class='param val'][.//span[contains(text(),'ACER')]]/div
 ${manufacturersAndParametersDisplayBtnDivXPath}   //*[@id='go_filter']
 ${filterListDivXPath}   //*[@id='act_filter_scaid']
+${currentPageNumDivXPath}   //*[@data-pagenumber][@class='page_delimiter']

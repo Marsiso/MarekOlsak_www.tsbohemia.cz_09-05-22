@@ -519,3 +519,134 @@ Sort catalog data by manufacturer and parameters
     # Apply filter
     Scroll element into view   ${displayButton}
     Click element   ${displayButton}
+
+    # Get data and verify matched items
+    Wait until keyword succeeds   30 seconds   5 seconds   Wait until element is visible   ${counter}
+    @{names}=   Get webelements   ${itemNames}
+    @{notes}=   Get webelements   ${itemNotes}
+    Log list   list_=${names}   level=INFO
+    Log list   list_=${notes}   level=INFO
+
+    ${lenNames}=   Get length   ${names}
+    ${lenNotes}=   Get length   ${notes}
+
+    Should be true   ${lenNames} == ${lenNotes}
+    FOR   ${i}   IN   1   ${lenNames}
+       # Check names
+       ${string}=   Get text   ${names}[${i}]
+       @{matches}=   Get regexp matches   ${string}   (ACER)
+       ${len}=   Get length   ${matches}
+       Should be true   ${len} > 0
+
+       # Check notes
+       ${string}=   Get text   ${notes}[${i}]
+       @{matches}=   Get regexp matches   ${string}   (ACER)
+       ${len}=   Get length   ${matches}
+       Should be true   ${len} > 0
+    END
+
+Display catalog items as list or icons and take screenshot
+    [arguments]   ${active}   ${inactive}   ${catalog}   ${screenShotDirectory}   ${fileName}
+
+    # Check visibility and dropdown menu
+    Wait until keyword succeeds   30 seconds   5 seconds   Wait until element is visible   ${active}
+
+    # Display catalog items as list
+    Click element   ${active}
+    Wait until keyword succeeds   30 seconds   5 seconds   Wait until element is visible   ${inactive}
+    Click element   ${inactive}
+
+    # Scroll middle element into view
+    @{items}=   Get webelements   ${catalog}
+    ${len}=   Get length   ${items}
+    ${index}=   Evaluate   ${len} / 2
+    ${index}=   Convert to integer   ${index}
+    Scroll element into view   ${items}[${index}]
+
+    # Take a screenshot
+    ${date}=   Get Current Date   result_format=datetime
+    SeleniumLibrary.Set Screenshot Directory   ${screenShotDirectory}
+    ${path}=   Capture page screenshot   filename=${date.year}_${date.month}_${date.day}_${date.hour}_${date.minute}_${fileName}
+    File should exist   ${path}
+
+Navigate through catalog pages and verify page has unique data
+    [arguments]   ${links}   ${catalog}   ${counter}
+
+    # Navigate through next few pages and log url
+    FOR   ${i}   IN RANGE  1   10
+       # Navigate to the next page
+       Run keyword if   ${i} > 1   Click element   ${links}\//*[contains(text(),'${i}')]
+       IF   ${i} == 2
+          ${prevUrl}=   Get location
+
+          # Scrap ids
+          Wait until keyword succeeds   30 seconds   5 seconds   Scroll element into view and set focus   ${counter}
+          @{items}=   Get webelements   ${catalog}
+          ${len}=   Get length   ${items}
+          @{prevIdList}=   Create list
+          FOR   ${i}   IN RANGE   0   ${len - 1}
+             # Get new item data
+             ${data}=   Get Element Attribute   ${items}[${i}]  data-price
+             ${id}=   Scrap data id from string   ${data}
+             Append to list   ${prevIdList}   ${id}
+          END
+
+       # Verify visibility
+       ELSE IF   ${i} > 4
+          # Visit first page
+          Click element   (${links})[1]
+          ${url}=   Get location
+          Comment   First page URL
+          Log   ${url}   level=INFO
+
+          # Visit second page
+          Click element   (${links})[last() - 2]
+          ${url}=   Get location
+          Comment   First page URL
+          Log   ${url}   level=INFO
+
+          # Visit first page
+          Click element   (${links})[2]
+          ${url}=   Get location
+          Comment   First page URL
+          Log   ${url}   level=INFO
+
+          # Visit last page
+
+          Click element   (${links})[last() - 1]
+          ${url}=   Get location
+          Comment   Last page URL
+          Log   ${url}   level=INFO
+
+          BREAK
+       ELSE IF   ${i} > 2
+          # Compare prev and new URL
+          Comment   Previous URL
+          Log   ${prevUrl}   level=INFO
+          ${url}=   Get location
+          Comment   Current URL
+          Log   ${url}   level=INFO
+          Should be true  '${url}' > '${prevUrl}'
+
+          # Scrap new cataloge page items ids
+          Wait until keyword succeeds   30 seconds   5 seconds   Scroll element into view and set focus   ${counter}
+          @{idList}=   Create list
+          @{items}=   Get webelements   ${catalog}
+          ${len}=   Get length   ${items}
+          FOR   ${i}   IN RANGE   0   ${len - 1}
+             # Get new item data
+             ${data}=   Get Element Attribute   ${items}[${i}]  data-price
+             ${id}=   Scrap data id from string   ${data}
+             Append to list   ${idList}   ${id}
+          END
+
+          # Compare prev and current catalog page items ids
+          FOR   ${id}   IN   @{idList}
+             List should not contain value   ${prevIdList}   ${id}
+          END
+
+          # Set new prev values
+          ${prevUrl}=   Set variable   ${url}
+          ${prevIdList}=   Set variable   ${idList}
+       END
+    END

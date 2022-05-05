@@ -11,5 +11,7 @@ ${userLoginPopUpForgotPasswdLinkXPath}  //a[@href="javascript:document.location.
 ${userLoginPopUpRegistrationLinkXPath}  //a[@href="/?cls=catalog&xsl=xcompany&catalogs=forcompany"]
 ${userLoginDropDownLogOffLinkXPath}     //a[@href="javascript:clearSessionCookie();document.location.href='/default.asp?cls=login&action=logoff'"][@class='logout']
 
-# Catalog items
+# Catalog
 ${catalogItemsNamesLinksXPath}   //div[@id='productlistjx']//div[@id='gallarea']//div[@class='prodbox']/h2/a[@title]
+${pageNavLinksXPath}   //*[@class='boxcont pagenav']/*[@class='cnt']/*
+

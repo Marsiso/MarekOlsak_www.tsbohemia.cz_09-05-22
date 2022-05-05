@@ -95,7 +95,7 @@ Check visiblity of dropdown items when menu item is toggled
 Check visiblity of dropdown items when previous menu item is toggled
     [arguments]                                             ${categoriesListXPath}              ${screenShotDirectory}
 
-     ${date}=                                               Get Current Date                    result_format=datetime
+    ${date}=                                                Get Current Date                    result_format=datetime
     SeleniumLibrary.Set Screenshot Directory                ${screenShotDirectory}
 
     Scroll element into view                                xpath=${categoriesListXPath}/*[4]

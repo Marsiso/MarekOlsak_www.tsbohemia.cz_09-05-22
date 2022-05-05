@@ -7,6 +7,7 @@ Library          SeleniumLibrary  run_on_failure=Nothing
 Library          Collections
 Library          OperatingSystem
 Library          String
+Library          DateTime
 Resource         ../variables/urls.robot
 Resource         ../variables/browser.robot
 Resource         ../variables/drivers.robot
@@ -15,8 +16,10 @@ Resource         ../variables/urls.robot
 Resource         ../variables/sliders.robot
 Resource         ../variables/paragraphs.robot
 Resource         ../variables/containers.robot
+Resource         ../variables/screenshots.robot
 Resource         ../variables/comboBoxes.robot
 Resource         ../variables/links.robot
+Resource         ../variables/lists.robot
 Resource         ../variables/formElements.robot
 Resource         ../keyWords/preConditions.robot
 Resource         ../keyWords/postConditions.robot
@@ -94,4 +97,30 @@ TC1212 Sort catalog data by manufacturer and parameters
      ...   ${manufacturersAndParametersGuideDivXPath}   ${manufacturersAndParametersAcerXPath}   ${filterListDivXPath}
      ...   ${catalogItemsNamesLinksXPath}   ${catalogItemsNotes}   ${manufacturersAndParametersDisplayBtnDivXPath}
      ...   ${catalogItemsCounterXPath}
+     [teardown]   Close web browser and clear cache
+
+TC1213 Display catalog items as list
+     [tags]   testCase   data   display
+     Open web browser at domain's homepage and hide cookies popUp
+     ...   ${browser}   ${notebooksURL}   ${driverPath}   ${popUpBtnAgreeXPath}
+     Display catalog items as list or icons and take screenshot   ${showStyleCatalogListActiveItemXPath}
+     ...   ${showStyleCatalogListInactiveItemXPath}   ${catalogItemsDivsXPath}   ${screenshotDirectory}
+     ...   TS12_Catalog_items_as_list.png
+     [teardown]   Close web browser and clear cache
+
+TC1214 Display catalog items as icons
+     [tags]   testCase   data   display
+     Open web browser at domain's homepage and hide cookies popUp
+     ...   ${browser}   ${notebooksURL}   ${driverPath}   ${popUpBtnAgreeXPath}
+     Display catalog items as list or icons and take screenshot   ${showStyleCatalogListActiveItemXPath}
+     ...   ${showStyleCatalogListInactiveItemXPath}   ${catalogItemsDivsXPath}   ${screenshotDirectory}
+     ...   TS12_Catalog_items_as_icons.png
+     [teardown]   Close web browser and clear cache
+
+TC1215 Navigate through catalog using pages and verify page has unique data
+     [tags]   testCase   data   navigation
+     Open web browser at domain's homepage and hide cookies popUp
+     ...   ${browser}   ${notebooksURL}   ${driverPath}   ${popUpBtnAgreeXPath}
+     Navigate through catalog pages and verify page has unique data   ${pageNavLinksXPath}   ${catalogItemsDivsXPath}
+     ...   ${sortFilterSelectionXPath}
      [teardown]   Close web browser and clear cache
