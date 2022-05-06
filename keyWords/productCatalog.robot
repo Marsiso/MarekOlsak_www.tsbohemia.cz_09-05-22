@@ -304,7 +304,7 @@ Check catalog data updates when localization changed
     Scroll element into view and set focus   ${counter}
     Select from list by value   ${localization}   14
     Click element   ${save}
-    Scroll element into view and set focus   ${counter}
+    #Scroll element into view and set focus   ${counter}
 
     # Get list of catalog items
     @{items}=   Get webelements   ${catalog}
@@ -546,7 +546,7 @@ Sort catalog data by manufacturer and parameters
     END
 
 Display catalog items as list or icons and take screenshot
-    [arguments]   ${active}   ${inactive}   ${catalog}   ${screenShotDirectory}   ${fileName}
+    [arguments]   ${active}   ${inactive}   ${catalog}   ${screenShotDirectory}   ${fileName}   ${DATETIME}
 
     # Check visibility and dropdown menu
     Wait until keyword succeeds   30 seconds   5 seconds   Wait until element is visible   ${active}
@@ -565,8 +565,8 @@ Display catalog items as list or icons and take screenshot
 
     # Take a screenshot
     ${date}=   Get Current Date   result_format=datetime
-    SeleniumLibrary.Set Screenshot Directory   ${screenShotDirectory}
-    ${path}=   Capture page screenshot   filename=${date.year}_${date.month}_${date.day}_${date.hour}_${date.minute}_${fileName}
+    SeleniumLibrary.Set Screenshot Directory   ${screenShotDirectory}\\${DATETIME}
+    ${path}=   Capture page screenshot   filename=${fileName}
     File should exist   ${path}
 
 Navigate through catalog pages and verify page has unique data

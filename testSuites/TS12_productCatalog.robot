@@ -25,6 +25,9 @@ Resource         ../keyWords/preConditions.robot
 Resource         ../keyWords/postConditions.robot
 Resource         ../keyWords/productCatalog.robot
 
+*** Variables ***
+${DATETIME}=   ${Empty}
+
 *** Test Cases ***
 TC1201 Price slider interactability
      [tags]   testCase   slider
@@ -130,7 +133,7 @@ TC1213 Display catalog items as list
      ...   ${browser}   ${notebooksURL}   ${driverPath}   ${popUpBtnAgreeXPath}
      Display catalog items as list or icons and take screenshot   ${showStyleCatalogListActiveItemXPath}
      ...   ${showStyleCatalogListInactiveItemXPath}   ${catalogItemsDivsXPath}   ${screenshotDirectory}
-     ...   TS12_Catalog_items_as_list.png
+     ...   TS12_Catalog_items_as_list.png   ${DATETIME}
      [teardown]   Close web browser and clear cache
 
 TC1214 Display catalog items as icons
@@ -139,7 +142,7 @@ TC1214 Display catalog items as icons
      ...   ${browser}   ${notebooksURL}   ${driverPath}   ${popUpBtnAgreeXPath}
      Display catalog items as list or icons and take screenshot   ${showStyleCatalogListActiveItemXPath}
      ...   ${showStyleCatalogListInactiveItemXPath}   ${catalogItemsDivsXPath}   ${screenshotDirectory}
-     ...   TS12_Catalog_items_as_icons.png
+     ...   TS12_Catalog_items_as_icons.png   ${DATETIME}
      [teardown]   Close web browser and clear cache
 
 TC1215 Navigate through catalog using pages and verify page has unique data

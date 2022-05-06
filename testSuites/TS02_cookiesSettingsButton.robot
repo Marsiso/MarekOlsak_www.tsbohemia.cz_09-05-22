@@ -22,10 +22,13 @@ TC0201 New popUp window visibility
     Check new popUp window visibility                       ${cookiesPopUpDivXPath}             ${settingsPopUpDivXPath}
     ...                                                     ${popUpBtnSettingsXPath}            ${popUpBtnDeclineCookiesXPath}
     ...                                                     ${popUpBtnSaveSettingsXPath}
+    [teardown]                                              Close web browser and clear cache
 
 TC0202 Button save settings functionality
     [tags]                                                  testCase                            button
-    Check button save settings functionality                ${popUpBtnSaveSettingsXPath}
+    Open web browser and visit domain's homepage            ${browser}                          ${urlHomePage}
+    ...                                                     ${driverPath}
+    Check button save settings functionality                ${popUpBtnSettingsXPath}            ${popUpBtnSaveSettingsXPath}
     [teardown]                                              Close web browser and clear cache
 
 TC0203 Preference cookies deselection

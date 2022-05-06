@@ -49,11 +49,14 @@ Check new popUp window visibility
     Checkbox should not be selected             marketing
 
 Check button save settings functionality
-    [arguments]                                 ${saveCookiesBtnXPath}
+    [arguments]                                 ${settingsBtnXPath}         ${saveCookiesBtnXPath}
 
     &{cookiesPrev}=                             Get cookies                 as_dict=True
     Log dictionary                              dictionary=&{cookiesPrev}   level=INFO
 
+    Wait until element is visible               ${settingsBtnXPath}
+    Click button                                ${settingsBtnXPath}
+    Wait until element is visible               ${saveCookiesBtnXPath}
     Click button                                ${saveCookiesBtnXPath}
 
     &{cookiesNew}=                              Get cookies                 as_dict=True

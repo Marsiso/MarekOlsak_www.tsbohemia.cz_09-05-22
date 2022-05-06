@@ -47,6 +47,7 @@ Check subSelection visibility on linked webPage
 Check categories visibility during mobile's viewport size
     [arguments]                                             ${mobileViewPortWidth}              ${menuBtnXPath}
     ...                                                     ${categoriesListXPath}              ${screenShotDirectory}
+    ...                                                     ${DATETIME}
 
 
     # Check if viewPort's width and height are not already mobile device's display size
@@ -57,14 +58,13 @@ Check categories visibility during mobile's viewport size
         Set window size                                     ${mobileViewPortWidth}              ${maxHeight}
     END
 
-    ${date}=                                                Get Current Date                    result_format=datetime
-    SeleniumLibrary.Set Screenshot Directory                ${screenShotDirectory}
+    SeleniumLibrary.Set Screenshot Directory                ${screenShotDirectory}\\${DATETIME}
 
     # Check if menu button is displayed
     Wait until element is visible                           ${menuBtnXPath}
 
     # Capture & verify page's screenshot
-    ${path}=                                                Capture page screenshot            filename=${date.year}_${date.month}_${date.day}_${date.hour}_${date.minute}_TS02_Mobile_ViewPort_MainMenu.png
+    ${path}=                                                Capture page screenshot            filename=TS03_Mobile_ViewPort_MainMenu.png
     File should exist                                       ${path}
 
     # Toggle menu / Display dropdown items
@@ -78,28 +78,28 @@ Check categories visibility during mobile's viewport size
     END
 
     # Capture & verify page's screenshot
-    ${path}=                                                Capture page screenshot             filename=${date.year}_${date.month}_${date.day}_${date.hour}_${date.minute}_TS02_Mobile_ViewPort_ToggledMainMenu.png
+    ${path}=                                                Capture page screenshot             filename=TS03_Mobile_ViewPort_ToggledMainMenu.png
     File should exist                                       ${path}
 
 Check visiblity of dropdown items when menu item is toggled
     [arguments]                                             ${categoriesListXPath}              ${screenShotDirectory}
+    ...                                                     ${DATETIME}
 
-    ${date}=                                                Get Current Date                    result_format=datetime
-    SeleniumLibrary.Set Screenshot Directory                ${screenShotDirectory}
+    SeleniumLibrary.Set Screenshot Directory                ${screenShotDirectory}\\${DATETIME}
 
     Scroll element into view                                xpath=${categoriesListXPath}/*[3]
     Click element                                           xpath=${categoriesListXPath}/*[3]
-    ${path}=                                                Capture page screenshot            filename=${date.year}_${date.month}_${date.day}_${date.hour}_${date.minute}_TS02_Mobile_ViewPort_Hobby.png
+    ${path}=                                                Capture page screenshot            filename=TS03_Mobile_ViewPort_Hobby.png
     File should exist                                       ${path}
 
 Check visiblity of dropdown items when previous menu item is toggled
     [arguments]                                             ${categoriesListXPath}              ${screenShotDirectory}
+    ...                                                     ${DATETIME}
 
-    ${date}=                                                Get Current Date                    result_format=datetime
-    SeleniumLibrary.Set Screenshot Directory                ${screenShotDirectory}
+    SeleniumLibrary.Set Screenshot Directory                ${screenShotDirectory}\\${DATETIME}
 
     Scroll element into view                                xpath=${categoriesListXPath}/*[4]
     Click element                                           xpath=${categoriesListXPath}/*[4]
     Scroll element into view                                xpath=${categoriesListXPath}/*[1]
-    ${path}=                                                Capture page screenshot            filename=${date.year}_${date.month}_${date.day}_${date.hour}_${date.minute}_TS02_Mobile_ViewPort_Sport.png
+    ${path}=                                                Capture page screenshot            filename=TS03_Mobile_ViewPort_Sport.png
     File should exist                                       ${path}

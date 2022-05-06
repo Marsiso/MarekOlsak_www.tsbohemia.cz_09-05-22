@@ -22,31 +22,52 @@ Resource         ../keyWords/preConditions.robot
 Resource         ../keyWords/postConditions.robot
 Resource         ../keyWords/mainNavigationPanel.robot
 
+*** Variables ***
+${DATETIME}=   ${EMPTY}
+
 *** Test Cases ***
 TC0301 Brand functionality
     [tags]                                                                  testCase                            elements
     Open web browser at domain's homepage and hide cookies popUp            ${browser}                          ${urlHomePage}
     ...                                                                     ${driverPath}                       ${popUpBtnAgreeXPath}
     Check main navigation panel brand functionality                         ${mainNavPanelLogoLinkXPath}        ${categoriesListXPath}
+    [teardown]                                                              Close web browser and clear cache
 
 TC0302 Link's subSelection visibility during state mouse: hover
     [tags]                                                                  testCase                            subSelection
+    Open web browser at domain's homepage and hide cookies popUp            ${browser}                          ${urlHomePage}
+    ...                                                                     ${driverPath}                       ${popUpBtnAgreeXPath}
     Check link's subSelection visibility during state mouse: hover          ${notebookImgXPath}                 ${categoriesListXPath}
+    [teardown]                                                              Close web browser and clear cache
 
 TC0303 Link's subSelection visibility during state mouse: hover
     [tags]                                                                  testCase                            subSelection
+    Open web browser at domain's homepage and hide cookies popUp            ${browser}                          ${urlHomePage}
+    ...                                                                     ${driverPath}                       ${popUpBtnAgreeXPath}
     Check link's subSelection visibility during state mouse: hover          ${notebookImgXPath}                 ${categoriesListXPath}
+    [teardown]                                                              Close web browser and clear cache
 
 TC0304 Categories visibility during mobile's viewport size
     [tags]                                                                  testCase                            dropdown
+    Open web browser at domain's homepage and hide cookies popUp            ${browser}                          ${urlHomePage}
+    ...                                                                     ${driverPath}                       ${popUpBtnAgreeXPath}
     Check categories visibility during mobile's viewport size               ${mobileViewPortWidth}              ${mainNavPnlDropDownMenuBtnXPath}
     ...                                                                     ${categoriesListXPath}              ${screenshotDirectory}
+    ...                                                                     ${DATETIME}
+    [teardown]                                                              Close web browser and clear cache
 
 TC0305 Visiblity of dropdown items when menu item is toggled
     [tags]                                                                  testCase                            dropdown
+    Open web browser at domain's homepage and hide cookies popUp            ${browser}                          ${urlHomePage}
+    ...                                                                     ${driverPath}                       ${popUpBtnAgreeXPath}
     Check visiblity of dropdown items when menu item is toggled             ${categoriesListXPath}              ${screenshotDirectory}
+    ...                                                                     ${DATETIME}
+    [teardown]                                                              Close web browser and clear cache
 
 TC0306 Visiblity of dropdown items when previous menu item is toggled
     [tags]                                                                  testCase                            dropdown
+    Open web browser at domain's homepage and hide cookies popUp            ${browser}                          ${urlHomePage}
+    ...                                                                     ${driverPath}                       ${popUpBtnAgreeXPath}
     Check visiblity of dropdown items when previous menu item is toggled    ${categoriesListXPath}              ${screenshotDirectory}
-    [teardown]                                                              Run keywords                        Close web browser and clear cache
+    ...                                                                     ${DATETIME}
+    [teardown]                                                              Close web browser and clear cache
