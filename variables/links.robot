@@ -15,3 +15,5 @@ ${userLoginDropDownLogOffLinkXPath}     //a[@href="javascript:clearSessionCookie
 ${catalogItemsNamesLinksXPath}   //div[@id='productlistjx']//div[@id='gallarea']//div[@class='prodbox']/h2/a[@title]
 ${pageNavLinksXPath}   //*[@class='boxcont pagenav']/*[@class='cnt']/*
 
+# Search bar
+${searchPnlMatchesLinksXPath}   //*[contains(concat(' ',normalize-space(@class),' '),'luigi-ac-item') and @data-result-id]

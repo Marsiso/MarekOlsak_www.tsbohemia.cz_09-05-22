@@ -25,3 +25,7 @@ ${manufacturersAndParametersAcerXPath}   //*[@class='param val'][.//span[contain
 ${manufacturersAndParametersDisplayBtnDivXPath}   //*[@id='go_filter']
 ${filterListDivXPath}   //*[@id='act_filter_scaid']
 ${currentPageNumDivXPath}   //*[@data-pagenumber][@class='page_delimiter']
+
+# Search form
+${searchPnlFormDivXPath}   //*[@action='/vyhledavani.htm']
+${searchPnlContentsDivsXPath}   (//*[contains(concat(' ',normalize-space(@class),' '),'luigi-ac-products') or contains(concat(' ',normalize-space(@class),' '),'luigi-ac-header')])[1]

@@ -7,3 +7,7 @@ ${userLoginPopUpPasswdInputXPath}   //input[@name="~ConLogPswd"]
 ${registrFormEmailInputXPath}       //input[@name="conlogname"][@type="text"]
 ${registrFormPasswdInputXPath}      //input[@name="ConLogPswdNew"][@type="password"]
 ${resetPassViaEmailInputXPath}      //td/input[@name="conemail"][@type="text"]
+
+# Search form
+${searchTextFieldInputXPath}   //*[@id='autocomplete' or @name='productQuery']
+${searchSubmitInputXPath}   //*[@value='Hledat' and @type='submit']
