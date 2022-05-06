@@ -26,7 +26,7 @@ TC0201 New popUp window visibility
 TC0202 Button save settings functionality
     [tags]                                                  testCase                            button
     Check button save settings functionality                ${popUpBtnSaveSettingsXPath}
-    [teardown]                                              Run keywords                        Close web browser and clear cache
+    [teardown]                                              Close web browser and clear cache
 
 TC0203 Preference cookies deselection
     [tags]                                                  testCase                            cookies
@@ -34,7 +34,7 @@ TC0203 Preference cookies deselection
     Open web browser and visit domain's homepage            ${browser}                          ${urlHomePage}
     ...                                                     ${driverPath}
     Check preference cookies deselection functionality      ${popUpBtnSaveSettingsXPath}        ${popUpBtnSettingsXPath}
-    [teardown]                                              Run keywords                        Close web browser and clear cache
+    [teardown]                                              Close web browser and clear cache
 
 TC0204 Analytic cookies selection
     [tags]                                                  testCase                            cookies
@@ -42,7 +42,7 @@ TC0204 Analytic cookies selection
     Open web browser and visit domain's homepage            ${browser}                          ${urlHomePage}
     ...                                                     ${driverPath}
     Check analytic cookies selection functionality          ${popUpBtnSaveSettingsXPath}        ${popUpBtnSettingsXPath}
-    [teardown]                                              Run keywords                        Close web browser and clear cache
+    [teardown]                                              Close web browser and clear cache
 
 TC0205 Marketing cookies selection
     [tags]                                                  testCase                            cookies
@@ -50,12 +50,28 @@ TC0205 Marketing cookies selection
     Open web browser and visit domain's homepage            ${browser}                          ${urlHomePage}
     ...                                                     ${driverPath}
     Check marketing cookies selection functionality         ${popUpBtnSaveSettingsXPath}        ${popUpBtnSettingsXPath}
-    [teardown]                                              Run keywords                        Close web browser and clear cache
+    [teardown]                                              Close web browser and clear cache
 
-TC0206 Button decline cookies functionality
+TC0206 Marketing and preferencial cookies selection
+    [tags]                                                  testCase                            cookies
+    ...                                                     checkbox
+    Open web browser and visit domain's homepage            ${browser}                          ${urlHomePage}
+    ...                                                     ${driverPath}
+    Check marketing cookies selection functionality         ${popUpBtnSaveSettingsXPath}        ${popUpBtnSettingsXPath}
+    [teardown]                                              Close web browser and clear cache
+
+TC0207 Marketing and analytic cookies selection
+    [tags]                                                  testCase                            cookies
+    ...                                                     checkbox
+    Open web browser and visit domain's homepage            ${browser}                          ${urlHomePage}
+    ...                                                     ${driverPath}
+    Check marketing cookies selection functionality         ${popUpBtnSaveSettingsXPath}        ${popUpBtnSettingsXPath}
+    [teardown]                                              Close web browser and clear cache
+
+TC0208 Button decline cookies functionality
     [tags]                                                  testCase                            cookies
     ...                                                     checkbox
     Open web browser and visit domain's homepage            ${browser}                          ${urlHomePage}
     ...                                                     ${driverPath}
     Check button decline cookies functionality              ${popUpBtnDeclineCookiesXPath}      ${popUpBtnSettingsXPath}
-    [teardown]                                              Run keywords                        Close web browser and clear cache
+    [teardown]                                              Close web browser and clear cache
