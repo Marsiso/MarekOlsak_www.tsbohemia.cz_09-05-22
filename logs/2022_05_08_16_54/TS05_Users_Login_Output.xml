@@ -1,0 +1,1182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0 (Python 3.10.2 on win32)" generated="20220508 17:06:07.642" rpa="false" schemaversion="3">
+<suite id="s1" name="TS05 usersLogin" source="C:\Users\m_ols\PycharmProjects\MarekOlsak_www.tsbohemia.cz_09_05_22\testSuites\TS05_usersLogin.robot">
+<test id="s1-t1" name="TC0501 PopUp visibility after link click" line="23">
+<kw name="Open web browser at domain's homepage and hide cookies popUp" library="preConditions">
+<arg>${browser}</arg>
+<arg>${urlHomePage}</arg>
+<arg>${driverPath}</arg>
+<arg>${popUpBtnAgreeXPath}</arg>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>"${browserName}" == "Chrome"</arg>
+<arg>Open chrome browser</arg>
+<arg>${driverPath}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Open chrome browser" library="preConditions">
+<arg>${driverPath}</arg>
+<kw name="Create Webdriver" library="SeleniumLibrary">
+<arg>Chrome</arg>
+<arg>executable_path=${driverPath}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<msg timestamp="20220508 17:06:07.829" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<status status="PASS" starttime="20220508 17:06:07.829" endtime="20220508 17:06:08.807"/>
+</kw>
+<status status="PASS" starttime="20220508 17:06:07.829" endtime="20220508 17:06:08.808"/>
+</kw>
+<status status="PASS" starttime="20220508 17:06:07.829" endtime="20220508 17:06:08.808"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>"${browserName}" == "Edge"</arg>
+<arg>Open edge browser</arg>
+<arg>${driverPath}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20220508 17:06:08.808" endtime="20220508 17:06:08.808"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>"${browserName}" == "IE"</arg>
+<arg>Open ie browser</arg>
+<arg>${driverPath}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20220508 17:06:08.808" endtime="20220508 17:06:08.808"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220508 17:06:08.808" endtime="20220508 17:06:08.928"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220508 17:06:08.928" level="INFO">Opening url 'https://www.tsbohemia.cz/'</msg>
+<status status="PASS" starttime="20220508 17:06:08.928" endtime="20220508 17:06:10.648"/>
+</kw>
+<kw name="Manually manage to bypass captcha" library="preConditions">
+<kw name="Sleep" library="BuiltIn">
+<arg>12s</arg>
+<arg>Bypassing captcha</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220508 17:06:22.653" level="INFO">Slept 12 seconds</msg>
+<msg timestamp="20220508 17:06:22.653" level="INFO">Bypassing captcha</msg>
+<status status="PASS" starttime="20220508 17:06:10.648" endtime="20220508 17:06:22.653"/>
+</kw>
+<status status="PASS" starttime="20220508 17:06:10.648" endtime="20220508 17:06:22.653"/>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<arg>1 seconds</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" starttime="20220508 17:06:22.653" endtime="20220508 17:06:22.653"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${button}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220508 17:06:22.653" endtime="20220508 17:06:24.722"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${button}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220508 17:06:24.722" level="INFO">Clicking button '//*[contains(concat(' ',normalize-space(@class),' '),'ch2-dialog')][contains(concat(' ',normalize-space(@class),' '),'ch2-visible')][@role="dialog"]//*[contains(text(),"Souhlasím")][contains(concat(' ',normalize-space(@class),' '),'ch2-btn')]'.</msg>
+<status status="PASS" starttime="20220508 17:06:24.722" endtime="20220508 17:06:29.834"/>
+</kw>
+<kw name="Wait Until Element Is Not Visible" library="SeleniumLibrary">
+<arg>${button}</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" starttime="20220508 17:06:29.834" endtime="20220508 17:06:30.856"/>
+</kw>
+<status status="PASS" starttime="20220508 17:06:07.828" endtime="20220508 17:06:30.856"/>
+</kw>
+<kw name="Check popUp visibility after link click" library="usersLogin">
+<arg>${userAccountLogoLinkXPath}</arg>
+<arg>${userLoginPopUpXPath}</arg>
+<arg>${userLoginPopUpNameInputXPath}</arg>
+<arg>${userLoginPopUpPasswdInputXPath}</arg>
+<arg>${userLoginPopUpLoginXPath}</arg>
+<arg>${userLoginPopUpRegistrationLinkXPath}</arg>
+<arg>${userLoginPopUpForgotPasswdLinkXPath}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${userAccountLink}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220508 17:06:30.857" endtime="20220508 17:06:32.878"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${userAccountLink}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220508 17:06:32.878" level="INFO">Clicking element '//a[@href="javascript:toggleLoginPop();"]'.</msg>
+<status status="PASS" starttime="20220508 17:06:32.878" endtime="20220508 17:06:34.961"/>
+</kw>
+<for flavor="IN">
+<var>${element}</var>
+<value>@{elements}</value>
+<iter>
+<var name="${element}">//div[contains(concat(' ',normalize-space(@class),' '),'tabformcont')][contains(concat(' ',normalize-space(@class),' '),'logincont')][contains(concat(' ',normalize-space(@class),' '),'frmauth')]</var>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${element}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220508 17:06:34.961" endtime="20220508 17:06:36.982"/>
+</kw>
+<status status="PASS" starttime="20220508 17:06:34.961" endtime="20220508 17:06:36.982"/>
+</iter>
+<iter>
+<var name="${element}">//input[@name="~ConLogName"]</var>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${element}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220508 17:06:36.982" endtime="20220508 17:06:39.005"/>
+</kw>
+<status status="PASS" starttime="20220508 17:06:36.982" endtime="20220508 17:06:39.005"/>
+</iter>
+<iter>
+<var name="${element}">//input[@name="~ConLogPswd"]</var>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${element}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220508 17:06:39.005" endtime="20220508 17:06:41.029"/>
+</kw>
+<status status="PASS" starttime="20220508 17:06:39.005" endtime="20220508 17:06:41.029"/>
+</iter>
+<iter>
+<var name="${element}">//div[contains(concat(' ',normalize-space(@class),' '),'btnn')][contains(concat(' ',normalize-space(@class),' '),'btnnlogin')]</var>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${element}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220508 17:06:41.029" endtime="20220508 17:06:43.052"/>
+</kw>
+<status status="PASS" starttime="20220508 17:06:41.029" endtime="20220508 17:06:43.052"/>
+</iter>
+<iter>
+<var name="${element}">//a[@href="/?cls=catalog&amp;xsl=xcompany&amp;catalogs=forcompany"]</var>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${element}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220508 17:06:43.052" endtime="20220508 17:06:45.090"/>
+</kw>
+<status status="PASS" starttime="20220508 17:06:43.052" endtime="20220508 17:06:45.090"/>
+</iter>
+<iter>
+<var name="${element}">//a[@href="javascript:document.location.href='default.asp?exec=inc/incnewpswd.asp'"]</var>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${element}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220508 17:06:45.090" endtime="20220508 17:06:47.117"/>
+</kw>
+<status status="PASS" starttime="20220508 17:06:45.090" endtime="20220508 17:06:47.117"/>
+</iter>
+<status status="PASS" starttime="20220508 17:06:34.961" endtime="20220508 17:06:47.117"/>
+</for>
+<status status="PASS" starttime="20220508 17:06:30.856" endtime="20220508 17:06:47.117"/>
+</kw>
+<kw name="Close web browser and clear cache" library="postConditions" type="TEARDOWN">
+<kw name="Delete All Cookies" library="SeleniumLibrary">
+<doc>Deletes all cookies.</doc>
+<status status="PASS" starttime="20220508 17:06:47.117" endtime="20220508 17:06:48.221"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220508 17:06:50.230" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220508 17:06:48.221" endtime="20220508 17:06:50.230"/>
+</kw>
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20220508 17:06:50.230" endtime="20220508 17:06:53.282"/>
+</kw>
+<status status="PASS" starttime="20220508 17:06:47.117" endtime="20220508 17:06:53.282"/>
+</kw>
+<tag>link</tag>
+<tag>popUp</tag>
+<tag>testCase</tag>
+<status status="PASS" starttime="20220508 17:06:07.828" endtime="20220508 17:06:53.282"/>
+</test>
+<test id="s1-t2" name="TC0502 Valid user name and password validation" line="34">
+<kw name="Open web browser at domain's homepage and hide cookies popUp" library="preConditions">
+<arg>${browser}</arg>
+<arg>${urlHomePage}</arg>
+<arg>${driverPath}</arg>
+<arg>${popUpBtnAgreeXPath}</arg>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>"${browserName}" == "Chrome"</arg>
+<arg>Open chrome browser</arg>
+<arg>${driverPath}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Open chrome browser" library="preConditions">
+<arg>${driverPath}</arg>
+<kw name="Create Webdriver" library="SeleniumLibrary">
+<arg>Chrome</arg>
+<arg>executable_path=${driverPath}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<msg timestamp="20220508 17:06:53.284" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<status status="PASS" starttime="20220508 17:06:53.284" endtime="20220508 17:06:54.238"/>
+</kw>
+<status status="PASS" starttime="20220508 17:06:53.284" endtime="20220508 17:06:54.238"/>
+</kw>
+<status status="PASS" starttime="20220508 17:06:53.284" endtime="20220508 17:06:54.238"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>"${browserName}" == "Edge"</arg>
+<arg>Open edge browser</arg>
+<arg>${driverPath}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20220508 17:06:54.239" endtime="20220508 17:06:54.239"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>"${browserName}" == "IE"</arg>
+<arg>Open ie browser</arg>
+<arg>${driverPath}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20220508 17:06:54.239" endtime="20220508 17:06:54.239"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220508 17:06:54.239" endtime="20220508 17:06:54.356"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220508 17:06:54.356" level="INFO">Opening url 'https://www.tsbohemia.cz/'</msg>
+<status status="PASS" starttime="20220508 17:06:54.356" endtime="20220508 17:06:55.936"/>
+</kw>
+<kw name="Manually manage to bypass captcha" library="preConditions">
+<kw name="Sleep" library="BuiltIn">
+<arg>12s</arg>
+<arg>Bypassing captcha</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220508 17:07:07.946" level="INFO">Slept 12 seconds</msg>
+<msg timestamp="20220508 17:07:07.946" level="INFO">Bypassing captcha</msg>
+<status status="PASS" starttime="20220508 17:06:55.937" endtime="20220508 17:07:07.946"/>
+</kw>
+<status status="PASS" starttime="20220508 17:06:55.936" endtime="20220508 17:07:07.946"/>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<arg>1 seconds</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" starttime="20220508 17:07:07.946" endtime="20220508 17:07:07.946"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${button}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220508 17:07:07.946" endtime="20220508 17:07:10.013"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${button}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220508 17:07:10.013" level="INFO">Clicking button '//*[contains(concat(' ',normalize-space(@class),' '),'ch2-dialog')][contains(concat(' ',normalize-space(@class),' '),'ch2-visible')][@role="dialog"]//*[contains(text(),"Souhlasím")][contains(concat(' ',normalize-space(@class),' '),'ch2-btn')]'.</msg>
+<status status="PASS" starttime="20220508 17:07:10.013" endtime="20220508 17:07:15.105"/>
+</kw>
+<kw name="Wait Until Element Is Not Visible" library="SeleniumLibrary">
+<arg>${button}</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" starttime="20220508 17:07:15.105" endtime="20220508 17:07:16.115"/>
+</kw>
+<status status="PASS" starttime="20220508 17:06:53.283" endtime="20220508 17:07:16.115"/>
+</kw>
+<kw name="Validate users credentials" library="usersLogin">
+<var>${result}</var>
+<arg>${userLoginPopUpNameInputXPath}</arg>
+<arg>${validUserName}</arg>
+<arg>${userLoginPopUpPasswdInputXPath}</arg>
+<arg>${validPassword}</arg>
+<arg>${userAccountLogoLinkXPath}</arg>
+<arg>${userLoginPopUpLoginXPath}</arg>
+<arg>${accountIsNotLoggedInXPath}</arg>
+<arg>${accountIsLoggedInXPath}</arg>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${bool1}</var>
+<arg>Page should not contain element</arg>
+<arg>${logedInDiv}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Page Should Not Contain Element" library="SeleniumLibrary">
+<arg>${logedInDiv}</arg>
+<doc>Verifies that element ``locator`` is not found on the current page.</doc>
+<msg timestamp="20220508 17:07:17.129" level="INFO">Current page does not contain element '//div[@id='bodyout'][@data-logged="1"]'.</msg>
+<status status="PASS" starttime="20220508 17:07:16.116" endtime="20220508 17:07:17.129"/>
+</kw>
+<msg timestamp="20220508 17:07:17.129" level="INFO">${bool1} = True</msg>
+<status status="PASS" starttime="20220508 17:07:16.116" endtime="20220508 17:07:17.129"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${bool2}</var>
+<arg>Page should contain element</arg>
+<arg>${logedOutDiv}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>${logedOutDiv}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20220508 17:07:18.141" level="INFO">Current page contains element '//div[@id='bodyout'][@data-logged="0"]'.</msg>
+<status status="PASS" starttime="20220508 17:07:17.129" endtime="20220508 17:07:18.141"/>
+</kw>
+<msg timestamp="20220508 17:07:18.141" level="INFO">${bool2} = True</msg>
+<status status="PASS" starttime="20220508 17:07:17.129" endtime="20220508 17:07:18.141"/>
+</kw>
+<try>
+<branch type="TRY">
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${bool1}</arg>
+<arg>${bool2}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20220508 17:07:18.141" endtime="20220508 17:07:18.141"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${bool1}</arg>
+<arg>${True}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20220508 17:07:18.142" endtime="20220508 17:07:18.142"/>
+</kw>
+<status status="PASS" starttime="20220508 17:07:18.141" endtime="20220508 17:07:18.142"/>
+</branch>
+<branch type="EXCEPT">
+<kw name="Log To Console" library="BuiltIn">
+<arg>|| User should not be logged in!! ||</arg>
+<arg>format=*^60</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20220508 17:07:18.142" endtime="20220508 17:07:18.142"/>
+</kw>
+<kw name="Fail" library="BuiltIn">
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<status status="NOT RUN" starttime="20220508 17:07:18.142" endtime="20220508 17:07:18.142"/>
+</kw>
+<status status="NOT RUN" starttime="20220508 17:07:18.142" endtime="20220508 17:07:18.142"/>
+</branch>
+<status status="PASS" starttime="20220508 17:07:18.141" endtime="20220508 17:07:18.142"/>
+</try>
+<try>
+<branch type="TRY">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${accountLogo}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220508 17:07:18.142" endtime="20220508 17:07:20.162"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${accountLogo}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220508 17:07:20.162" level="INFO">Clicking element '//a[@href="javascript:toggleLoginPop();"]'.</msg>
+<status status="PASS" starttime="20220508 17:07:20.162" endtime="20220508 17:07:22.238"/>
+</kw>
+<status status="PASS" starttime="20220508 17:07:18.142" endtime="20220508 17:07:22.238"/>
+</branch>
+<branch type="EXCEPT">
+<kw name="Log To Console" library="BuiltIn">
+<arg>|| Failed locating the login form!! ||</arg>
+<arg>format=*^60</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20220508 17:07:22.238" endtime="20220508 17:07:22.238"/>
+</kw>
+<kw name="Fail" library="BuiltIn">
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<status status="NOT RUN" starttime="20220508 17:07:22.238" endtime="20220508 17:07:22.238"/>
+</kw>
+<status status="NOT RUN" starttime="20220508 17:07:22.238" endtime="20220508 17:07:22.238"/>
+</branch>
+<status status="PASS" starttime="20220508 17:07:18.142" endtime="20220508 17:07:22.238"/>
+</try>
+<try>
+<branch type="TRY">
+<kw name="Clear Element Text" library="SeleniumLibrary">
+<arg>${userNameForm}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" starttime="20220508 17:07:22.238" endtime="20220508 17:07:24.282"/>
+</kw>
+<kw name="Clear Element Text" library="SeleniumLibrary">
+<arg>${passwordForm}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" starttime="20220508 17:07:24.282" endtime="20220508 17:07:26.310"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${userNameForm}</arg>
+<arg>${userName}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220508 17:07:26.310" level="INFO">Typing text 'mara.olsik@gmail.com' into text field '//input[@name="~ConLogName"]'.</msg>
+<status status="PASS" starttime="20220508 17:07:26.310" endtime="20220508 17:07:29.376"/>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>${passwordForm}</arg>
+<arg>${password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20220508 17:07:29.376" level="INFO">Typing password into text field '//input[@name="~ConLogPswd"]'.</msg>
+<msg timestamp="20220508 17:07:31.406" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20220508 17:07:32.439" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20220508 17:07:29.376" endtime="20220508 17:07:32.439"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${logInBtn}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220508 17:07:32.439" level="INFO">Clicking element '//div[contains(concat(' ',normalize-space(@class),' '),'btnn')][contains(concat(' ',normalize-space(@class),' '),'btnnlogin')]'.</msg>
+<status status="PASS" starttime="20220508 17:07:32.439" endtime="20220508 17:07:36.675"/>
+</kw>
+<status status="PASS" starttime="20220508 17:07:22.238" endtime="20220508 17:07:36.675"/>
+</branch>
+<branch type="EXCEPT">
+<kw name="Log To Console" library="BuiltIn">
+<arg>|| Failed filling in credentials!! ||</arg>
+<arg>format=*^60</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20220508 17:07:36.675" endtime="20220508 17:07:36.675"/>
+</kw>
+<kw name="Return From Keyword" library="BuiltIn">
+<arg>${True}</arg>
+<doc>Returns from the enclosing user keyword.</doc>
+<status status="NOT RUN" starttime="20220508 17:07:36.675" endtime="20220508 17:07:36.675"/>
+</kw>
+<status status="NOT RUN" starttime="20220508 17:07:36.675" endtime="20220508 17:07:36.675"/>
+</branch>
+<status status="PASS" starttime="20220508 17:07:22.238" endtime="20220508 17:07:36.675"/>
+</try>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${bool1}</var>
+<arg>Page should contain element</arg>
+<arg>${logedInDiv}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>${logedInDiv}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20220508 17:07:37.687" level="INFO">Current page contains element '//div[@id='bodyout'][@data-logged="1"]'.</msg>
+<status status="PASS" starttime="20220508 17:07:36.675" endtime="20220508 17:07:37.687"/>
+</kw>
+<msg timestamp="20220508 17:07:37.687" level="INFO">${bool1} = True</msg>
+<status status="PASS" starttime="20220508 17:07:36.675" endtime="20220508 17:07:37.687"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${bool2}</var>
+<arg>Page should not contain element</arg>
+<arg>${logedOutDiv}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Page Should Not Contain Element" library="SeleniumLibrary">
+<arg>${logedOutDiv}</arg>
+<doc>Verifies that element ``locator`` is not found on the current page.</doc>
+<msg timestamp="20220508 17:07:38.701" level="INFO">Current page does not contain element '//div[@id='bodyout'][@data-logged="0"]'.</msg>
+<status status="PASS" starttime="20220508 17:07:37.687" endtime="20220508 17:07:38.701"/>
+</kw>
+<msg timestamp="20220508 17:07:38.701" level="INFO">${bool2} = True</msg>
+<status status="PASS" starttime="20220508 17:07:37.687" endtime="20220508 17:07:38.701"/>
+</kw>
+<try>
+<branch type="TRY">
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${bool1}</arg>
+<arg>${bool2}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20220508 17:07:38.701" endtime="20220508 17:07:38.701"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${bool1}</arg>
+<arg>${True}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20220508 17:07:38.701" endtime="20220508 17:07:38.701"/>
+</kw>
+<kw name="Return From Keyword" library="BuiltIn">
+<arg>${True}</arg>
+<doc>Returns from the enclosing user keyword.</doc>
+<msg timestamp="20220508 17:07:38.702" level="INFO">Returning from the enclosing user keyword.</msg>
+<status status="PASS" starttime="20220508 17:07:38.702" endtime="20220508 17:07:38.702"/>
+</kw>
+<status status="PASS" starttime="20220508 17:07:38.701" endtime="20220508 17:07:38.702"/>
+</branch>
+<branch type="EXCEPT">
+<kw name="Log To Console" library="BuiltIn">
+<arg>|| Page does not contain logged in user elements!! ||</arg>
+<arg>format=*^60</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20220508 17:07:38.702" endtime="20220508 17:07:38.702"/>
+</kw>
+<kw name="Return From Keyword" library="BuiltIn">
+<arg>${False}</arg>
+<doc>Returns from the enclosing user keyword.</doc>
+<status status="NOT RUN" starttime="20220508 17:07:38.702" endtime="20220508 17:07:38.702"/>
+</kw>
+<status status="NOT RUN" starttime="20220508 17:07:38.702" endtime="20220508 17:07:38.702"/>
+</branch>
+<status status="PASS" starttime="20220508 17:07:38.701" endtime="20220508 17:07:38.702"/>
+</try>
+<msg timestamp="20220508 17:07:38.703" level="INFO">${result} = True</msg>
+<status status="PASS" starttime="20220508 17:07:16.115" endtime="20220508 17:07:38.703"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${result}</arg>
+<arg>${True}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20220508 17:07:38.703" endtime="20220508 17:07:38.703"/>
+</kw>
+<kw name="Close web browser and clear cache" library="postConditions" type="TEARDOWN">
+<kw name="Delete All Cookies" library="SeleniumLibrary">
+<doc>Deletes all cookies.</doc>
+<status status="PASS" starttime="20220508 17:07:38.704" endtime="20220508 17:07:39.885"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220508 17:07:41.899" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220508 17:07:39.885" endtime="20220508 17:07:41.899"/>
+</kw>
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20220508 17:07:41.899" endtime="20220508 17:07:44.945"/>
+</kw>
+<status status="PASS" starttime="20220508 17:07:38.703" endtime="20220508 17:07:44.945"/>
+</kw>
+<tag>inputForm</tag>
+<tag>login</tag>
+<tag>popUp</tag>
+<tag>testCase</tag>
+<status status="PASS" starttime="20220508 17:06:53.283" endtime="20220508 17:07:44.945"/>
+</test>
+<test id="s1-t3" name="TC0503 Valid user name and invalid password validation" line="46">
+<kw name="Open web browser at domain's homepage and hide cookies popUp" library="preConditions">
+<arg>${browser}</arg>
+<arg>${urlHomePage}</arg>
+<arg>${driverPath}</arg>
+<arg>${popUpBtnAgreeXPath}</arg>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>"${browserName}" == "Chrome"</arg>
+<arg>Open chrome browser</arg>
+<arg>${driverPath}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Open chrome browser" library="preConditions">
+<arg>${driverPath}</arg>
+<kw name="Create Webdriver" library="SeleniumLibrary">
+<arg>Chrome</arg>
+<arg>executable_path=${driverPath}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<msg timestamp="20220508 17:07:44.947" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<status status="PASS" starttime="20220508 17:07:44.947" endtime="20220508 17:07:45.914"/>
+</kw>
+<status status="PASS" starttime="20220508 17:07:44.947" endtime="20220508 17:07:45.914"/>
+</kw>
+<status status="PASS" starttime="20220508 17:07:44.947" endtime="20220508 17:07:45.914"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>"${browserName}" == "Edge"</arg>
+<arg>Open edge browser</arg>
+<arg>${driverPath}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20220508 17:07:45.915" endtime="20220508 17:07:45.915"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>"${browserName}" == "IE"</arg>
+<arg>Open ie browser</arg>
+<arg>${driverPath}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20220508 17:07:45.915" endtime="20220508 17:07:45.915"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220508 17:07:45.915" endtime="20220508 17:07:46.033"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220508 17:07:46.033" level="INFO">Opening url 'https://www.tsbohemia.cz/'</msg>
+<status status="PASS" starttime="20220508 17:07:46.033" endtime="20220508 17:07:47.488"/>
+</kw>
+<kw name="Manually manage to bypass captcha" library="preConditions">
+<kw name="Sleep" library="BuiltIn">
+<arg>12s</arg>
+<arg>Bypassing captcha</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220508 17:07:59.493" level="INFO">Slept 12 seconds</msg>
+<msg timestamp="20220508 17:07:59.493" level="INFO">Bypassing captcha</msg>
+<status status="PASS" starttime="20220508 17:07:47.488" endtime="20220508 17:07:59.493"/>
+</kw>
+<status status="PASS" starttime="20220508 17:07:47.488" endtime="20220508 17:07:59.493"/>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<arg>1 seconds</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" starttime="20220508 17:07:59.493" endtime="20220508 17:07:59.493"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${button}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220508 17:07:59.493" endtime="20220508 17:08:01.561"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${button}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220508 17:08:01.561" level="INFO">Clicking button '//*[contains(concat(' ',normalize-space(@class),' '),'ch2-dialog')][contains(concat(' ',normalize-space(@class),' '),'ch2-visible')][@role="dialog"]//*[contains(text(),"Souhlasím")][contains(concat(' ',normalize-space(@class),' '),'ch2-btn')]'.</msg>
+<status status="PASS" starttime="20220508 17:08:01.561" endtime="20220508 17:08:06.684"/>
+</kw>
+<kw name="Wait Until Element Is Not Visible" library="SeleniumLibrary">
+<arg>${button}</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" starttime="20220508 17:08:06.684" endtime="20220508 17:08:07.713"/>
+</kw>
+<status status="PASS" starttime="20220508 17:07:44.946" endtime="20220508 17:08:07.713"/>
+</kw>
+<kw name="Validate users credentials" library="usersLogin">
+<var>${result}</var>
+<arg>${userLoginPopUpNameInputXPath}</arg>
+<arg>${validUserName}</arg>
+<arg>${userLoginPopUpPasswdInputXPath}</arg>
+<arg>${invalidPassword}</arg>
+<arg>${userAccountLogoLinkXPath}</arg>
+<arg>${userLoginPopUpLoginXPath}</arg>
+<arg>${accountIsNotLoggedInXPath}</arg>
+<arg>${accountIsLoggedInXPath}</arg>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${bool1}</var>
+<arg>Page should not contain element</arg>
+<arg>${logedInDiv}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Page Should Not Contain Element" library="SeleniumLibrary">
+<arg>${logedInDiv}</arg>
+<doc>Verifies that element ``locator`` is not found on the current page.</doc>
+<msg timestamp="20220508 17:08:08.729" level="INFO">Current page does not contain element '//div[@id='bodyout'][@data-logged="1"]'.</msg>
+<status status="PASS" starttime="20220508 17:08:07.714" endtime="20220508 17:08:08.729"/>
+</kw>
+<msg timestamp="20220508 17:08:08.729" level="INFO">${bool1} = True</msg>
+<status status="PASS" starttime="20220508 17:08:07.714" endtime="20220508 17:08:08.729"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${bool2}</var>
+<arg>Page should contain element</arg>
+<arg>${logedOutDiv}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>${logedOutDiv}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20220508 17:08:09.748" level="INFO">Current page contains element '//div[@id='bodyout'][@data-logged="0"]'.</msg>
+<status status="PASS" starttime="20220508 17:08:08.729" endtime="20220508 17:08:09.748"/>
+</kw>
+<msg timestamp="20220508 17:08:09.748" level="INFO">${bool2} = True</msg>
+<status status="PASS" starttime="20220508 17:08:08.729" endtime="20220508 17:08:09.748"/>
+</kw>
+<try>
+<branch type="TRY">
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${bool1}</arg>
+<arg>${bool2}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20220508 17:08:09.748" endtime="20220508 17:08:09.748"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${bool1}</arg>
+<arg>${True}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20220508 17:08:09.748" endtime="20220508 17:08:09.749"/>
+</kw>
+<status status="PASS" starttime="20220508 17:08:09.748" endtime="20220508 17:08:09.749"/>
+</branch>
+<branch type="EXCEPT">
+<kw name="Log To Console" library="BuiltIn">
+<arg>|| User should not be logged in!! ||</arg>
+<arg>format=*^60</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20220508 17:08:09.749" endtime="20220508 17:08:09.749"/>
+</kw>
+<kw name="Fail" library="BuiltIn">
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<status status="NOT RUN" starttime="20220508 17:08:09.749" endtime="20220508 17:08:09.749"/>
+</kw>
+<status status="NOT RUN" starttime="20220508 17:08:09.749" endtime="20220508 17:08:09.749"/>
+</branch>
+<status status="PASS" starttime="20220508 17:08:09.748" endtime="20220508 17:08:09.749"/>
+</try>
+<try>
+<branch type="TRY">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${accountLogo}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220508 17:08:09.749" endtime="20220508 17:08:11.773"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${accountLogo}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220508 17:08:11.773" level="INFO">Clicking element '//a[@href="javascript:toggleLoginPop();"]'.</msg>
+<status status="PASS" starttime="20220508 17:08:11.773" endtime="20220508 17:08:13.857"/>
+</kw>
+<status status="PASS" starttime="20220508 17:08:09.749" endtime="20220508 17:08:13.857"/>
+</branch>
+<branch type="EXCEPT">
+<kw name="Log To Console" library="BuiltIn">
+<arg>|| Failed locating the login form!! ||</arg>
+<arg>format=*^60</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20220508 17:08:13.857" endtime="20220508 17:08:13.857"/>
+</kw>
+<kw name="Fail" library="BuiltIn">
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<status status="NOT RUN" starttime="20220508 17:08:13.857" endtime="20220508 17:08:13.857"/>
+</kw>
+<status status="NOT RUN" starttime="20220508 17:08:13.857" endtime="20220508 17:08:13.857"/>
+</branch>
+<status status="PASS" starttime="20220508 17:08:09.749" endtime="20220508 17:08:13.857"/>
+</try>
+<try>
+<branch type="TRY">
+<kw name="Clear Element Text" library="SeleniumLibrary">
+<arg>${userNameForm}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" starttime="20220508 17:08:13.857" endtime="20220508 17:08:15.891"/>
+</kw>
+<kw name="Clear Element Text" library="SeleniumLibrary">
+<arg>${passwordForm}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" starttime="20220508 17:08:15.891" endtime="20220508 17:08:17.921"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${userNameForm}</arg>
+<arg>${userName}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220508 17:08:17.921" level="INFO">Typing text 'mara.olsik@gmail.com' into text field '//input[@name="~ConLogName"]'.</msg>
+<status status="PASS" starttime="20220508 17:08:17.921" endtime="20220508 17:08:20.979"/>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>${passwordForm}</arg>
+<arg>${password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20220508 17:08:20.979" level="INFO">Typing password into text field '//input[@name="~ConLogPswd"]'.</msg>
+<msg timestamp="20220508 17:08:23.012" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20220508 17:08:24.043" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20220508 17:08:20.979" endtime="20220508 17:08:24.043"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${logInBtn}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220508 17:08:24.043" level="INFO">Clicking element '//div[contains(concat(' ',normalize-space(@class),' '),'btnn')][contains(concat(' ',normalize-space(@class),' '),'btnnlogin')]'.</msg>
+<status status="PASS" starttime="20220508 17:08:24.043" endtime="20220508 17:08:27.732"/>
+</kw>
+<status status="PASS" starttime="20220508 17:08:13.857" endtime="20220508 17:08:27.732"/>
+</branch>
+<branch type="EXCEPT">
+<kw name="Log To Console" library="BuiltIn">
+<arg>|| Failed filling in credentials!! ||</arg>
+<arg>format=*^60</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20220508 17:08:27.732" endtime="20220508 17:08:27.732"/>
+</kw>
+<kw name="Return From Keyword" library="BuiltIn">
+<arg>${True}</arg>
+<doc>Returns from the enclosing user keyword.</doc>
+<status status="NOT RUN" starttime="20220508 17:08:27.732" endtime="20220508 17:08:27.732"/>
+</kw>
+<status status="NOT RUN" starttime="20220508 17:08:27.732" endtime="20220508 17:08:27.732"/>
+</branch>
+<status status="PASS" starttime="20220508 17:08:13.857" endtime="20220508 17:08:27.732"/>
+</try>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${bool1}</var>
+<arg>Page should contain element</arg>
+<arg>${logedInDiv}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>${logedInDiv}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20220508 17:08:29.760" level="FAIL">Page should have contained element '//div[@id='bodyout'][@data-logged="1"]' but did not.</msg>
+<status status="FAIL" starttime="20220508 17:08:27.732" endtime="20220508 17:08:29.761"/>
+</kw>
+<msg timestamp="20220508 17:08:29.761" level="INFO">${bool1} = False</msg>
+<status status="PASS" starttime="20220508 17:08:27.732" endtime="20220508 17:08:29.761"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${bool2}</var>
+<arg>Page should not contain element</arg>
+<arg>${logedOutDiv}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Page Should Not Contain Element" library="SeleniumLibrary">
+<arg>${logedOutDiv}</arg>
+<doc>Verifies that element ``locator`` is not found on the current page.</doc>
+<msg timestamp="20220508 17:08:31.790" level="FAIL">Page should not have contained element '//div[@id='bodyout'][@data-logged="0"]'.</msg>
+<status status="FAIL" starttime="20220508 17:08:29.762" endtime="20220508 17:08:31.790"/>
+</kw>
+<msg timestamp="20220508 17:08:31.790" level="INFO">${bool2} = False</msg>
+<status status="PASS" starttime="20220508 17:08:29.761" endtime="20220508 17:08:31.790"/>
+</kw>
+<try>
+<branch type="TRY">
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${bool1}</arg>
+<arg>${bool2}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20220508 17:08:31.791" endtime="20220508 17:08:31.791"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${bool1}</arg>
+<arg>${True}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<msg timestamp="20220508 17:08:31.791" level="FAIL">False != True</msg>
+<status status="FAIL" starttime="20220508 17:08:31.791" endtime="20220508 17:08:31.791"/>
+</kw>
+<kw name="Return From Keyword" library="BuiltIn">
+<arg>${True}</arg>
+<doc>Returns from the enclosing user keyword.</doc>
+<status status="NOT RUN" starttime="20220508 17:08:31.792" endtime="20220508 17:08:31.792"/>
+</kw>
+<status status="FAIL" starttime="20220508 17:08:31.790" endtime="20220508 17:08:31.792"/>
+</branch>
+<branch type="EXCEPT">
+<kw name="Log To Console" library="BuiltIn">
+<arg>|| Page does not contain logged in user elements!! ||</arg>
+<arg>format=*^60</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220508 17:08:31.792" endtime="20220508 17:08:31.792"/>
+</kw>
+<kw name="Return From Keyword" library="BuiltIn">
+<arg>${False}</arg>
+<doc>Returns from the enclosing user keyword.</doc>
+<msg timestamp="20220508 17:08:31.792" level="INFO">Returning from the enclosing user keyword.</msg>
+<status status="PASS" starttime="20220508 17:08:31.792" endtime="20220508 17:08:31.793"/>
+</kw>
+<status status="PASS" starttime="20220508 17:08:31.792" endtime="20220508 17:08:31.793"/>
+</branch>
+<status status="PASS" starttime="20220508 17:08:31.790" endtime="20220508 17:08:31.793"/>
+</try>
+<msg timestamp="20220508 17:08:31.793" level="INFO">${result} = False</msg>
+<status status="PASS" starttime="20220508 17:08:07.713" endtime="20220508 17:08:31.793"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${result}</arg>
+<arg>${False}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20220508 17:08:31.793" endtime="20220508 17:08:31.793"/>
+</kw>
+<tag>inputForm</tag>
+<tag>login</tag>
+<tag>popUp</tag>
+<tag>testCase</tag>
+<status status="PASS" starttime="20220508 17:07:44.946" endtime="20220508 17:08:31.793"/>
+</test>
+<test id="s1-t4" name="TC0504 Link forgotten password functionality with invalid email adress" line="57">
+<kw name="Check link forgotten password functionality" library="usersLogin">
+<var>${result}</var>
+<arg>${userAccountLogoLinkXPath}</arg>
+<arg>${userLoginPopUpForgotPasswdLinkXPath}</arg>
+<arg>${resetPassViaEmailInputXPath}</arg>
+<arg>${sendResetPasswdEmailBtnXPath}</arg>
+<arg>${emailNotFoundMsgXPath}</arg>
+<arg>${emailFoundMshXPath}</arg>
+<arg>${urlHomePage}</arg>
+<arg>${invalidUserName}</arg>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220508 17:08:31.795" level="INFO">Opening url 'https://www.tsbohemia.cz/'</msg>
+<status status="PASS" starttime="20220508 17:08:31.795" endtime="20220508 17:08:33.414"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${accLogo}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220508 17:08:33.414" endtime="20220508 17:08:35.449"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${accLogo}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220508 17:08:35.449" level="INFO">Clicking element '//a[@href="javascript:toggleLoginPop();"]'.</msg>
+<status status="PASS" starttime="20220508 17:08:35.449" endtime="20220508 17:08:37.496"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${link}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220508 17:08:37.496" endtime="20220508 17:08:39.521"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${link}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220508 17:08:39.521" level="INFO">Clicking element '//a[@href="javascript:document.location.href='default.asp?exec=inc/incnewpswd.asp'"]'.</msg>
+<status status="PASS" starttime="20220508 17:08:39.521" endtime="20220508 17:08:41.913"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${emailForm}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20220508 17:08:43.946" level="INFO">Element '//td/input[@name="conemail"][@type="text"]' is displayed.</msg>
+<status status="PASS" starttime="20220508 17:08:41.913" endtime="20220508 17:08:43.946"/>
+</kw>
+<try>
+<branch type="TRY">
+<kw name="Clear Element Text" library="SeleniumLibrary">
+<arg>${emailForm}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" starttime="20220508 17:08:43.946" endtime="20220508 17:08:45.988"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${emailForm}</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220508 17:08:45.988" level="INFO">Typing text 'mara.olsik@seznam.cz' into text field '//td/input[@name="conemail"][@type="text"]'.</msg>
+<status status="PASS" starttime="20220508 17:08:45.988" endtime="20220508 17:08:49.072"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${sendBtn}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220508 17:08:49.072" level="INFO">Clicking element '//tr[@class='btncell']//a[@title='Odeslat'][@href='#']'.</msg>
+<status status="PASS" starttime="20220508 17:08:49.072" endtime="20220508 17:08:51.564"/>
+</kw>
+<status status="PASS" starttime="20220508 17:08:43.946" endtime="20220508 17:08:51.564"/>
+</branch>
+<branch type="EXCEPT">
+<kw name="Log To Console" library="BuiltIn">
+<arg>|| Failed filling in credentials!! ||</arg>
+<arg>format=*^60</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20220508 17:08:51.564" endtime="20220508 17:08:51.564"/>
+</kw>
+<kw name="Return From Keyword" library="BuiltIn">
+<arg>${True}</arg>
+<doc>Returns from the enclosing user keyword.</doc>
+<status status="NOT RUN" starttime="20220508 17:08:51.564" endtime="20220508 17:08:51.564"/>
+</kw>
+<status status="NOT RUN" starttime="20220508 17:08:51.564" endtime="20220508 17:08:51.564"/>
+</branch>
+<status status="PASS" starttime="20220508 17:08:43.946" endtime="20220508 17:08:51.564"/>
+</try>
+<try>
+<branch type="TRY">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${succMsg}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<msg timestamp="20220508 17:08:57.653" level="FAIL">Element '//div[@class='cnt'][contains(text(),'Odkaz pro obnovení hesla byl zaslán na e-mail :')][contains(text(),'mara.olsik@gmail.com')]' not visible after 5 seconds.</msg>
+<status status="FAIL" starttime="20220508 17:08:51.564" endtime="20220508 17:08:57.653"/>
+</kw>
+<kw name="Return From Keyword" library="BuiltIn">
+<arg>${True}</arg>
+<doc>Returns from the enclosing user keyword.</doc>
+<status status="NOT RUN" starttime="20220508 17:08:57.654" endtime="20220508 17:08:57.654"/>
+</kw>
+<status status="FAIL" starttime="20220508 17:08:51.564" endtime="20220508 17:08:57.654"/>
+</branch>
+<branch type="EXCEPT">
+<kw name="Log To Console" library="BuiltIn">
+<arg>|| Email does not exist!! ||</arg>
+<arg>format=*^60</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220508 17:08:57.654" endtime="20220508 17:08:57.654"/>
+</kw>
+<try>
+<branch type="TRY">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${failMsg}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220508 17:08:57.655" endtime="20220508 17:08:59.679"/>
+</kw>
+<kw name="Return From Keyword" library="BuiltIn">
+<arg>${False}</arg>
+<doc>Returns from the enclosing user keyword.</doc>
+<msg timestamp="20220508 17:08:59.679" level="INFO">Returning from the enclosing user keyword.</msg>
+<status status="PASS" starttime="20220508 17:08:59.679" endtime="20220508 17:08:59.679"/>
+</kw>
+<status status="PASS" starttime="20220508 17:08:57.655" endtime="20220508 17:08:59.679"/>
+</branch>
+<branch type="EXCEPT">
+<kw name="Log To Console" library="BuiltIn">
+<arg>|| Unexpectet error has occured!! ||</arg>
+<arg>format=*^60</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20220508 17:08:59.679" endtime="20220508 17:08:59.679"/>
+</kw>
+<status status="NOT RUN" starttime="20220508 17:08:59.679" endtime="20220508 17:08:59.679"/>
+</branch>
+<status status="PASS" starttime="20220508 17:08:57.654" endtime="20220508 17:08:59.679"/>
+</try>
+<status status="PASS" starttime="20220508 17:08:57.654" endtime="20220508 17:08:59.679"/>
+</branch>
+<status status="PASS" starttime="20220508 17:08:51.564" endtime="20220508 17:08:59.679"/>
+</try>
+<kw name="Return From Keyword" library="BuiltIn">
+<arg>${False}</arg>
+<doc>Returns from the enclosing user keyword.</doc>
+<status status="NOT RUN" starttime="20220508 17:08:59.680" endtime="20220508 17:08:59.680"/>
+</kw>
+<msg timestamp="20220508 17:08:59.680" level="INFO">${result} = False</msg>
+<status status="PASS" starttime="20220508 17:08:31.795" endtime="20220508 17:08:59.680"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${result}</arg>
+<arg>${False}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20220508 17:08:59.680" endtime="20220508 17:08:59.680"/>
+</kw>
+<tag>email</tag>
+<tag>inputForm</tag>
+<tag>testCase</tag>
+<status status="PASS" starttime="20220508 17:08:31.794" endtime="20220508 17:08:59.680"/>
+</test>
+<test id="s1-t5" name="TC0505 Link forgotten password functionality with valid email adress" line="66">
+<kw name="Check link forgotten password functionality" library="usersLogin">
+<var>${result}</var>
+<arg>${userAccountLogoLinkXPath}</arg>
+<arg>${userLoginPopUpForgotPasswdLinkXPath}</arg>
+<arg>${resetPassViaEmailInputXPath}</arg>
+<arg>${sendResetPasswdEmailBtnXPath}</arg>
+<arg>${emailNotFoundMsgXPath}</arg>
+<arg>${emailFoundMshXPath}</arg>
+<arg>${urlHomePage}</arg>
+<arg>${validUserName}</arg>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220508 17:08:59.682" level="INFO">Opening url 'https://www.tsbohemia.cz/'</msg>
+<status status="PASS" starttime="20220508 17:08:59.682" endtime="20220508 17:09:01.313"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${accLogo}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220508 17:09:01.313" endtime="20220508 17:09:03.375"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${accLogo}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220508 17:09:03.375" level="INFO">Clicking element '//a[@href="javascript:toggleLoginPop();"]'.</msg>
+<status status="PASS" starttime="20220508 17:09:03.375" endtime="20220508 17:09:05.434"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${link}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220508 17:09:05.434" endtime="20220508 17:09:07.462"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${link}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220508 17:09:07.462" level="INFO">Clicking element '//a[@href="javascript:document.location.href='default.asp?exec=inc/incnewpswd.asp'"]'.</msg>
+<status status="PASS" starttime="20220508 17:09:07.462" endtime="20220508 17:09:10.109"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${emailForm}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20220508 17:09:12.127" level="INFO">Element '//td/input[@name="conemail"][@type="text"]' is displayed.</msg>
+<status status="PASS" starttime="20220508 17:09:10.109" endtime="20220508 17:09:12.127"/>
+</kw>
+<try>
+<branch type="TRY">
+<kw name="Clear Element Text" library="SeleniumLibrary">
+<arg>${emailForm}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" starttime="20220508 17:09:12.127" endtime="20220508 17:09:14.163"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${emailForm}</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220508 17:09:14.164" level="INFO">Typing text 'mara.olsik@gmail.com' into text field '//td/input[@name="conemail"][@type="text"]'.</msg>
+<status status="PASS" starttime="20220508 17:09:14.164" endtime="20220508 17:09:17.235"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${sendBtn}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220508 17:09:17.235" level="INFO">Clicking element '//tr[@class='btncell']//a[@title='Odeslat'][@href='#']'.</msg>
+<status status="PASS" starttime="20220508 17:09:17.235" endtime="20220508 17:09:19.774"/>
+</kw>
+<status status="PASS" starttime="20220508 17:09:12.127" endtime="20220508 17:09:19.774"/>
+</branch>
+<branch type="EXCEPT">
+<kw name="Log To Console" library="BuiltIn">
+<arg>|| Failed filling in credentials!! ||</arg>
+<arg>format=*^60</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20220508 17:09:19.774" endtime="20220508 17:09:19.774"/>
+</kw>
+<kw name="Return From Keyword" library="BuiltIn">
+<arg>${True}</arg>
+<doc>Returns from the enclosing user keyword.</doc>
+<status status="NOT RUN" starttime="20220508 17:09:19.774" endtime="20220508 17:09:19.774"/>
+</kw>
+<status status="NOT RUN" starttime="20220508 17:09:19.774" endtime="20220508 17:09:19.774"/>
+</branch>
+<status status="PASS" starttime="20220508 17:09:12.127" endtime="20220508 17:09:19.774"/>
+</try>
+<try>
+<branch type="TRY">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${succMsg}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220508 17:09:19.774" endtime="20220508 17:09:21.817"/>
+</kw>
+<kw name="Return From Keyword" library="BuiltIn">
+<arg>${True}</arg>
+<doc>Returns from the enclosing user keyword.</doc>
+<msg timestamp="20220508 17:09:21.817" level="INFO">Returning from the enclosing user keyword.</msg>
+<status status="PASS" starttime="20220508 17:09:21.817" endtime="20220508 17:09:21.817"/>
+</kw>
+<status status="PASS" starttime="20220508 17:09:19.774" endtime="20220508 17:09:21.817"/>
+</branch>
+<branch type="EXCEPT">
+<kw name="Log To Console" library="BuiltIn">
+<arg>|| Email does not exist!! ||</arg>
+<arg>format=*^60</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20220508 17:09:21.817" endtime="20220508 17:09:21.817"/>
+</kw>
+<try>
+<branch type="TRY">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${failMsg}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" starttime="20220508 17:09:21.817" endtime="20220508 17:09:21.818"/>
+</kw>
+<kw name="Return From Keyword" library="BuiltIn">
+<arg>${False}</arg>
+<doc>Returns from the enclosing user keyword.</doc>
+<status status="NOT RUN" starttime="20220508 17:09:21.818" endtime="20220508 17:09:21.818"/>
+</kw>
+<status status="NOT RUN" starttime="20220508 17:09:21.817" endtime="20220508 17:09:21.818"/>
+</branch>
+<branch type="EXCEPT">
+<kw name="Log To Console" library="BuiltIn">
+<arg>|| Unexpectet error has occured!! ||</arg>
+<arg>format=*^60</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20220508 17:09:21.818" endtime="20220508 17:09:21.818"/>
+</kw>
+<status status="NOT RUN" starttime="20220508 17:09:21.818" endtime="20220508 17:09:21.818"/>
+</branch>
+<status status="NOT RUN" starttime="20220508 17:09:21.817" endtime="20220508 17:09:21.818"/>
+</try>
+<status status="NOT RUN" starttime="20220508 17:09:21.817" endtime="20220508 17:09:21.818"/>
+</branch>
+<status status="PASS" starttime="20220508 17:09:19.774" endtime="20220508 17:09:21.818"/>
+</try>
+<kw name="Return From Keyword" library="BuiltIn">
+<arg>${False}</arg>
+<doc>Returns from the enclosing user keyword.</doc>
+<status status="NOT RUN" starttime="20220508 17:09:21.818" endtime="20220508 17:09:21.818"/>
+</kw>
+<msg timestamp="20220508 17:09:21.818" level="INFO">${result} = True</msg>
+<status status="PASS" starttime="20220508 17:08:59.681" endtime="20220508 17:09:21.818"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${result}</arg>
+<arg>${True}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20220508 17:09:21.818" endtime="20220508 17:09:21.819"/>
+</kw>
+<kw name="Close web browser and clear cache" library="postConditions" type="TEARDOWN">
+<kw name="Delete All Cookies" library="SeleniumLibrary">
+<doc>Deletes all cookies.</doc>
+<status status="PASS" starttime="20220508 17:09:21.819" endtime="20220508 17:09:22.941"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220508 17:09:24.956" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220508 17:09:22.941" endtime="20220508 17:09:24.956"/>
+</kw>
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20220508 17:09:24.956" endtime="20220508 17:09:27.995"/>
+</kw>
+<status status="PASS" starttime="20220508 17:09:21.819" endtime="20220508 17:09:27.995"/>
+</kw>
+<tag>email</tag>
+<tag>inputForm</tag>
+<tag>testCase</tag>
+<status status="PASS" starttime="20220508 17:08:59.681" endtime="20220508 17:09:27.995"/>
+</test>
+<doc>A test suite testing cookies popUp element functionality.
+
+This test has a workflow that is created using keywords &amp;
+variables in the imported resource files.</doc>
+<status status="PASS" starttime="20220508 17:06:07.643" endtime="20220508 17:09:27.996"/>
+</suite>
+<statistics>
+<total>
+<stat pass="5" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="2" fail="0" skip="0">email</stat>
+<stat pass="4" fail="0" skip="0">inputForm</stat>
+<stat pass="1" fail="0" skip="0">link</stat>
+<stat pass="2" fail="0" skip="0">login</stat>
+<stat pass="3" fail="0" skip="0">popUp</stat>
+<stat pass="5" fail="0" skip="0">testCase</stat>
+</tag>
+<suite>
+<stat pass="5" fail="0" skip="0" id="s1" name="TS05 usersLogin">TS05 usersLogin</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
