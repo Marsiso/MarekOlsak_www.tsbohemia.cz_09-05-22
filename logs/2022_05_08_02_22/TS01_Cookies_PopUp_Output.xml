@@ -1,0 +1,3833 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0 (Python 3.10.2 on win32)" generated="20220508 02:22:48.034" rpa="false" schemaversion="3">
+<suite id="s1" name="TS01 cookiesPopUp" source="C:\Users\m_ols\PycharmProjects\MarekOlsak_www.tsbohemia.cz_09_05_22\testSuites\TS01_cookiesPopUp.robot">
+<test id="s1-t1" name="TC0101 PopUp visibility during domain's visit" line="20">
+<kw name="Open web browser and visit domain's homepage" library="preConditions">
+<arg>${browser}</arg>
+<arg>${urlHomePage}</arg>
+<arg>${driverPath}</arg>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>"${browserName}" == "Chrome"</arg>
+<arg>Open chrome browser</arg>
+<arg>${driverPath}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Open chrome browser" library="preConditions">
+<arg>${driverPath}</arg>
+<kw name="Create Webdriver" library="SeleniumLibrary">
+<arg>Chrome</arg>
+<arg>executable_path=${driverPath}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<msg timestamp="20220508 02:22:48.217" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<status status="PASS" starttime="20220508 02:22:48.216" endtime="20220508 02:22:49.190"/>
+</kw>
+<status status="PASS" starttime="20220508 02:22:48.216" endtime="20220508 02:22:49.190"/>
+</kw>
+<status status="PASS" starttime="20220508 02:22:48.216" endtime="20220508 02:22:49.190"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>"${browserName}" == "Edge"</arg>
+<arg>Open edge browser</arg>
+<arg>${driverPath}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20220508 02:22:49.190" endtime="20220508 02:22:49.190"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>"${browserName}" == "IE"</arg>
+<arg>Open ie browser</arg>
+<arg>${driverPath}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20220508 02:22:49.190" endtime="20220508 02:22:49.190"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220508 02:22:49.190" endtime="20220508 02:22:49.308"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220508 02:22:49.308" level="INFO">Opening url 'https://www.tsbohemia.cz/'</msg>
+<status status="PASS" starttime="20220508 02:22:49.308" endtime="20220508 02:22:50.831"/>
+</kw>
+<kw name="Manually manage to bypass captcha" library="preConditions">
+<kw name="Sleep" library="BuiltIn">
+<arg>12s</arg>
+<arg>Bypassing captcha</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220508 02:23:02.834" level="INFO">Slept 12 seconds</msg>
+<msg timestamp="20220508 02:23:02.834" level="INFO">Bypassing captcha</msg>
+<status status="PASS" starttime="20220508 02:22:50.832" endtime="20220508 02:23:02.834"/>
+</kw>
+<status status="PASS" starttime="20220508 02:22:50.832" endtime="20220508 02:23:02.834"/>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<arg>0.25 seconds</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" starttime="20220508 02:23:02.834" endtime="20220508 02:23:02.834"/>
+</kw>
+<status status="PASS" starttime="20220508 02:22:48.216" endtime="20220508 02:23:02.834"/>
+</kw>
+<kw name="Check popUp visibility during domain's visit" library="cookiesPopUp">
+<arg>${popUpBtnAgreeXPath}</arg>
+<arg>${popUpDescriptionXPath}</arg>
+<arg>${popUpLearnMoreLinkXPath}</arg>
+<arg>${popUpTitleXPath}</arg>
+<arg>${popUpBtnSettingsXPath}</arg>
+<for flavor="IN">
+<var>${element}</var>
+<value>@{elements}</value>
+<iter>
+<var name="${element}">//*[contains(concat(' ',normalize-space(@class),' '),' ch2-dialog')][contains(concat(' ',normalize-space(@class),' '),' ch2-visible')][@role="dialog"]//*[contains(text(),"Soubory cookie používáme")]</var>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${element}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20220508 02:23:02.836" endtime="20220508 02:23:03.133"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${element}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220508 02:23:03.133" endtime="20220508 02:23:03.661"/>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<arg>Cookies form element is present and visible</arg>
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<status status="PASS" starttime="20220508 02:23:03.661" endtime="20220508 02:23:03.661"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${element}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220508 02:23:03.661" level="INFO">//*[contains(concat(' ',normalize-space(@class),' '),' ch2-dialog')][contains(concat(' ',normalize-space(@class),' '),' ch2-visible')][@role="dialog"]//*[contains(text(),"Soubory cookie používáme")]</msg>
+<status status="PASS" starttime="20220508 02:23:03.661" endtime="20220508 02:23:03.661"/>
+</kw>
+<status status="PASS" starttime="20220508 02:23:02.835" endtime="20220508 02:23:03.661"/>
+</iter>
+<iter>
+<var name="${element}">//*[contains(concat(' ',normalize-space(@class),' '),' ch2-dialog')][contains(concat(' ',normalize-space(@class),' '),' ch2-visible')][@role="dialog"]//*[contains(text(),"Zjistit více")][contains(conc...</var>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${element}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20220508 02:23:03.661" endtime="20220508 02:23:03.923"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${element}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220508 02:23:03.923" endtime="20220508 02:23:04.447"/>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<arg>Cookies form element is present and visible</arg>
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<status status="PASS" starttime="20220508 02:23:04.447" endtime="20220508 02:23:04.447"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${element}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220508 02:23:04.447" level="INFO">//*[contains(concat(' ',normalize-space(@class),' '),' ch2-dialog')][contains(concat(' ',normalize-space(@class),' '),' ch2-visible')][@role="dialog"]//*[contains(text(),"Zjistit více")][contains(concat(' ',normalize-space(@class),' '),' ch2-learn-more')]</msg>
+<status status="PASS" starttime="20220508 02:23:04.447" endtime="20220508 02:23:04.447"/>
+</kw>
+<status status="PASS" starttime="20220508 02:23:03.661" endtime="20220508 02:23:04.447"/>
+</iter>
+<iter>
+<var name="${element}">//*[contains(concat(' ',normalize-space(@class),' '),' ch2-dialog')][contains(concat(' ',normalize-space(@class),' '),' ch2-visible')][@role="dialog"]//*[contains(text(),"Informace o cookies")]</var>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${element}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20220508 02:23:04.447" endtime="20220508 02:23:04.712"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${element}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220508 02:23:04.712" endtime="20220508 02:23:05.244"/>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<arg>Cookies form element is present and visible</arg>
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<status status="PASS" starttime="20220508 02:23:05.244" endtime="20220508 02:23:05.244"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${element}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220508 02:23:05.244" level="INFO">//*[contains(concat(' ',normalize-space(@class),' '),' ch2-dialog')][contains(concat(' ',normalize-space(@class),' '),' ch2-visible')][@role="dialog"]//*[contains(text(),"Informace o cookies")]</msg>
+<status status="PASS" starttime="20220508 02:23:05.244" endtime="20220508 02:23:05.244"/>
+</kw>
+<status status="PASS" starttime="20220508 02:23:04.447" endtime="20220508 02:23:05.244"/>
+</iter>
+<iter>
+<var name="${element}">//*[contains(concat(' ',normalize-space(@class),' '),'ch2-dialog')][contains(concat(' ',normalize-space(@class),' '),'ch2-visible')][@role="dialog"]//*[contains(text(),"Nastavení cookies")][contains(c...</var>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${element}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20220508 02:23:05.244" endtime="20220508 02:23:05.513"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${element}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220508 02:23:05.513" endtime="20220508 02:23:06.040"/>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<arg>Cookies form element is present and visible</arg>
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<status status="PASS" starttime="20220508 02:23:06.040" endtime="20220508 02:23:06.040"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${element}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220508 02:23:06.040" level="INFO">//*[contains(concat(' ',normalize-space(@class),' '),'ch2-dialog')][contains(concat(' ',normalize-space(@class),' '),'ch2-visible')][@role="dialog"]//*[contains(text(),"Nastavení cookies")][contains(concat(' ',normalize-space(@class),' '),'ch2-btn')]</msg>
+<status status="PASS" starttime="20220508 02:23:06.040" endtime="20220508 02:23:06.040"/>
+</kw>
+<status status="PASS" starttime="20220508 02:23:05.244" endtime="20220508 02:23:06.040"/>
+</iter>
+<status status="PASS" starttime="20220508 02:23:02.835" endtime="20220508 02:23:06.040"/>
+</for>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${button}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220508 02:23:06.040" level="INFO">Clicking button '//*[contains(concat(' ',normalize-space(@class),' '),'ch2-dialog')][contains(concat(' ',normalize-space(@class),' '),'ch2-visible')][@role="dialog"]//*[contains(text(),"Souhlasím")][contains(concat(' ',normalize-space(@class),' '),'ch2-btn')]'.</msg>
+<status status="PASS" starttime="20220508 02:23:06.040" endtime="20220508 02:23:07.399"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${bool}</var>
+<arg>Wait until page does not contain element</arg>
+<arg>${button}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Wait Until Page Does Not Contain Element" library="SeleniumLibrary">
+<arg>${button}</arg>
+<doc>Waits until the element ``locator`` disappears from the current page.</doc>
+<status status="PASS" starttime="20220508 02:23:07.399" endtime="20220508 02:23:07.666"/>
+</kw>
+<msg timestamp="20220508 02:23:07.666" level="INFO">${bool} = True</msg>
+<status status="PASS" starttime="20220508 02:23:07.399" endtime="20220508 02:23:07.666"/>
+</kw>
+<kw name="Pass Execution If" library="BuiltIn">
+<arg>${bool}</arg>
+<arg>Page does not contain cookies popUp element!</arg>
+<doc>Conditionally skips rest of the current test, setup, or teardown with PASS status.</doc>
+<msg timestamp="20220508 02:23:07.666" level="INFO">Execution passed with message:
+Page does not contain cookies popUp element!</msg>
+<status status="PASS" starttime="20220508 02:23:07.666" endtime="20220508 02:23:07.667"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${bool}</var>
+<arg>Wait until element is not visible</arg>
+<arg>${button}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="NOT RUN" starttime="20220508 02:23:07.667" endtime="20220508 02:23:07.667"/>
+</kw>
+<kw name="Pass Execution If" library="BuiltIn">
+<arg>${bool}</arg>
+<arg>Cookies popUp element is not visible!</arg>
+<doc>Conditionally skips rest of the current test, setup, or teardown with PASS status.</doc>
+<status status="NOT RUN" starttime="20220508 02:23:07.667" endtime="20220508 02:23:07.667"/>
+</kw>
+<kw name="Fail" library="BuiltIn">
+<arg>PopUp is still visible and present in DOM!</arg>
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<status status="NOT RUN" starttime="20220508 02:23:07.667" endtime="20220508 02:23:07.667"/>
+</kw>
+<status status="PASS" starttime="20220508 02:23:02.835" endtime="20220508 02:23:07.667"/>
+</kw>
+<kw name="Close web browser and clear cache" library="postConditions" type="TEARDOWN">
+<kw name="Delete All Cookies" library="SeleniumLibrary">
+<doc>Deletes all cookies.</doc>
+<status status="PASS" starttime="20220508 02:23:07.668" endtime="20220508 02:23:08.010"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220508 02:23:10.016" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220508 02:23:08.010" endtime="20220508 02:23:10.016"/>
+</kw>
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20220508 02:23:10.016" endtime="20220508 02:23:12.326"/>
+</kw>
+<status status="PASS" starttime="20220508 02:23:07.668" endtime="20220508 02:23:12.326"/>
+</kw>
+<tag>container</tag>
+<tag>testCase</tag>
+<status status="PASS" starttime="20220508 02:22:48.215" endtime="20220508 02:23:12.326">Page does not contain cookies popUp element!</status>
+</test>
+<test id="s1-t2" name="TC0102 Hypertext link learn more" line="27">
+<kw name="Open web browser and visit domain's homepage" library="preConditions">
+<arg>${browser}</arg>
+<arg>${urlHomePage}</arg>
+<arg>${driverPath}</arg>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>"${browserName}" == "Chrome"</arg>
+<arg>Open chrome browser</arg>
+<arg>${driverPath}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Open chrome browser" library="preConditions">
+<arg>${driverPath}</arg>
+<kw name="Create Webdriver" library="SeleniumLibrary">
+<arg>Chrome</arg>
+<arg>executable_path=${driverPath}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<msg timestamp="20220508 02:23:12.329" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<status status="PASS" starttime="20220508 02:23:12.328" endtime="20220508 02:23:13.284"/>
+</kw>
+<status status="PASS" starttime="20220508 02:23:12.328" endtime="20220508 02:23:13.284"/>
+</kw>
+<status status="PASS" starttime="20220508 02:23:12.328" endtime="20220508 02:23:13.284"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>"${browserName}" == "Edge"</arg>
+<arg>Open edge browser</arg>
+<arg>${driverPath}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20220508 02:23:13.285" endtime="20220508 02:23:13.285"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>"${browserName}" == "IE"</arg>
+<arg>Open ie browser</arg>
+<arg>${driverPath}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20220508 02:23:13.285" endtime="20220508 02:23:13.285"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220508 02:23:13.285" endtime="20220508 02:23:13.403"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220508 02:23:13.403" level="INFO">Opening url 'https://www.tsbohemia.cz/'</msg>
+<status status="PASS" starttime="20220508 02:23:13.403" endtime="20220508 02:23:14.925"/>
+</kw>
+<kw name="Manually manage to bypass captcha" library="preConditions">
+<kw name="Sleep" library="BuiltIn">
+<arg>12s</arg>
+<arg>Bypassing captcha</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220508 02:23:26.939" level="INFO">Slept 12 seconds</msg>
+<msg timestamp="20220508 02:23:26.939" level="INFO">Bypassing captcha</msg>
+<status status="PASS" starttime="20220508 02:23:14.925" endtime="20220508 02:23:26.939"/>
+</kw>
+<status status="PASS" starttime="20220508 02:23:14.925" endtime="20220508 02:23:26.939"/>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<arg>0.25 seconds</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" starttime="20220508 02:23:26.939" endtime="20220508 02:23:26.939"/>
+</kw>
+<status status="PASS" starttime="20220508 02:23:12.327" endtime="20220508 02:23:26.939"/>
+</kw>
+<kw name="Check link learn more" library="cookiesPopUp">
+<arg>${popUpLearnMoreLinkXPath}</arg>
+<kw name="Get Location" library="SeleniumLibrary">
+<var>${url}</var>
+<doc>Returns the current browser window URL.</doc>
+<msg timestamp="20220508 02:23:27.238" level="INFO">${url} = https://www.tsbohemia.cz/</msg>
+<status status="PASS" starttime="20220508 02:23:26.940" endtime="20220508 02:23:27.238"/>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<arg>Currently visited web page's URL adress</arg>
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<status status="PASS" starttime="20220508 02:23:27.238" endtime="20220508 02:23:27.238"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${url}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220508 02:23:27.238" level="INFO">https://www.tsbohemia.cz/</msg>
+<status status="PASS" starttime="20220508 02:23:27.238" endtime="20220508 02:23:27.238"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${link}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220508 02:23:27.238" endtime="20220508 02:23:27.765"/>
+</kw>
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>${link}</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<msg timestamp="20220508 02:23:27.765" level="INFO">Clicking link '//*[contains(concat(' ',normalize-space(@class),' '),' ch2-dialog')][contains(concat(' ',normalize-space(@class),' '),' ch2-visible')][@role="dialog"]//*[contains(text(),"Zjistit více")][contains(concat(' ',normalize-space(@class),' '),' ch2-learn-more')]'.</msg>
+<status status="PASS" starttime="20220508 02:23:27.765" endtime="20220508 02:23:28.957"/>
+</kw>
+<kw name="Get Location" library="SeleniumLibrary">
+<var>${newUrl}</var>
+<doc>Returns the current browser window URL.</doc>
+<msg timestamp="20220508 02:23:29.222" level="INFO">${newUrl} = https://www.tsbohemia.cz/cookies.htm</msg>
+<status status="PASS" starttime="20220508 02:23:28.957" endtime="20220508 02:23:29.222"/>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<arg>Currently visited web page's URL adress</arg>
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<status status="PASS" starttime="20220508 02:23:29.222" endtime="20220508 02:23:29.222"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${newUrl}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220508 02:23:29.222" level="INFO">https://www.tsbohemia.cz/cookies.htm</msg>
+<status status="PASS" starttime="20220508 02:23:29.222" endtime="20220508 02:23:29.222"/>
+</kw>
+<kw name="Location Should Be" library="SeleniumLibrary">
+<arg>${url}cookies.htm</arg>
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<msg timestamp="20220508 02:23:29.489" level="INFO">Current location is 'https://www.tsbohemia.cz/cookies.htm'.</msg>
+<status status="PASS" starttime="20220508 02:23:29.222" endtime="20220508 02:23:29.489"/>
+</kw>
+<status status="PASS" starttime="20220508 02:23:26.940" endtime="20220508 02:23:29.489"/>
+</kw>
+<kw name="Close web browser and clear cache" library="postConditions" type="TEARDOWN">
+<kw name="Delete All Cookies" library="SeleniumLibrary">
+<doc>Deletes all cookies.</doc>
+<status status="PASS" starttime="20220508 02:23:29.490" endtime="20220508 02:23:29.801"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220508 02:23:31.809" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220508 02:23:29.801" endtime="20220508 02:23:31.809"/>
+</kw>
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20220508 02:23:31.809" endtime="20220508 02:23:34.105"/>
+</kw>
+<status status="PASS" starttime="20220508 02:23:29.489" endtime="20220508 02:23:34.105"/>
+</kw>
+<tag>link</tag>
+<tag>testCase</tag>
+<status status="PASS" starttime="20220508 02:23:12.327" endtime="20220508 02:23:34.105"/>
+</test>
+<test id="s1-t3" name="TC0103 Button agree functionality" line="33">
+<kw name="Open web browser and visit domain's homepage" library="preConditions">
+<arg>${browser}</arg>
+<arg>${urlHomePage}</arg>
+<arg>${driverPath}</arg>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>"${browserName}" == "Chrome"</arg>
+<arg>Open chrome browser</arg>
+<arg>${driverPath}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Open chrome browser" library="preConditions">
+<arg>${driverPath}</arg>
+<kw name="Create Webdriver" library="SeleniumLibrary">
+<arg>Chrome</arg>
+<arg>executable_path=${driverPath}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<msg timestamp="20220508 02:23:34.108" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<status status="PASS" starttime="20220508 02:23:34.107" endtime="20220508 02:23:35.069"/>
+</kw>
+<status status="PASS" starttime="20220508 02:23:34.107" endtime="20220508 02:23:35.069"/>
+</kw>
+<status status="PASS" starttime="20220508 02:23:34.107" endtime="20220508 02:23:35.069"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>"${browserName}" == "Edge"</arg>
+<arg>Open edge browser</arg>
+<arg>${driverPath}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20220508 02:23:35.069" endtime="20220508 02:23:35.069"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>"${browserName}" == "IE"</arg>
+<arg>Open ie browser</arg>
+<arg>${driverPath}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20220508 02:23:35.070" endtime="20220508 02:23:35.070"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220508 02:23:35.070" endtime="20220508 02:23:35.187"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220508 02:23:35.187" level="INFO">Opening url 'https://www.tsbohemia.cz/'</msg>
+<status status="PASS" starttime="20220508 02:23:35.187" endtime="20220508 02:23:36.530"/>
+</kw>
+<kw name="Manually manage to bypass captcha" library="preConditions">
+<kw name="Sleep" library="BuiltIn">
+<arg>12s</arg>
+<arg>Bypassing captcha</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220508 02:23:48.540" level="INFO">Slept 12 seconds</msg>
+<msg timestamp="20220508 02:23:48.540" level="INFO">Bypassing captcha</msg>
+<status status="PASS" starttime="20220508 02:23:36.530" endtime="20220508 02:23:48.540"/>
+</kw>
+<status status="PASS" starttime="20220508 02:23:36.530" endtime="20220508 02:23:48.540"/>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<arg>0.25 seconds</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" starttime="20220508 02:23:48.540" endtime="20220508 02:23:48.540"/>
+</kw>
+<status status="PASS" starttime="20220508 02:23:34.106" endtime="20220508 02:23:48.540"/>
+</kw>
+<kw name="Check button agree functionality" library="cookiesPopUp">
+<arg>${cookiesPopUpDivXPath}</arg>
+<arg>${popUpBtnAgreeXPath}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${button}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220508 02:23:48.541" endtime="20220508 02:23:49.103"/>
+</kw>
+<kw name="Get Cookies" library="SeleniumLibrary">
+<var>&amp;{cookiesPrev}</var>
+<arg>as_dict=True</arg>
+<doc>Returns all cookies of the current page.</doc>
+<msg timestamp="20220508 02:23:49.369" level="INFO">&amp;{cookiesPrev} = { ssupp.visits=1 | ssupp.vid=viE45HYIvC-3W | _lb=7095154655171523000 | I6_COMPARE_COUNT=0 | ASPSESSIONIDQCSDTAAR=NNMHJJHDCMFFILABKOMMLELP | ASPSESSIONIDQAQBQAAQ=KCEJJAIDKJHFKDAOGAIDCHGM | i6IISId=B329...</msg>
+<status status="PASS" starttime="20220508 02:23:49.103" endtime="20220508 02:23:49.369"/>
+</kw>
+<kw name="Log Dictionary" library="Collections">
+<arg>dictionary=&amp;{cookiesPrev}</arg>
+<arg>level=INFO</arg>
+<doc>Logs the size and contents of the ``dictionary`` using given ``level``.</doc>
+<msg timestamp="20220508 02:23:49.369" level="INFO">Dictionary size is 11 and it contains following items:
+: i6empty2
+ARRAffinity: e78f3626da50e223f8e8600c428d540e2fb3a4b8aced97acf0eb045317f134c9
+ASPSESSIONIDQAQBQAAQ: KCEJJAIDKJHFKDAOGAIDCHGM
+ASPSESSIONIDQCSDTAAR: NNMHJJHDCMFFILABKOMMLELP
+I6_COMPARE_COUNT: 0
+_lb: 7095154655171523000
+datadome: up~_UCm~avWUhHfMszZxu3i23.U4V_~9k55bPioVQ~wqCFD5cU7HPhWpzXbf.nlGS-NLoVXVg4B-8OKOHToNP3UqZgoC0FTbd5raKJii8oKr17odinAUqIHE0.P6Ub-
+i6IIS%5FPermanent: StiOrderBy=&amp;StiShowStyle=&amp;StiPageSize=24&amp;HTTPReferrer=+%23REFERRER%3Ahttps%3A%2F%2Fwww%2Etsbohemia%2Ecz%2F%3BREMOTE%5FADDR%3A10%2E10%2E15%2E101%3BSERVERNAME%3AWWWSERVER4%3BHTTP%5FX%5FFORWARDED%5FFOR%3A5%2E104%2E19%2E4%3BHTTP%5FX%5FORIGINAL%5FURL%3A%2F%3B
+i6IISId: B3290277%2D4AE2%2D4AAF%2DA6E0%2D4C677BCA0F25
+ssupp.vid: viE45HYIvC-3W
+ssupp.visits: 1</msg>
+<status status="PASS" starttime="20220508 02:23:49.369" endtime="20220508 02:23:49.369"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220508 02:23:49.370" level="INFO">Clicking element '//*[contains(concat(' ',normalize-space(@class),' '),'ch2-dialog')][contains(concat(' ',normalize-space(@class),' '),'ch2-visible')][@role="dialog"]//*[contains(text(),"Souhlasím")][contains(concat(' ',normalize-space(@class),' '),'ch2-btn')]'.</msg>
+<status status="PASS" starttime="20220508 02:23:49.369" endtime="20220508 02:23:49.929"/>
+</kw>
+<kw name="Page Should Not Contain Element" library="SeleniumLibrary">
+<arg>${form}</arg>
+<doc>Verifies that element ``locator`` is not found on the current page.</doc>
+<msg timestamp="20220508 02:23:50.195" level="INFO">Current page does not contain element '//*[contains(concat(' ',normalize-space(@class),' '),'ch2-dialog')][contains(concat(' ',normalize-space(@class),' '),'ch2-visible')][@role="dialog"]'.</msg>
+<status status="PASS" starttime="20220508 02:23:49.929" endtime="20220508 02:23:50.195"/>
+</kw>
+<kw name="Get Cookies" library="SeleniumLibrary">
+<var>&amp;{cookiesNew}</var>
+<arg>as_dict=True</arg>
+<doc>Returns all cookies of the current page.</doc>
+<msg timestamp="20220508 02:23:50.458" level="INFO">&amp;{cookiesNew} = { _gat_UA-2333423-4=1 | _gid=GA1.2.267322494.1651969430 | _gcl_au=1.1.1637678786.1651969430 | cookiehub=eyJhbnN3ZXJlZCI6dHJ1ZSwicHJlY29uc2VudCI6ZmFsc2UsInJldmlzaW9uIjoxLCJkbnQiOmZhbHNlLCJhbGxvd1NhbGUi...</msg>
+<status status="PASS" starttime="20220508 02:23:50.195" endtime="20220508 02:23:50.458"/>
+</kw>
+<kw name="Log Dictionary" library="Collections">
+<arg>dictionary=&amp;{cookiesNew}</arg>
+<arg>level=INFO</arg>
+<doc>Logs the size and contents of the ``dictionary`` using given ``level``.</doc>
+<msg timestamp="20220508 02:23:50.458" level="INFO">Dictionary size is 18 and it contains following items:
+: i6empty2
+ARRAffinity: e78f3626da50e223f8e8600c428d540e2fb3a4b8aced97acf0eb045317f134c9
+ASPSESSIONIDQAQBQAAQ: KCEJJAIDKJHFKDAOGAIDCHGM
+ASPSESSIONIDQCSDTAAR: NNMHJJHDCMFFILABKOMMLELP
+I6_COMPARE_COUNT: 0
+_fbp: fb.1.1651969430130.2114141844
+_ga: GA1.2.2061918731.1651969426
+_ga_PG4QXVWFXP: GS1.1.1651969425.1.0.1651969429.0
+_gat_UA-2333423-4: 1
+_gcl_au: 1.1.1637678786.1651969430
+_gid: GA1.2.267322494.1651969430
+_lb: 7095154655171523000
+cookiehub: eyJhbnN3ZXJlZCI6dHJ1ZSwicHJlY29uc2VudCI6ZmFsc2UsInJldmlzaW9uIjoxLCJkbnQiOmZhbHNlLCJhbGxvd1NhbGUiOnRydWUsImltcGxpY3QiOmZhbHNlLCJyZWdpb24iOiIiLCJ0b2tlbiI6InJHMWpwTExkRHBEV2k1UzNTVEh6bFUzTkpKN1RUejNTVVQ2Q3o2dDh5eTdnVnNNVmV4OUNIb01xS1FPb2Q2eFAiLCJ0aW1lc3RhbXAiOiIyMDIyLTA1LTA4VDAwOjIzOjQ1LjQ3OVoiLCJjYXRlZ29yaWVzIjpbeyJjaWQiOjEsImlkIjoibmVjZXNzYXJ5IiwidmFsdWUiOnRydWUsInByZWNvbnNlbnQiOnRydWUsImZpcmVkIjp0cnVlfSx7ImNpZCI6MiwiaWQiOiJwcmVmZXJlbmNlcyIsInZhbHVlIjp0cnVlLCJwcmVjb25zZW50IjpmYWxzZSwiZmlyZWQiOmZhbHNlfSx7ImNpZCI6MywiaWQiOiJhbmFseXRpY3MiLCJ2YWx1ZSI6dHJ1ZSwicHJlY29uc2VudCI6ZmFsc2UsImZpcmVkIjpmYWxzZX0seyJjaWQiOjQsImlkIjoibWFya2V0aW5nIiwidmFsdWUiOnRydWUsInByZWNvbnNlbnQiOmZhbHNlLCJmaXJlZCI6ZmFsc2V9LHsiY2lkIjo1LCJpZCI6InVuY2F0ZWdvcml6ZWQiLCJ2YWx1ZSI6dHJ1ZSwicHJlY29uc2VudCI6ZmFsc2UsImZpcmVkIjpmYWxzZX1dfQ==
+datadome: up~_UCm~avWUhHfMszZxu3i23.U4V_~9k55bPioVQ~wqCFD5cU7HPhWpzXbf.nlGS-NLoVXVg4B-8OKOHToNP3UqZgoC0FTbd5raKJii8oKr17odinAUqIHE0.P6Ub-
+i6IIS%5FPermanent: StiOrderBy=&amp;StiShowStyle=&amp;StiPageSize=24&amp;HTTPReferrer=+%23REFERRER%3Ahttps%3A%2F%2Fwww%2Etsbohemia%2Ecz%2F%3BREMOTE%5FADDR%3A10%2E10%2E15%2E101%3BSERVERNAME%3AWWWSERVER4%3BHTTP%5FX%5FFORWARDED%5FFOR%3A5%2E104%2E19%2E4%3BHTTP%5FX%5FORIGINAL%5FURL%3A%2F%3B
+i6IISId: B3290277%2D4AE2%2D4AAF%2DA6E0%2D4C677BCA0F25
+ssupp.vid: viE45HYIvC-3W
+ssupp.visits: 1</msg>
+<status status="PASS" starttime="20220508 02:23:50.458" endtime="20220508 02:23:50.458"/>
+</kw>
+<kw name="Create List" library="BuiltIn">
+<var>@{diff}</var>
+<doc>Returns a list containing given items.</doc>
+<msg timestamp="20220508 02:23:50.459" level="INFO">@{diff} = [ ]</msg>
+<status status="PASS" starttime="20220508 02:23:50.459" endtime="20220508 02:23:50.459"/>
+</kw>
+<for flavor="IN">
+<var>${cookieNew}</var>
+<value>&amp;{cookiesNew}</value>
+<iter>
+<var name="${cookieNew}">('_gat_UA-2333423-4', '1')</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>False</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220508 02:23:50.459" level="INFO">${match} = False</msg>
+<status status="PASS" starttime="20220508 02:23:50.459" endtime="20220508 02:23:50.459"/>
+</kw>
+<for flavor="IN">
+<var>${cookiePrev}</var>
+<value>&amp;{cookiesPrev}</value>
+<iter>
+<var name="${cookiePrev}">('ssupp.visits', '1')</var>
+<if>
+<branch type="IF" condition="&quot;${cookieNew}&quot; == &quot;${cookiePrev}&quot;">
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20220508 02:23:50.459" endtime="20220508 02:23:50.459"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20220508 02:23:50.460" endtime="20220508 02:23:50.460"/>
+</break>
+<status status="NOT RUN" starttime="20220508 02:23:50.459" endtime="20220508 02:23:50.460"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.459" endtime="20220508 02:23:50.460"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.459" endtime="20220508 02:23:50.460"/>
+</iter>
+<iter>
+<var name="${cookiePrev}">('ssupp.vid', 'viE45HYIvC-3W')</var>
+<if>
+<branch type="IF" condition="&quot;${cookieNew}&quot; == &quot;${cookiePrev}&quot;">
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20220508 02:23:50.460" endtime="20220508 02:23:50.460"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20220508 02:23:50.460" endtime="20220508 02:23:50.460"/>
+</break>
+<status status="NOT RUN" starttime="20220508 02:23:50.460" endtime="20220508 02:23:50.460"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.460" endtime="20220508 02:23:50.460"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.460" endtime="20220508 02:23:50.460"/>
+</iter>
+<iter>
+<var name="${cookiePrev}">('_lb', '7095154655171523000')</var>
+<if>
+<branch type="IF" condition="&quot;${cookieNew}&quot; == &quot;${cookiePrev}&quot;">
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20220508 02:23:50.460" endtime="20220508 02:23:50.460"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20220508 02:23:50.460" endtime="20220508 02:23:50.460"/>
+</break>
+<status status="NOT RUN" starttime="20220508 02:23:50.460" endtime="20220508 02:23:50.460"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.460" endtime="20220508 02:23:50.460"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.460" endtime="20220508 02:23:50.460"/>
+</iter>
+<iter>
+<var name="${cookiePrev}">('I6_COMPARE_COUNT', '0')</var>
+<if>
+<branch type="IF" condition="&quot;${cookieNew}&quot; == &quot;${cookiePrev}&quot;">
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20220508 02:23:50.461" endtime="20220508 02:23:50.461"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20220508 02:23:50.461" endtime="20220508 02:23:50.461"/>
+</break>
+<status status="NOT RUN" starttime="20220508 02:23:50.461" endtime="20220508 02:23:50.461"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.461" endtime="20220508 02:23:50.461"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.461" endtime="20220508 02:23:50.461"/>
+</iter>
+<iter>
+<var name="${cookiePrev}">('ASPSESSIONIDQCSDTAAR', 'NNMHJJHDCMFFILABKOMMLELP')</var>
+<if>
+<branch type="IF" condition="&quot;${cookieNew}&quot; == &quot;${cookiePrev}&quot;">
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20220508 02:23:50.461" endtime="20220508 02:23:50.461"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20220508 02:23:50.461" endtime="20220508 02:23:50.461"/>
+</break>
+<status status="NOT RUN" starttime="20220508 02:23:50.461" endtime="20220508 02:23:50.461"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.461" endtime="20220508 02:23:50.461"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.461" endtime="20220508 02:23:50.462"/>
+</iter>
+<iter>
+<var name="${cookiePrev}">('ASPSESSIONIDQAQBQAAQ', 'KCEJJAIDKJHFKDAOGAIDCHGM')</var>
+<if>
+<branch type="IF" condition="&quot;${cookieNew}&quot; == &quot;${cookiePrev}&quot;">
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20220508 02:23:50.462" endtime="20220508 02:23:50.462"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20220508 02:23:50.462" endtime="20220508 02:23:50.462"/>
+</break>
+<status status="NOT RUN" starttime="20220508 02:23:50.462" endtime="20220508 02:23:50.462"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.462" endtime="20220508 02:23:50.462"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.462" endtime="20220508 02:23:50.462"/>
+</iter>
+<iter>
+<var name="${cookiePrev}">('i6IISId', 'B3290277%2D4AE2%2D4AAF%2DA6E0%2D4C677BCA0F25')</var>
+<if>
+<branch type="IF" condition="&quot;${cookieNew}&quot; == &quot;${cookiePrev}&quot;">
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20220508 02:23:50.462" endtime="20220508 02:23:50.462"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20220508 02:23:50.462" endtime="20220508 02:23:50.462"/>
+</break>
+<status status="NOT RUN" starttime="20220508 02:23:50.462" endtime="20220508 02:23:50.462"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.462" endtime="20220508 02:23:50.462"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.462" endtime="20220508 02:23:50.462"/>
+</iter>
+<iter>
+<var name="${cookiePrev}">('ARRAffinity', 'e78f3626da50e223f8e8600c428d540e2fb3a4b8aced97acf0eb045317f134c9')</var>
+<if>
+<branch type="IF" condition="&quot;${cookieNew}&quot; == &quot;${cookiePrev}&quot;">
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20220508 02:23:50.463" endtime="20220508 02:23:50.463"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20220508 02:23:50.463" endtime="20220508 02:23:50.463"/>
+</break>
+<status status="NOT RUN" starttime="20220508 02:23:50.462" endtime="20220508 02:23:50.463"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.462" endtime="20220508 02:23:50.463"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.462" endtime="20220508 02:23:50.463"/>
+</iter>
+<iter>
+<var name="${cookiePrev}">('datadome', 'up~_UCm~avWUhHfMszZxu3i23.U4V_~9k55bPioVQ~wqCFD5cU7HPhWpzXbf.nlGS-NLoVXVg4B-8OKOHToNP3UqZgoC0FTbd5raKJii8oKr17odinAUqIHE0.P6Ub-')</var>
+<if>
+<branch type="IF" condition="&quot;${cookieNew}&quot; == &quot;${cookiePrev}&quot;">
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20220508 02:23:50.463" endtime="20220508 02:23:50.463"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20220508 02:23:50.463" endtime="20220508 02:23:50.463"/>
+</break>
+<status status="NOT RUN" starttime="20220508 02:23:50.463" endtime="20220508 02:23:50.463"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.463" endtime="20220508 02:23:50.463"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.463" endtime="20220508 02:23:50.463"/>
+</iter>
+<iter>
+<var name="${cookiePrev}">('i6IIS%5FPermanent', 'StiOrderBy=&amp;StiShowStyle=&amp;StiPageSize=24&amp;HTTPReferrer=+%23REFERRER%3Ahttps%3A%2F%2Fwww%2Etsbohemia%2Ecz%2F%3BREMOTE%5FADDR%3A10%2E10%2E15%2E101%3BSERVERNAME%3AWWWSERVER4%3BHTTP%...</var>
+<if>
+<branch type="IF" condition="&quot;${cookieNew}&quot; == &quot;${cookiePrev}&quot;">
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20220508 02:23:50.463" endtime="20220508 02:23:50.463"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20220508 02:23:50.463" endtime="20220508 02:23:50.463"/>
+</break>
+<status status="NOT RUN" starttime="20220508 02:23:50.463" endtime="20220508 02:23:50.463"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.463" endtime="20220508 02:23:50.463"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.463" endtime="20220508 02:23:50.463"/>
+</iter>
+<iter>
+<var name="${cookiePrev}">('', 'i6empty2')</var>
+<if>
+<branch type="IF" condition="&quot;${cookieNew}&quot; == &quot;${cookiePrev}&quot;">
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20220508 02:23:50.464" endtime="20220508 02:23:50.464"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20220508 02:23:50.464" endtime="20220508 02:23:50.464"/>
+</break>
+<status status="NOT RUN" starttime="20220508 02:23:50.464" endtime="20220508 02:23:50.464"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.463" endtime="20220508 02:23:50.464"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.463" endtime="20220508 02:23:50.464"/>
+</iter>
+<status status="PASS" starttime="20220508 02:23:50.459" endtime="20220508 02:23:50.464"/>
+</for>
+<if>
+<branch type="IF" condition="&quot;${match}&quot; == &quot;False&quot;">
+<kw name="Append To List" library="Collections">
+<arg>${diff}</arg>
+<arg>${cookieNew}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20220508 02:23:50.464" endtime="20220508 02:23:50.464"/>
+</kw>
+<status status="PASS" starttime="20220508 02:23:50.464" endtime="20220508 02:23:50.464"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.464" endtime="20220508 02:23:50.464"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.459" endtime="20220508 02:23:50.464"/>
+</iter>
+<iter>
+<var name="${cookieNew}">('_gid', 'GA1.2.267322494.1651969430')</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>False</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220508 02:23:50.464" level="INFO">${match} = False</msg>
+<status status="PASS" starttime="20220508 02:23:50.464" endtime="20220508 02:23:50.464"/>
+</kw>
+<for flavor="IN">
+<var>${cookiePrev}</var>
+<value>&amp;{cookiesPrev}</value>
+<iter>
+<var name="${cookiePrev}">('ssupp.visits', '1')</var>
+<if>
+<branch type="IF" condition="&quot;${cookieNew}&quot; == &quot;${cookiePrev}&quot;">
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20220508 02:23:50.465" endtime="20220508 02:23:50.465"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20220508 02:23:50.465" endtime="20220508 02:23:50.465"/>
+</break>
+<status status="NOT RUN" starttime="20220508 02:23:50.465" endtime="20220508 02:23:50.465"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.465" endtime="20220508 02:23:50.465"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.465" endtime="20220508 02:23:50.465"/>
+</iter>
+<iter>
+<var name="${cookiePrev}">('ssupp.vid', 'viE45HYIvC-3W')</var>
+<if>
+<branch type="IF" condition="&quot;${cookieNew}&quot; == &quot;${cookiePrev}&quot;">
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20220508 02:23:50.465" endtime="20220508 02:23:50.465"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20220508 02:23:50.465" endtime="20220508 02:23:50.465"/>
+</break>
+<status status="NOT RUN" starttime="20220508 02:23:50.465" endtime="20220508 02:23:50.465"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.465" endtime="20220508 02:23:50.465"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.465" endtime="20220508 02:23:50.465"/>
+</iter>
+<iter>
+<var name="${cookiePrev}">('_lb', '7095154655171523000')</var>
+<if>
+<branch type="IF" condition="&quot;${cookieNew}&quot; == &quot;${cookiePrev}&quot;">
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20220508 02:23:50.466" endtime="20220508 02:23:50.466"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20220508 02:23:50.466" endtime="20220508 02:23:50.466"/>
+</break>
+<status status="NOT RUN" starttime="20220508 02:23:50.465" endtime="20220508 02:23:50.466"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.465" endtime="20220508 02:23:50.466"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.465" endtime="20220508 02:23:50.466"/>
+</iter>
+<iter>
+<var name="${cookiePrev}">('I6_COMPARE_COUNT', '0')</var>
+<if>
+<branch type="IF" condition="&quot;${cookieNew}&quot; == &quot;${cookiePrev}&quot;">
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20220508 02:23:50.466" endtime="20220508 02:23:50.466"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20220508 02:23:50.466" endtime="20220508 02:23:50.466"/>
+</break>
+<status status="NOT RUN" starttime="20220508 02:23:50.466" endtime="20220508 02:23:50.466"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.466" endtime="20220508 02:23:50.466"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.466" endtime="20220508 02:23:50.466"/>
+</iter>
+<iter>
+<var name="${cookiePrev}">('ASPSESSIONIDQCSDTAAR', 'NNMHJJHDCMFFILABKOMMLELP')</var>
+<if>
+<branch type="IF" condition="&quot;${cookieNew}&quot; == &quot;${cookiePrev}&quot;">
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20220508 02:23:50.466" endtime="20220508 02:23:50.466"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20220508 02:23:50.466" endtime="20220508 02:23:50.466"/>
+</break>
+<status status="NOT RUN" starttime="20220508 02:23:50.466" endtime="20220508 02:23:50.466"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.466" endtime="20220508 02:23:50.466"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.466" endtime="20220508 02:23:50.467"/>
+</iter>
+<iter>
+<var name="${cookiePrev}">('ASPSESSIONIDQAQBQAAQ', 'KCEJJAIDKJHFKDAOGAIDCHGM')</var>
+<if>
+<branch type="IF" condition="&quot;${cookieNew}&quot; == &quot;${cookiePrev}&quot;">
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20220508 02:23:50.467" endtime="20220508 02:23:50.467"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20220508 02:23:50.467" endtime="20220508 02:23:50.467"/>
+</break>
+<status status="NOT RUN" starttime="20220508 02:23:50.467" endtime="20220508 02:23:50.467"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.467" endtime="20220508 02:23:50.467"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.467" endtime="20220508 02:23:50.467"/>
+</iter>
+<iter>
+<var name="${cookiePrev}">('i6IISId', 'B3290277%2D4AE2%2D4AAF%2DA6E0%2D4C677BCA0F25')</var>
+<if>
+<branch type="IF" condition="&quot;${cookieNew}&quot; == &quot;${cookiePrev}&quot;">
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20220508 02:23:50.467" endtime="20220508 02:23:50.467"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20220508 02:23:50.467" endtime="20220508 02:23:50.467"/>
+</break>
+<status status="NOT RUN" starttime="20220508 02:23:50.467" endtime="20220508 02:23:50.467"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.467" endtime="20220508 02:23:50.467"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.467" endtime="20220508 02:23:50.467"/>
+</iter>
+<iter>
+<var name="${cookiePrev}">('ARRAffinity', 'e78f3626da50e223f8e8600c428d540e2fb3a4b8aced97acf0eb045317f134c9')</var>
+<if>
+<branch type="IF" condition="&quot;${cookieNew}&quot; == &quot;${cookiePrev}&quot;">
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20220508 02:23:50.467" endtime="20220508 02:23:50.468"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20220508 02:23:50.468" endtime="20220508 02:23:50.468"/>
+</break>
+<status status="NOT RUN" starttime="20220508 02:23:50.467" endtime="20220508 02:23:50.468"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.467" endtime="20220508 02:23:50.468"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.467" endtime="20220508 02:23:50.468"/>
+</iter>
+<iter>
+<var name="${cookiePrev}">('datadome', 'up~_UCm~avWUhHfMszZxu3i23.U4V_~9k55bPioVQ~wqCFD5cU7HPhWpzXbf.nlGS-NLoVXVg4B-8OKOHToNP3UqZgoC0FTbd5raKJii8oKr17odinAUqIHE0.P6Ub-')</var>
+<if>
+<branch type="IF" condition="&quot;${cookieNew}&quot; == &quot;${cookiePrev}&quot;">
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20220508 02:23:50.468" endtime="20220508 02:23:50.468"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20220508 02:23:50.468" endtime="20220508 02:23:50.468"/>
+</break>
+<status status="NOT RUN" starttime="20220508 02:23:50.468" endtime="20220508 02:23:50.468"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.468" endtime="20220508 02:23:50.468"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.468" endtime="20220508 02:23:50.468"/>
+</iter>
+<iter>
+<var name="${cookiePrev}">('i6IIS%5FPermanent', 'StiOrderBy=&amp;StiShowStyle=&amp;StiPageSize=24&amp;HTTPReferrer=+%23REFERRER%3Ahttps%3A%2F%2Fwww%2Etsbohemia%2Ecz%2F%3BREMOTE%5FADDR%3A10%2E10%2E15%2E101%3BSERVERNAME%3AWWWSERVER4%3BHTTP%...</var>
+<if>
+<branch type="IF" condition="&quot;${cookieNew}&quot; == &quot;${cookiePrev}&quot;">
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20220508 02:23:50.468" endtime="20220508 02:23:50.468"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20220508 02:23:50.468" endtime="20220508 02:23:50.468"/>
+</break>
+<status status="NOT RUN" starttime="20220508 02:23:50.468" endtime="20220508 02:23:50.468"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.468" endtime="20220508 02:23:50.468"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.468" endtime="20220508 02:23:50.468"/>
+</iter>
+<iter>
+<var name="${cookiePrev}">('', 'i6empty2')</var>
+<if>
+<branch type="IF" condition="&quot;${cookieNew}&quot; == &quot;${cookiePrev}&quot;">
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20220508 02:23:50.469" endtime="20220508 02:23:50.469"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20220508 02:23:50.469" endtime="20220508 02:23:50.469"/>
+</break>
+<status status="NOT RUN" starttime="20220508 02:23:50.468" endtime="20220508 02:23:50.469"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.468" endtime="20220508 02:23:50.469"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.468" endtime="20220508 02:23:50.469"/>
+</iter>
+<status status="PASS" starttime="20220508 02:23:50.464" endtime="20220508 02:23:50.469"/>
+</for>
+<if>
+<branch type="IF" condition="&quot;${match}&quot; == &quot;False&quot;">
+<kw name="Append To List" library="Collections">
+<arg>${diff}</arg>
+<arg>${cookieNew}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20220508 02:23:50.469" endtime="20220508 02:23:50.469"/>
+</kw>
+<status status="PASS" starttime="20220508 02:23:50.469" endtime="20220508 02:23:50.469"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.469" endtime="20220508 02:23:50.469"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.464" endtime="20220508 02:23:50.469"/>
+</iter>
+<iter>
+<var name="${cookieNew}">('_gcl_au', '1.1.1637678786.1651969430')</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>False</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220508 02:23:50.469" level="INFO">${match} = False</msg>
+<status status="PASS" starttime="20220508 02:23:50.469" endtime="20220508 02:23:50.469"/>
+</kw>
+<for flavor="IN">
+<var>${cookiePrev}</var>
+<value>&amp;{cookiesPrev}</value>
+<iter>
+<var name="${cookiePrev}">('ssupp.visits', '1')</var>
+<if>
+<branch type="IF" condition="&quot;${cookieNew}&quot; == &quot;${cookiePrev}&quot;">
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20220508 02:23:50.470" endtime="20220508 02:23:50.470"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20220508 02:23:50.470" endtime="20220508 02:23:50.470"/>
+</break>
+<status status="NOT RUN" starttime="20220508 02:23:50.470" endtime="20220508 02:23:50.470"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.469" endtime="20220508 02:23:50.470"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.469" endtime="20220508 02:23:50.470"/>
+</iter>
+<iter>
+<var name="${cookiePrev}">('ssupp.vid', 'viE45HYIvC-3W')</var>
+<if>
+<branch type="IF" condition="&quot;${cookieNew}&quot; == &quot;${cookiePrev}&quot;">
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20220508 02:23:50.470" endtime="20220508 02:23:50.470"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20220508 02:23:50.470" endtime="20220508 02:23:50.470"/>
+</break>
+<status status="NOT RUN" starttime="20220508 02:23:50.470" endtime="20220508 02:23:50.470"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.470" endtime="20220508 02:23:50.470"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.470" endtime="20220508 02:23:50.470"/>
+</iter>
+<iter>
+<var name="${cookiePrev}">('_lb', '7095154655171523000')</var>
+<if>
+<branch type="IF" condition="&quot;${cookieNew}&quot; == &quot;${cookiePrev}&quot;">
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20220508 02:23:50.470" endtime="20220508 02:23:50.470"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20220508 02:23:50.470" endtime="20220508 02:23:50.470"/>
+</break>
+<status status="NOT RUN" starttime="20220508 02:23:50.470" endtime="20220508 02:23:50.470"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.470" endtime="20220508 02:23:50.470"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.470" endtime="20220508 02:23:50.470"/>
+</iter>
+<iter>
+<var name="${cookiePrev}">('I6_COMPARE_COUNT', '0')</var>
+<if>
+<branch type="IF" condition="&quot;${cookieNew}&quot; == &quot;${cookiePrev}&quot;">
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20220508 02:23:50.471" endtime="20220508 02:23:50.471"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20220508 02:23:50.471" endtime="20220508 02:23:50.471"/>
+</break>
+<status status="NOT RUN" starttime="20220508 02:23:50.471" endtime="20220508 02:23:50.471"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.471" endtime="20220508 02:23:50.471"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.470" endtime="20220508 02:23:50.471"/>
+</iter>
+<iter>
+<var name="${cookiePrev}">('ASPSESSIONIDQCSDTAAR', 'NNMHJJHDCMFFILABKOMMLELP')</var>
+<if>
+<branch type="IF" condition="&quot;${cookieNew}&quot; == &quot;${cookiePrev}&quot;">
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20220508 02:23:50.471" endtime="20220508 02:23:50.471"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20220508 02:23:50.471" endtime="20220508 02:23:50.471"/>
+</break>
+<status status="NOT RUN" starttime="20220508 02:23:50.471" endtime="20220508 02:23:50.471"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.471" endtime="20220508 02:23:50.471"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.471" endtime="20220508 02:23:50.471"/>
+</iter>
+<iter>
+<var name="${cookiePrev}">('ASPSESSIONIDQAQBQAAQ', 'KCEJJAIDKJHFKDAOGAIDCHGM')</var>
+<if>
+<branch type="IF" condition="&quot;${cookieNew}&quot; == &quot;${cookiePrev}&quot;">
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20220508 02:23:50.471" endtime="20220508 02:23:50.471"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20220508 02:23:50.471" endtime="20220508 02:23:50.471"/>
+</break>
+<status status="NOT RUN" starttime="20220508 02:23:50.471" endtime="20220508 02:23:50.471"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.471" endtime="20220508 02:23:50.472"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.471" endtime="20220508 02:23:50.472"/>
+</iter>
+<iter>
+<var name="${cookiePrev}">('i6IISId', 'B3290277%2D4AE2%2D4AAF%2DA6E0%2D4C677BCA0F25')</var>
+<if>
+<branch type="IF" condition="&quot;${cookieNew}&quot; == &quot;${cookiePrev}&quot;">
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20220508 02:23:50.472" endtime="20220508 02:23:50.472"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20220508 02:23:50.472" endtime="20220508 02:23:50.472"/>
+</break>
+<status status="NOT RUN" starttime="20220508 02:23:50.472" endtime="20220508 02:23:50.472"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.472" endtime="20220508 02:23:50.472"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.472" endtime="20220508 02:23:50.472"/>
+</iter>
+<iter>
+<var name="${cookiePrev}">('ARRAffinity', 'e78f3626da50e223f8e8600c428d540e2fb3a4b8aced97acf0eb045317f134c9')</var>
+<if>
+<branch type="IF" condition="&quot;${cookieNew}&quot; == &quot;${cookiePrev}&quot;">
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20220508 02:23:50.472" endtime="20220508 02:23:50.472"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20220508 02:23:50.472" endtime="20220508 02:23:50.472"/>
+</break>
+<status status="NOT RUN" starttime="20220508 02:23:50.472" endtime="20220508 02:23:50.472"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.472" endtime="20220508 02:23:50.472"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.472" endtime="20220508 02:23:50.472"/>
+</iter>
+<iter>
+<var name="${cookiePrev}">('datadome', 'up~_UCm~avWUhHfMszZxu3i23.U4V_~9k55bPioVQ~wqCFD5cU7HPhWpzXbf.nlGS-NLoVXVg4B-8OKOHToNP3UqZgoC0FTbd5raKJii8oKr17odinAUqIHE0.P6Ub-')</var>
+<if>
+<branch type="IF" condition="&quot;${cookieNew}&quot; == &quot;${cookiePrev}&quot;">
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20220508 02:23:50.473" endtime="20220508 02:23:50.473"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20220508 02:23:50.473" endtime="20220508 02:23:50.473"/>
+</break>
+<status status="NOT RUN" starttime="20220508 02:23:50.473" endtime="20220508 02:23:50.473"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.472" endtime="20220508 02:23:50.473"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.472" endtime="20220508 02:23:50.473"/>
+</iter>
+<iter>
+<var name="${cookiePrev}">('i6IIS%5FPermanent', 'StiOrderBy=&amp;StiShowStyle=&amp;StiPageSize=24&amp;HTTPReferrer=+%23REFERRER%3Ahttps%3A%2F%2Fwww%2Etsbohemia%2Ecz%2F%3BREMOTE%5FADDR%3A10%2E10%2E15%2E101%3BSERVERNAME%3AWWWSERVER4%3BHTTP%...</var>
+<if>
+<branch type="IF" condition="&quot;${cookieNew}&quot; == &quot;${cookiePrev}&quot;">
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20220508 02:23:50.473" endtime="20220508 02:23:50.473"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20220508 02:23:50.473" endtime="20220508 02:23:50.473"/>
+</break>
+<status status="NOT RUN" starttime="20220508 02:23:50.473" endtime="20220508 02:23:50.473"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.473" endtime="20220508 02:23:50.473"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.473" endtime="20220508 02:23:50.473"/>
+</iter>
+<iter>
+<var name="${cookiePrev}">('', 'i6empty2')</var>
+<if>
+<branch type="IF" condition="&quot;${cookieNew}&quot; == &quot;${cookiePrev}&quot;">
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20220508 02:23:50.473" endtime="20220508 02:23:50.473"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20220508 02:23:50.473" endtime="20220508 02:23:50.473"/>
+</break>
+<status status="NOT RUN" starttime="20220508 02:23:50.473" endtime="20220508 02:23:50.473"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.473" endtime="20220508 02:23:50.473"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.473" endtime="20220508 02:23:50.473"/>
+</iter>
+<status status="PASS" starttime="20220508 02:23:50.469" endtime="20220508 02:23:50.473"/>
+</for>
+<if>
+<branch type="IF" condition="&quot;${match}&quot; == &quot;False&quot;">
+<kw name="Append To List" library="Collections">
+<arg>${diff}</arg>
+<arg>${cookieNew}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20220508 02:23:50.474" endtime="20220508 02:23:50.474"/>
+</kw>
+<status status="PASS" starttime="20220508 02:23:50.474" endtime="20220508 02:23:50.474"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.473" endtime="20220508 02:23:50.474"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.469" endtime="20220508 02:23:50.474"/>
+</iter>
+<iter>
+<var name="${cookieNew}">('cookiehub', 'eyJhbnN3ZXJlZCI6dHJ1ZSwicHJlY29uc2VudCI6ZmFsc2UsInJldmlzaW9uIjoxLCJkbnQiOmZhbHNlLCJhbGxvd1NhbGUiOnRydWUsImltcGxpY3QiOmZhbHNlLCJyZWdpb24iOiIiLCJ0b2tlbiI6InJHMWpwTExkRHBEV2k1UzNTVEh6bFUzT...</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>False</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220508 02:23:50.474" level="INFO">${match} = False</msg>
+<status status="PASS" starttime="20220508 02:23:50.474" endtime="20220508 02:23:50.474"/>
+</kw>
+<for flavor="IN">
+<var>${cookiePrev}</var>
+<value>&amp;{cookiesPrev}</value>
+<iter>
+<var name="${cookiePrev}">('ssupp.visits', '1')</var>
+<if>
+<branch type="IF" condition="&quot;${cookieNew}&quot; == &quot;${cookiePrev}&quot;">
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20220508 02:23:50.475" endtime="20220508 02:23:50.475"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20220508 02:23:50.475" endtime="20220508 02:23:50.475"/>
+</break>
+<status status="NOT RUN" starttime="20220508 02:23:50.475" endtime="20220508 02:23:50.475"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.474" endtime="20220508 02:23:50.475"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.474" endtime="20220508 02:23:50.475"/>
+</iter>
+<iter>
+<var name="${cookiePrev}">('ssupp.vid', 'viE45HYIvC-3W')</var>
+<if>
+<branch type="IF" condition="&quot;${cookieNew}&quot; == &quot;${cookiePrev}&quot;">
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20220508 02:23:50.475" endtime="20220508 02:23:50.475"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20220508 02:23:50.475" endtime="20220508 02:23:50.475"/>
+</break>
+<status status="NOT RUN" starttime="20220508 02:23:50.475" endtime="20220508 02:23:50.475"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.475" endtime="20220508 02:23:50.475"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.475" endtime="20220508 02:23:50.475"/>
+</iter>
+<iter>
+<var name="${cookiePrev}">('_lb', '7095154655171523000')</var>
+<if>
+<branch type="IF" condition="&quot;${cookieNew}&quot; == &quot;${cookiePrev}&quot;">
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20220508 02:23:50.475" endtime="20220508 02:23:50.475"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20220508 02:23:50.475" endtime="20220508 02:23:50.475"/>
+</break>
+<status status="NOT RUN" starttime="20220508 02:23:50.475" endtime="20220508 02:23:50.475"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.475" endtime="20220508 02:23:50.475"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.475" endtime="20220508 02:23:50.476"/>
+</iter>
+<iter>
+<var name="${cookiePrev}">('I6_COMPARE_COUNT', '0')</var>
+<if>
+<branch type="IF" condition="&quot;${cookieNew}&quot; == &quot;${cookiePrev}&quot;">
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20220508 02:23:50.476" endtime="20220508 02:23:50.476"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20220508 02:23:50.476" endtime="20220508 02:23:50.476"/>
+</break>
+<status status="NOT RUN" starttime="20220508 02:23:50.476" endtime="20220508 02:23:50.476"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.476" endtime="20220508 02:23:50.476"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.476" endtime="20220508 02:23:50.476"/>
+</iter>
+<iter>
+<var name="${cookiePrev}">('ASPSESSIONIDQCSDTAAR', 'NNMHJJHDCMFFILABKOMMLELP')</var>
+<if>
+<branch type="IF" condition="&quot;${cookieNew}&quot; == &quot;${cookiePrev}&quot;">
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20220508 02:23:50.476" endtime="20220508 02:23:50.476"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20220508 02:23:50.476" endtime="20220508 02:23:50.476"/>
+</break>
+<status status="NOT RUN" starttime="20220508 02:23:50.476" endtime="20220508 02:23:50.476"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.476" endtime="20220508 02:23:50.476"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.476" endtime="20220508 02:23:50.476"/>
+</iter>
+<iter>
+<var name="${cookiePrev}">('ASPSESSIONIDQAQBQAAQ', 'KCEJJAIDKJHFKDAOGAIDCHGM')</var>
+<if>
+<branch type="IF" condition="&quot;${cookieNew}&quot; == &quot;${cookiePrev}&quot;">
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20220508 02:23:50.476" endtime="20220508 02:23:50.476"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20220508 02:23:50.477" endtime="20220508 02:23:50.477"/>
+</break>
+<status status="NOT RUN" starttime="20220508 02:23:50.476" endtime="20220508 02:23:50.477"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.476" endtime="20220508 02:23:50.477"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.476" endtime="20220508 02:23:50.477"/>
+</iter>
+<iter>
+<var name="${cookiePrev}">('i6IISId', 'B3290277%2D4AE2%2D4AAF%2DA6E0%2D4C677BCA0F25')</var>
+<if>
+<branch type="IF" condition="&quot;${cookieNew}&quot; == &quot;${cookiePrev}&quot;">
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20220508 02:23:50.477" endtime="20220508 02:23:50.477"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20220508 02:23:50.477" endtime="20220508 02:23:50.477"/>
+</break>
+<status status="NOT RUN" starttime="20220508 02:23:50.477" endtime="20220508 02:23:50.477"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.477" endtime="20220508 02:23:50.477"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.477" endtime="20220508 02:23:50.477"/>
+</iter>
+<iter>
+<var name="${cookiePrev}">('ARRAffinity', 'e78f3626da50e223f8e8600c428d540e2fb3a4b8aced97acf0eb045317f134c9')</var>
+<if>
+<branch type="IF" condition="&quot;${cookieNew}&quot; == &quot;${cookiePrev}&quot;">
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20220508 02:23:50.477" endtime="20220508 02:23:50.477"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20220508 02:23:50.477" endtime="20220508 02:23:50.477"/>
+</break>
+<status status="NOT RUN" starttime="20220508 02:23:50.477" endtime="20220508 02:23:50.477"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.477" endtime="20220508 02:23:50.477"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.477" endtime="20220508 02:23:50.477"/>
+</iter>
+<iter>
+<var name="${cookiePrev}">('datadome', 'up~_UCm~avWUhHfMszZxu3i23.U4V_~9k55bPioVQ~wqCFD5cU7HPhWpzXbf.nlGS-NLoVXVg4B-8OKOHToNP3UqZgoC0FTbd5raKJii8oKr17odinAUqIHE0.P6Ub-')</var>
+<if>
+<branch type="IF" condition="&quot;${cookieNew}&quot; == &quot;${cookiePrev}&quot;">
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20220508 02:23:50.478" endtime="20220508 02:23:50.478"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20220508 02:23:50.478" endtime="20220508 02:23:50.478"/>
+</break>
+<status status="NOT RUN" starttime="20220508 02:23:50.478" endtime="20220508 02:23:50.478"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.477" endtime="20220508 02:23:50.478"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.477" endtime="20220508 02:23:50.478"/>
+</iter>
+<iter>
+<var name="${cookiePrev}">('i6IIS%5FPermanent', 'StiOrderBy=&amp;StiShowStyle=&amp;StiPageSize=24&amp;HTTPReferrer=+%23REFERRER%3Ahttps%3A%2F%2Fwww%2Etsbohemia%2Ecz%2F%3BREMOTE%5FADDR%3A10%2E10%2E15%2E101%3BSERVERNAME%3AWWWSERVER4%3BHTTP%...</var>
+<if>
+<branch type="IF" condition="&quot;${cookieNew}&quot; == &quot;${cookiePrev}&quot;">
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20220508 02:23:50.478" endtime="20220508 02:23:50.478"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20220508 02:23:50.478" endtime="20220508 02:23:50.478"/>
+</break>
+<status status="NOT RUN" starttime="20220508 02:23:50.478" endtime="20220508 02:23:50.478"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.478" endtime="20220508 02:23:50.478"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.478" endtime="20220508 02:23:50.478"/>
+</iter>
+<iter>
+<var name="${cookiePrev}">('', 'i6empty2')</var>
+<if>
+<branch type="IF" condition="&quot;${cookieNew}&quot; == &quot;${cookiePrev}&quot;">
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20220508 02:23:50.478" endtime="20220508 02:23:50.478"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20220508 02:23:50.478" endtime="20220508 02:23:50.478"/>
+</break>
+<status status="NOT RUN" starttime="20220508 02:23:50.478" endtime="20220508 02:23:50.478"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.478" endtime="20220508 02:23:50.478"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.478" endtime="20220508 02:23:50.478"/>
+</iter>
+<status status="PASS" starttime="20220508 02:23:50.474" endtime="20220508 02:23:50.478"/>
+</for>
+<if>
+<branch type="IF" condition="&quot;${match}&quot; == &quot;False&quot;">
+<kw name="Append To List" library="Collections">
+<arg>${diff}</arg>
+<arg>${cookieNew}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20220508 02:23:50.479" endtime="20220508 02:23:50.479"/>
+</kw>
+<status status="PASS" starttime="20220508 02:23:50.479" endtime="20220508 02:23:50.479"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.479" endtime="20220508 02:23:50.479"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.474" endtime="20220508 02:23:50.479"/>
+</iter>
+<iter>
+<var name="${cookieNew}">('ssupp.visits', '1')</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>False</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220508 02:23:50.479" level="INFO">${match} = False</msg>
+<status status="PASS" starttime="20220508 02:23:50.479" endtime="20220508 02:23:50.479"/>
+</kw>
+<for flavor="IN">
+<var>${cookiePrev}</var>
+<value>&amp;{cookiesPrev}</value>
+<iter>
+<var name="${cookiePrev}">('ssupp.visits', '1')</var>
+<if>
+<branch type="IF" condition="&quot;${cookieNew}&quot; == &quot;${cookiePrev}&quot;">
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220508 02:23:50.480" level="INFO">${match} = True</msg>
+<status status="PASS" starttime="20220508 02:23:50.479" endtime="20220508 02:23:50.480"/>
+</kw>
+<break>
+<status status="PASS" starttime="20220508 02:23:50.480" endtime="20220508 02:23:50.480"/>
+</break>
+<status status="PASS" starttime="20220508 02:23:50.479" endtime="20220508 02:23:50.480"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.479" endtime="20220508 02:23:50.480"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.479" endtime="20220508 02:23:50.480"/>
+</iter>
+<status status="PASS" starttime="20220508 02:23:50.479" endtime="20220508 02:23:50.480"/>
+</for>
+<if>
+<branch type="IF" condition="&quot;${match}&quot; == &quot;False&quot;">
+<kw name="Append To List" library="Collections">
+<arg>${diff}</arg>
+<arg>${cookieNew}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="NOT RUN" starttime="20220508 02:23:50.480" endtime="20220508 02:23:50.480"/>
+</kw>
+<status status="NOT RUN" starttime="20220508 02:23:50.480" endtime="20220508 02:23:50.480"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.480" endtime="20220508 02:23:50.480"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.479" endtime="20220508 02:23:50.480"/>
+</iter>
+<iter>
+<var name="${cookieNew}">('ARRAffinity', 'e78f3626da50e223f8e8600c428d540e2fb3a4b8aced97acf0eb045317f134c9')</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>False</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220508 02:23:50.480" level="INFO">${match} = False</msg>
+<status status="PASS" starttime="20220508 02:23:50.480" endtime="20220508 02:23:50.480"/>
+</kw>
+<for flavor="IN">
+<var>${cookiePrev}</var>
+<value>&amp;{cookiesPrev}</value>
+<iter>
+<var name="${cookiePrev}">('ssupp.visits', '1')</var>
+<if>
+<branch type="IF" condition="&quot;${cookieNew}&quot; == &quot;${cookiePrev}&quot;">
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20220508 02:23:50.481" endtime="20220508 02:23:50.481"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20220508 02:23:50.481" endtime="20220508 02:23:50.481"/>
+</break>
+<status status="NOT RUN" starttime="20220508 02:23:50.481" endtime="20220508 02:23:50.481"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.480" endtime="20220508 02:23:50.481"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.480" endtime="20220508 02:23:50.481"/>
+</iter>
+<iter>
+<var name="${cookiePrev}">('ssupp.vid', 'viE45HYIvC-3W')</var>
+<if>
+<branch type="IF" condition="&quot;${cookieNew}&quot; == &quot;${cookiePrev}&quot;">
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20220508 02:23:50.481" endtime="20220508 02:23:50.481"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20220508 02:23:50.481" endtime="20220508 02:23:50.481"/>
+</break>
+<status status="NOT RUN" starttime="20220508 02:23:50.481" endtime="20220508 02:23:50.481"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.481" endtime="20220508 02:23:50.481"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.481" endtime="20220508 02:23:50.481"/>
+</iter>
+<iter>
+<var name="${cookiePrev}">('_lb', '7095154655171523000')</var>
+<if>
+<branch type="IF" condition="&quot;${cookieNew}&quot; == &quot;${cookiePrev}&quot;">
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20220508 02:23:50.481" endtime="20220508 02:23:50.481"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20220508 02:23:50.481" endtime="20220508 02:23:50.481"/>
+</break>
+<status status="NOT RUN" starttime="20220508 02:23:50.481" endtime="20220508 02:23:50.481"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.481" endtime="20220508 02:23:50.481"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.481" endtime="20220508 02:23:50.481"/>
+</iter>
+<iter>
+<var name="${cookiePrev}">('I6_COMPARE_COUNT', '0')</var>
+<if>
+<branch type="IF" condition="&quot;${cookieNew}&quot; == &quot;${cookiePrev}&quot;">
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20220508 02:23:50.482" endtime="20220508 02:23:50.482"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20220508 02:23:50.482" endtime="20220508 02:23:50.482"/>
+</break>
+<status status="NOT RUN" starttime="20220508 02:23:50.482" endtime="20220508 02:23:50.482"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.481" endtime="20220508 02:23:50.482"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.481" endtime="20220508 02:23:50.482"/>
+</iter>
+<iter>
+<var name="${cookiePrev}">('ASPSESSIONIDQCSDTAAR', 'NNMHJJHDCMFFILABKOMMLELP')</var>
+<if>
+<branch type="IF" condition="&quot;${cookieNew}&quot; == &quot;${cookiePrev}&quot;">
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20220508 02:23:50.482" endtime="20220508 02:23:50.482"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20220508 02:23:50.482" endtime="20220508 02:23:50.482"/>
+</break>
+<status status="NOT RUN" starttime="20220508 02:23:50.482" endtime="20220508 02:23:50.482"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.482" endtime="20220508 02:23:50.482"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.482" endtime="20220508 02:23:50.482"/>
+</iter>
+<iter>
+<var name="${cookiePrev}">('ASPSESSIONIDQAQBQAAQ', 'KCEJJAIDKJHFKDAOGAIDCHGM')</var>
+<if>
+<branch type="IF" condition="&quot;${cookieNew}&quot; == &quot;${cookiePrev}&quot;">
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20220508 02:23:50.482" endtime="20220508 02:23:50.482"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20220508 02:23:50.482" endtime="20220508 02:23:50.482"/>
+</break>
+<status status="NOT RUN" starttime="20220508 02:23:50.482" endtime="20220508 02:23:50.482"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.482" endtime="20220508 02:23:50.482"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.482" endtime="20220508 02:23:50.482"/>
+</iter>
+<iter>
+<var name="${cookiePrev}">('i6IISId', 'B3290277%2D4AE2%2D4AAF%2DA6E0%2D4C677BCA0F25')</var>
+<if>
+<branch type="IF" condition="&quot;${cookieNew}&quot; == &quot;${cookiePrev}&quot;">
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20220508 02:23:50.483" endtime="20220508 02:23:50.483"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20220508 02:23:50.483" endtime="20220508 02:23:50.483"/>
+</break>
+<status status="NOT RUN" starttime="20220508 02:23:50.483" endtime="20220508 02:23:50.483"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.483" endtime="20220508 02:23:50.483"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.483" endtime="20220508 02:23:50.483"/>
+</iter>
+<iter>
+<var name="${cookiePrev}">('ARRAffinity', 'e78f3626da50e223f8e8600c428d540e2fb3a4b8aced97acf0eb045317f134c9')</var>
+<if>
+<branch type="IF" condition="&quot;${cookieNew}&quot; == &quot;${cookiePrev}&quot;">
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220508 02:23:50.483" level="INFO">${match} = True</msg>
+<status status="PASS" starttime="20220508 02:23:50.483" endtime="20220508 02:23:50.483"/>
+</kw>
+<break>
+<status status="PASS" starttime="20220508 02:23:50.483" endtime="20220508 02:23:50.483"/>
+</break>
+<status status="PASS" starttime="20220508 02:23:50.483" endtime="20220508 02:23:50.483"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.483" endtime="20220508 02:23:50.483"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.483" endtime="20220508 02:23:50.483"/>
+</iter>
+<status status="PASS" starttime="20220508 02:23:50.480" endtime="20220508 02:23:50.483"/>
+</for>
+<if>
+<branch type="IF" condition="&quot;${match}&quot; == &quot;False&quot;">
+<kw name="Append To List" library="Collections">
+<arg>${diff}</arg>
+<arg>${cookieNew}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="NOT RUN" starttime="20220508 02:23:50.483" endtime="20220508 02:23:50.484"/>
+</kw>
+<status status="NOT RUN" starttime="20220508 02:23:50.483" endtime="20220508 02:23:50.484"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.483" endtime="20220508 02:23:50.484"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.480" endtime="20220508 02:23:50.484"/>
+</iter>
+<iter>
+<var name="${cookieNew}">('ssupp.vid', 'viE45HYIvC-3W')</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>False</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220508 02:23:50.484" level="INFO">${match} = False</msg>
+<status status="PASS" starttime="20220508 02:23:50.484" endtime="20220508 02:23:50.484"/>
+</kw>
+<for flavor="IN">
+<var>${cookiePrev}</var>
+<value>&amp;{cookiesPrev}</value>
+<iter>
+<var name="${cookiePrev}">('ssupp.visits', '1')</var>
+<if>
+<branch type="IF" condition="&quot;${cookieNew}&quot; == &quot;${cookiePrev}&quot;">
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20220508 02:23:50.484" endtime="20220508 02:23:50.484"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20220508 02:23:50.484" endtime="20220508 02:23:50.484"/>
+</break>
+<status status="NOT RUN" starttime="20220508 02:23:50.484" endtime="20220508 02:23:50.484"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.484" endtime="20220508 02:23:50.484"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.484" endtime="20220508 02:23:50.484"/>
+</iter>
+<iter>
+<var name="${cookiePrev}">('ssupp.vid', 'viE45HYIvC-3W')</var>
+<if>
+<branch type="IF" condition="&quot;${cookieNew}&quot; == &quot;${cookiePrev}&quot;">
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220508 02:23:50.485" level="INFO">${match} = True</msg>
+<status status="PASS" starttime="20220508 02:23:50.485" endtime="20220508 02:23:50.485"/>
+</kw>
+<break>
+<status status="PASS" starttime="20220508 02:23:50.485" endtime="20220508 02:23:50.485"/>
+</break>
+<status status="PASS" starttime="20220508 02:23:50.484" endtime="20220508 02:23:50.485"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.484" endtime="20220508 02:23:50.485"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.484" endtime="20220508 02:23:50.485"/>
+</iter>
+<status status="PASS" starttime="20220508 02:23:50.484" endtime="20220508 02:23:50.485"/>
+</for>
+<if>
+<branch type="IF" condition="&quot;${match}&quot; == &quot;False&quot;">
+<kw name="Append To List" library="Collections">
+<arg>${diff}</arg>
+<arg>${cookieNew}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="NOT RUN" starttime="20220508 02:23:50.485" endtime="20220508 02:23:50.485"/>
+</kw>
+<status status="NOT RUN" starttime="20220508 02:23:50.485" endtime="20220508 02:23:50.485"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.485" endtime="20220508 02:23:50.485"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.484" endtime="20220508 02:23:50.485"/>
+</iter>
+<iter>
+<var name="${cookieNew}">('ASPSESSIONIDQCSDTAAR', 'NNMHJJHDCMFFILABKOMMLELP')</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>False</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220508 02:23:50.485" level="INFO">${match} = False</msg>
+<status status="PASS" starttime="20220508 02:23:50.485" endtime="20220508 02:23:50.485"/>
+</kw>
+<for flavor="IN">
+<var>${cookiePrev}</var>
+<value>&amp;{cookiesPrev}</value>
+<iter>
+<var name="${cookiePrev}">('ssupp.visits', '1')</var>
+<if>
+<branch type="IF" condition="&quot;${cookieNew}&quot; == &quot;${cookiePrev}&quot;">
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20220508 02:23:50.486" endtime="20220508 02:23:50.486"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20220508 02:23:50.486" endtime="20220508 02:23:50.486"/>
+</break>
+<status status="NOT RUN" starttime="20220508 02:23:50.485" endtime="20220508 02:23:50.486"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.485" endtime="20220508 02:23:50.486"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.485" endtime="20220508 02:23:50.486"/>
+</iter>
+<iter>
+<var name="${cookiePrev}">('ssupp.vid', 'viE45HYIvC-3W')</var>
+<if>
+<branch type="IF" condition="&quot;${cookieNew}&quot; == &quot;${cookiePrev}&quot;">
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20220508 02:23:50.486" endtime="20220508 02:23:50.486"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20220508 02:23:50.486" endtime="20220508 02:23:50.486"/>
+</break>
+<status status="NOT RUN" starttime="20220508 02:23:50.486" endtime="20220508 02:23:50.486"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.486" endtime="20220508 02:23:50.486"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.486" endtime="20220508 02:23:50.486"/>
+</iter>
+<iter>
+<var name="${cookiePrev}">('_lb', '7095154655171523000')</var>
+<if>
+<branch type="IF" condition="&quot;${cookieNew}&quot; == &quot;${cookiePrev}&quot;">
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20220508 02:23:50.486" endtime="20220508 02:23:50.486"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20220508 02:23:50.486" endtime="20220508 02:23:50.486"/>
+</break>
+<status status="NOT RUN" starttime="20220508 02:23:50.486" endtime="20220508 02:23:50.486"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.486" endtime="20220508 02:23:50.486"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.486" endtime="20220508 02:23:50.486"/>
+</iter>
+<iter>
+<var name="${cookiePrev}">('I6_COMPARE_COUNT', '0')</var>
+<if>
+<branch type="IF" condition="&quot;${cookieNew}&quot; == &quot;${cookiePrev}&quot;">
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20220508 02:23:50.487" endtime="20220508 02:23:50.487"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20220508 02:23:50.487" endtime="20220508 02:23:50.487"/>
+</break>
+<status status="NOT RUN" starttime="20220508 02:23:50.487" endtime="20220508 02:23:50.487"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.486" endtime="20220508 02:23:50.487"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.486" endtime="20220508 02:23:50.487"/>
+</iter>
+<iter>
+<var name="${cookiePrev}">('ASPSESSIONIDQCSDTAAR', 'NNMHJJHDCMFFILABKOMMLELP')</var>
+<if>
+<branch type="IF" condition="&quot;${cookieNew}&quot; == &quot;${cookiePrev}&quot;">
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220508 02:23:50.487" level="INFO">${match} = True</msg>
+<status status="PASS" starttime="20220508 02:23:50.487" endtime="20220508 02:23:50.487"/>
+</kw>
+<break>
+<status status="PASS" starttime="20220508 02:23:50.487" endtime="20220508 02:23:50.487"/>
+</break>
+<status status="PASS" starttime="20220508 02:23:50.487" endtime="20220508 02:23:50.487"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.487" endtime="20220508 02:23:50.487"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.487" endtime="20220508 02:23:50.487"/>
+</iter>
+<status status="PASS" starttime="20220508 02:23:50.485" endtime="20220508 02:23:50.487"/>
+</for>
+<if>
+<branch type="IF" condition="&quot;${match}&quot; == &quot;False&quot;">
+<kw name="Append To List" library="Collections">
+<arg>${diff}</arg>
+<arg>${cookieNew}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="NOT RUN" starttime="20220508 02:23:50.487" endtime="20220508 02:23:50.487"/>
+</kw>
+<status status="NOT RUN" starttime="20220508 02:23:50.487" endtime="20220508 02:23:50.487"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.487" endtime="20220508 02:23:50.487"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.485" endtime="20220508 02:23:50.487"/>
+</iter>
+<iter>
+<var name="${cookieNew}">('_lb', '7095154655171523000')</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>False</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220508 02:23:50.488" level="INFO">${match} = False</msg>
+<status status="PASS" starttime="20220508 02:23:50.488" endtime="20220508 02:23:50.488"/>
+</kw>
+<for flavor="IN">
+<var>${cookiePrev}</var>
+<value>&amp;{cookiesPrev}</value>
+<iter>
+<var name="${cookiePrev}">('ssupp.visits', '1')</var>
+<if>
+<branch type="IF" condition="&quot;${cookieNew}&quot; == &quot;${cookiePrev}&quot;">
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20220508 02:23:50.488" endtime="20220508 02:23:50.488"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20220508 02:23:50.488" endtime="20220508 02:23:50.488"/>
+</break>
+<status status="NOT RUN" starttime="20220508 02:23:50.488" endtime="20220508 02:23:50.488"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.488" endtime="20220508 02:23:50.488"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.488" endtime="20220508 02:23:50.488"/>
+</iter>
+<iter>
+<var name="${cookiePrev}">('ssupp.vid', 'viE45HYIvC-3W')</var>
+<if>
+<branch type="IF" condition="&quot;${cookieNew}&quot; == &quot;${cookiePrev}&quot;">
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20220508 02:23:50.488" endtime="20220508 02:23:50.488"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20220508 02:23:50.488" endtime="20220508 02:23:50.489"/>
+</break>
+<status status="NOT RUN" starttime="20220508 02:23:50.488" endtime="20220508 02:23:50.489"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.488" endtime="20220508 02:23:50.489"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.488" endtime="20220508 02:23:50.489"/>
+</iter>
+<iter>
+<var name="${cookiePrev}">('_lb', '7095154655171523000')</var>
+<if>
+<branch type="IF" condition="&quot;${cookieNew}&quot; == &quot;${cookiePrev}&quot;">
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220508 02:23:50.489" level="INFO">${match} = True</msg>
+<status status="PASS" starttime="20220508 02:23:50.489" endtime="20220508 02:23:50.489"/>
+</kw>
+<break>
+<status status="PASS" starttime="20220508 02:23:50.489" endtime="20220508 02:23:50.489"/>
+</break>
+<status status="PASS" starttime="20220508 02:23:50.489" endtime="20220508 02:23:50.489"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.489" endtime="20220508 02:23:50.489"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.489" endtime="20220508 02:23:50.489"/>
+</iter>
+<status status="PASS" starttime="20220508 02:23:50.488" endtime="20220508 02:23:50.489"/>
+</for>
+<if>
+<branch type="IF" condition="&quot;${match}&quot; == &quot;False&quot;">
+<kw name="Append To List" library="Collections">
+<arg>${diff}</arg>
+<arg>${cookieNew}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="NOT RUN" starttime="20220508 02:23:50.489" endtime="20220508 02:23:50.489"/>
+</kw>
+<status status="NOT RUN" starttime="20220508 02:23:50.489" endtime="20220508 02:23:50.489"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.489" endtime="20220508 02:23:50.489"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.487" endtime="20220508 02:23:50.489"/>
+</iter>
+<iter>
+<var name="${cookieNew}">('_fbp', 'fb.1.1651969430130.2114141844')</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>False</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220508 02:23:50.490" level="INFO">${match} = False</msg>
+<status status="PASS" starttime="20220508 02:23:50.490" endtime="20220508 02:23:50.490"/>
+</kw>
+<for flavor="IN">
+<var>${cookiePrev}</var>
+<value>&amp;{cookiesPrev}</value>
+<iter>
+<var name="${cookiePrev}">('ssupp.visits', '1')</var>
+<if>
+<branch type="IF" condition="&quot;${cookieNew}&quot; == &quot;${cookiePrev}&quot;">
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20220508 02:23:50.490" endtime="20220508 02:23:50.490"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20220508 02:23:50.490" endtime="20220508 02:23:50.490"/>
+</break>
+<status status="NOT RUN" starttime="20220508 02:23:50.490" endtime="20220508 02:23:50.490"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.490" endtime="20220508 02:23:50.490"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.490" endtime="20220508 02:23:50.490"/>
+</iter>
+<iter>
+<var name="${cookiePrev}">('ssupp.vid', 'viE45HYIvC-3W')</var>
+<if>
+<branch type="IF" condition="&quot;${cookieNew}&quot; == &quot;${cookiePrev}&quot;">
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20220508 02:23:50.491" endtime="20220508 02:23:50.491"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20220508 02:23:50.491" endtime="20220508 02:23:50.491"/>
+</break>
+<status status="NOT RUN" starttime="20220508 02:23:50.491" endtime="20220508 02:23:50.491"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.490" endtime="20220508 02:23:50.491"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.490" endtime="20220508 02:23:50.491"/>
+</iter>
+<iter>
+<var name="${cookiePrev}">('_lb', '7095154655171523000')</var>
+<if>
+<branch type="IF" condition="&quot;${cookieNew}&quot; == &quot;${cookiePrev}&quot;">
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20220508 02:23:50.491" endtime="20220508 02:23:50.491"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20220508 02:23:50.491" endtime="20220508 02:23:50.491"/>
+</break>
+<status status="NOT RUN" starttime="20220508 02:23:50.491" endtime="20220508 02:23:50.491"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.491" endtime="20220508 02:23:50.491"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.491" endtime="20220508 02:23:50.491"/>
+</iter>
+<iter>
+<var name="${cookiePrev}">('I6_COMPARE_COUNT', '0')</var>
+<if>
+<branch type="IF" condition="&quot;${cookieNew}&quot; == &quot;${cookiePrev}&quot;">
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20220508 02:23:50.491" endtime="20220508 02:23:50.491"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20220508 02:23:50.491" endtime="20220508 02:23:50.491"/>
+</break>
+<status status="NOT RUN" starttime="20220508 02:23:50.491" endtime="20220508 02:23:50.491"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.491" endtime="20220508 02:23:50.491"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.491" endtime="20220508 02:23:50.491"/>
+</iter>
+<iter>
+<var name="${cookiePrev}">('ASPSESSIONIDQCSDTAAR', 'NNMHJJHDCMFFILABKOMMLELP')</var>
+<if>
+<branch type="IF" condition="&quot;${cookieNew}&quot; == &quot;${cookiePrev}&quot;">
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20220508 02:23:50.492" endtime="20220508 02:23:50.492"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20220508 02:23:50.492" endtime="20220508 02:23:50.492"/>
+</break>
+<status status="NOT RUN" starttime="20220508 02:23:50.492" endtime="20220508 02:23:50.492"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.491" endtime="20220508 02:23:50.492"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.491" endtime="20220508 02:23:50.492"/>
+</iter>
+<iter>
+<var name="${cookiePrev}">('ASPSESSIONIDQAQBQAAQ', 'KCEJJAIDKJHFKDAOGAIDCHGM')</var>
+<if>
+<branch type="IF" condition="&quot;${cookieNew}&quot; == &quot;${cookiePrev}&quot;">
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20220508 02:23:50.492" endtime="20220508 02:23:50.492"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20220508 02:23:50.492" endtime="20220508 02:23:50.492"/>
+</break>
+<status status="NOT RUN" starttime="20220508 02:23:50.492" endtime="20220508 02:23:50.492"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.492" endtime="20220508 02:23:50.492"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.492" endtime="20220508 02:23:50.492"/>
+</iter>
+<iter>
+<var name="${cookiePrev}">('i6IISId', 'B3290277%2D4AE2%2D4AAF%2DA6E0%2D4C677BCA0F25')</var>
+<if>
+<branch type="IF" condition="&quot;${cookieNew}&quot; == &quot;${cookiePrev}&quot;">
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20220508 02:23:50.492" endtime="20220508 02:23:50.492"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20220508 02:23:50.492" endtime="20220508 02:23:50.492"/>
+</break>
+<status status="NOT RUN" starttime="20220508 02:23:50.492" endtime="20220508 02:23:50.492"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.492" endtime="20220508 02:23:50.492"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.492" endtime="20220508 02:23:50.492"/>
+</iter>
+<iter>
+<var name="${cookiePrev}">('ARRAffinity', 'e78f3626da50e223f8e8600c428d540e2fb3a4b8aced97acf0eb045317f134c9')</var>
+<if>
+<branch type="IF" condition="&quot;${cookieNew}&quot; == &quot;${cookiePrev}&quot;">
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20220508 02:23:50.493" endtime="20220508 02:23:50.493"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20220508 02:23:50.493" endtime="20220508 02:23:50.493"/>
+</break>
+<status status="NOT RUN" starttime="20220508 02:23:50.493" endtime="20220508 02:23:50.493"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.492" endtime="20220508 02:23:50.493"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.492" endtime="20220508 02:23:50.493"/>
+</iter>
+<iter>
+<var name="${cookiePrev}">('datadome', 'up~_UCm~avWUhHfMszZxu3i23.U4V_~9k55bPioVQ~wqCFD5cU7HPhWpzXbf.nlGS-NLoVXVg4B-8OKOHToNP3UqZgoC0FTbd5raKJii8oKr17odinAUqIHE0.P6Ub-')</var>
+<if>
+<branch type="IF" condition="&quot;${cookieNew}&quot; == &quot;${cookiePrev}&quot;">
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20220508 02:23:50.493" endtime="20220508 02:23:50.493"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20220508 02:23:50.493" endtime="20220508 02:23:50.493"/>
+</break>
+<status status="NOT RUN" starttime="20220508 02:23:50.493" endtime="20220508 02:23:50.493"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.493" endtime="20220508 02:23:50.493"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.493" endtime="20220508 02:23:50.493"/>
+</iter>
+<iter>
+<var name="${cookiePrev}">('i6IIS%5FPermanent', 'StiOrderBy=&amp;StiShowStyle=&amp;StiPageSize=24&amp;HTTPReferrer=+%23REFERRER%3Ahttps%3A%2F%2Fwww%2Etsbohemia%2Ecz%2F%3BREMOTE%5FADDR%3A10%2E10%2E15%2E101%3BSERVERNAME%3AWWWSERVER4%3BHTTP%...</var>
+<if>
+<branch type="IF" condition="&quot;${cookieNew}&quot; == &quot;${cookiePrev}&quot;">
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20220508 02:23:50.493" endtime="20220508 02:23:50.493"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20220508 02:23:50.493" endtime="20220508 02:23:50.493"/>
+</break>
+<status status="NOT RUN" starttime="20220508 02:23:50.493" endtime="20220508 02:23:50.493"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.493" endtime="20220508 02:23:50.493"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.493" endtime="20220508 02:23:50.493"/>
+</iter>
+<iter>
+<var name="${cookiePrev}">('', 'i6empty2')</var>
+<if>
+<branch type="IF" condition="&quot;${cookieNew}&quot; == &quot;${cookiePrev}&quot;">
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20220508 02:23:50.494" endtime="20220508 02:23:50.494"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20220508 02:23:50.494" endtime="20220508 02:23:50.494"/>
+</break>
+<status status="NOT RUN" starttime="20220508 02:23:50.494" endtime="20220508 02:23:50.494"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.494" endtime="20220508 02:23:50.494"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.494" endtime="20220508 02:23:50.494"/>
+</iter>
+<status status="PASS" starttime="20220508 02:23:50.490" endtime="20220508 02:23:50.494"/>
+</for>
+<if>
+<branch type="IF" condition="&quot;${match}&quot; == &quot;False&quot;">
+<kw name="Append To List" library="Collections">
+<arg>${diff}</arg>
+<arg>${cookieNew}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20220508 02:23:50.494" endtime="20220508 02:23:50.494"/>
+</kw>
+<status status="PASS" starttime="20220508 02:23:50.494" endtime="20220508 02:23:50.494"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.494" endtime="20220508 02:23:50.494"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.490" endtime="20220508 02:23:50.494"/>
+</iter>
+<iter>
+<var name="${cookieNew}">('datadome', 'up~_UCm~avWUhHfMszZxu3i23.U4V_~9k55bPioVQ~wqCFD5cU7HPhWpzXbf.nlGS-NLoVXVg4B-8OKOHToNP3UqZgoC0FTbd5raKJii8oKr17odinAUqIHE0.P6Ub-')</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>False</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220508 02:23:50.494" level="INFO">${match} = False</msg>
+<status status="PASS" starttime="20220508 02:23:50.494" endtime="20220508 02:23:50.494"/>
+</kw>
+<for flavor="IN">
+<var>${cookiePrev}</var>
+<value>&amp;{cookiesPrev}</value>
+<iter>
+<var name="${cookiePrev}">('ssupp.visits', '1')</var>
+<if>
+<branch type="IF" condition="&quot;${cookieNew}&quot; == &quot;${cookiePrev}&quot;">
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20220508 02:23:50.495" endtime="20220508 02:23:50.495"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20220508 02:23:50.495" endtime="20220508 02:23:50.495"/>
+</break>
+<status status="NOT RUN" starttime="20220508 02:23:50.495" endtime="20220508 02:23:50.495"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.495" endtime="20220508 02:23:50.495"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.495" endtime="20220508 02:23:50.495"/>
+</iter>
+<iter>
+<var name="${cookiePrev}">('ssupp.vid', 'viE45HYIvC-3W')</var>
+<if>
+<branch type="IF" condition="&quot;${cookieNew}&quot; == &quot;${cookiePrev}&quot;">
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20220508 02:23:50.495" endtime="20220508 02:23:50.495"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20220508 02:23:50.495" endtime="20220508 02:23:50.495"/>
+</break>
+<status status="NOT RUN" starttime="20220508 02:23:50.495" endtime="20220508 02:23:50.495"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.495" endtime="20220508 02:23:50.495"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.495" endtime="20220508 02:23:50.495"/>
+</iter>
+<iter>
+<var name="${cookiePrev}">('_lb', '7095154655171523000')</var>
+<if>
+<branch type="IF" condition="&quot;${cookieNew}&quot; == &quot;${cookiePrev}&quot;">
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20220508 02:23:50.495" endtime="20220508 02:23:50.495"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20220508 02:23:50.496" endtime="20220508 02:23:50.496"/>
+</break>
+<status status="NOT RUN" starttime="20220508 02:23:50.495" endtime="20220508 02:23:50.496"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.495" endtime="20220508 02:23:50.496"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.495" endtime="20220508 02:23:50.496"/>
+</iter>
+<iter>
+<var name="${cookiePrev}">('I6_COMPARE_COUNT', '0')</var>
+<if>
+<branch type="IF" condition="&quot;${cookieNew}&quot; == &quot;${cookiePrev}&quot;">
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20220508 02:23:50.496" endtime="20220508 02:23:50.496"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20220508 02:23:50.496" endtime="20220508 02:23:50.496"/>
+</break>
+<status status="NOT RUN" starttime="20220508 02:23:50.496" endtime="20220508 02:23:50.496"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.496" endtime="20220508 02:23:50.496"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.496" endtime="20220508 02:23:50.496"/>
+</iter>
+<iter>
+<var name="${cookiePrev}">('ASPSESSIONIDQCSDTAAR', 'NNMHJJHDCMFFILABKOMMLELP')</var>
+<if>
+<branch type="IF" condition="&quot;${cookieNew}&quot; == &quot;${cookiePrev}&quot;">
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20220508 02:23:50.496" endtime="20220508 02:23:50.496"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20220508 02:23:50.496" endtime="20220508 02:23:50.496"/>
+</break>
+<status status="NOT RUN" starttime="20220508 02:23:50.496" endtime="20220508 02:23:50.496"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.496" endtime="20220508 02:23:50.496"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.496" endtime="20220508 02:23:50.496"/>
+</iter>
+<iter>
+<var name="${cookiePrev}">('ASPSESSIONIDQAQBQAAQ', 'KCEJJAIDKJHFKDAOGAIDCHGM')</var>
+<if>
+<branch type="IF" condition="&quot;${cookieNew}&quot; == &quot;${cookiePrev}&quot;">
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20220508 02:23:50.496" endtime="20220508 02:23:50.497"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20220508 02:23:50.497" endtime="20220508 02:23:50.497"/>
+</break>
+<status status="NOT RUN" starttime="20220508 02:23:50.496" endtime="20220508 02:23:50.497"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.496" endtime="20220508 02:23:50.497"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.496" endtime="20220508 02:23:50.497"/>
+</iter>
+<iter>
+<var name="${cookiePrev}">('i6IISId', 'B3290277%2D4AE2%2D4AAF%2DA6E0%2D4C677BCA0F25')</var>
+<if>
+<branch type="IF" condition="&quot;${cookieNew}&quot; == &quot;${cookiePrev}&quot;">
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20220508 02:23:50.497" endtime="20220508 02:23:50.497"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20220508 02:23:50.497" endtime="20220508 02:23:50.497"/>
+</break>
+<status status="NOT RUN" starttime="20220508 02:23:50.497" endtime="20220508 02:23:50.497"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.497" endtime="20220508 02:23:50.497"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.497" endtime="20220508 02:23:50.497"/>
+</iter>
+<iter>
+<var name="${cookiePrev}">('ARRAffinity', 'e78f3626da50e223f8e8600c428d540e2fb3a4b8aced97acf0eb045317f134c9')</var>
+<if>
+<branch type="IF" condition="&quot;${cookieNew}&quot; == &quot;${cookiePrev}&quot;">
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20220508 02:23:50.497" endtime="20220508 02:23:50.497"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20220508 02:23:50.497" endtime="20220508 02:23:50.497"/>
+</break>
+<status status="NOT RUN" starttime="20220508 02:23:50.497" endtime="20220508 02:23:50.497"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.497" endtime="20220508 02:23:50.497"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.497" endtime="20220508 02:23:50.497"/>
+</iter>
+<iter>
+<var name="${cookiePrev}">('datadome', 'up~_UCm~avWUhHfMszZxu3i23.U4V_~9k55bPioVQ~wqCFD5cU7HPhWpzXbf.nlGS-NLoVXVg4B-8OKOHToNP3UqZgoC0FTbd5raKJii8oKr17odinAUqIHE0.P6Ub-')</var>
+<if>
+<branch type="IF" condition="&quot;${cookieNew}&quot; == &quot;${cookiePrev}&quot;">
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220508 02:23:50.498" level="INFO">${match} = True</msg>
+<status status="PASS" starttime="20220508 02:23:50.498" endtime="20220508 02:23:50.498"/>
+</kw>
+<break>
+<status status="PASS" starttime="20220508 02:23:50.498" endtime="20220508 02:23:50.498"/>
+</break>
+<status status="PASS" starttime="20220508 02:23:50.498" endtime="20220508 02:23:50.498"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.497" endtime="20220508 02:23:50.498"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.497" endtime="20220508 02:23:50.498"/>
+</iter>
+<status status="PASS" starttime="20220508 02:23:50.494" endtime="20220508 02:23:50.498"/>
+</for>
+<if>
+<branch type="IF" condition="&quot;${match}&quot; == &quot;False&quot;">
+<kw name="Append To List" library="Collections">
+<arg>${diff}</arg>
+<arg>${cookieNew}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="NOT RUN" starttime="20220508 02:23:50.498" endtime="20220508 02:23:50.498"/>
+</kw>
+<status status="NOT RUN" starttime="20220508 02:23:50.498" endtime="20220508 02:23:50.498"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.498" endtime="20220508 02:23:50.498"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.494" endtime="20220508 02:23:50.498"/>
+</iter>
+<iter>
+<var name="${cookieNew}">('I6_COMPARE_COUNT', '0')</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>False</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220508 02:23:50.498" level="INFO">${match} = False</msg>
+<status status="PASS" starttime="20220508 02:23:50.498" endtime="20220508 02:23:50.498"/>
+</kw>
+<for flavor="IN">
+<var>${cookiePrev}</var>
+<value>&amp;{cookiesPrev}</value>
+<iter>
+<var name="${cookiePrev}">('ssupp.visits', '1')</var>
+<if>
+<branch type="IF" condition="&quot;${cookieNew}&quot; == &quot;${cookiePrev}&quot;">
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20220508 02:23:50.499" endtime="20220508 02:23:50.499"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20220508 02:23:50.499" endtime="20220508 02:23:50.499"/>
+</break>
+<status status="NOT RUN" starttime="20220508 02:23:50.499" endtime="20220508 02:23:50.499"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.498" endtime="20220508 02:23:50.499"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.498" endtime="20220508 02:23:50.499"/>
+</iter>
+<iter>
+<var name="${cookiePrev}">('ssupp.vid', 'viE45HYIvC-3W')</var>
+<if>
+<branch type="IF" condition="&quot;${cookieNew}&quot; == &quot;${cookiePrev}&quot;">
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20220508 02:23:50.499" endtime="20220508 02:23:50.499"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20220508 02:23:50.499" endtime="20220508 02:23:50.499"/>
+</break>
+<status status="NOT RUN" starttime="20220508 02:23:50.499" endtime="20220508 02:23:50.499"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.499" endtime="20220508 02:23:50.499"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.499" endtime="20220508 02:23:50.499"/>
+</iter>
+<iter>
+<var name="${cookiePrev}">('_lb', '7095154655171523000')</var>
+<if>
+<branch type="IF" condition="&quot;${cookieNew}&quot; == &quot;${cookiePrev}&quot;">
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20220508 02:23:50.499" endtime="20220508 02:23:50.499"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20220508 02:23:50.499" endtime="20220508 02:23:50.499"/>
+</break>
+<status status="NOT RUN" starttime="20220508 02:23:50.499" endtime="20220508 02:23:50.499"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.499" endtime="20220508 02:23:50.499"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.499" endtime="20220508 02:23:50.499"/>
+</iter>
+<iter>
+<var name="${cookiePrev}">('I6_COMPARE_COUNT', '0')</var>
+<if>
+<branch type="IF" condition="&quot;${cookieNew}&quot; == &quot;${cookiePrev}&quot;">
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220508 02:23:50.500" level="INFO">${match} = True</msg>
+<status status="PASS" starttime="20220508 02:23:50.500" endtime="20220508 02:23:50.500"/>
+</kw>
+<break>
+<status status="PASS" starttime="20220508 02:23:50.500" endtime="20220508 02:23:50.500"/>
+</break>
+<status status="PASS" starttime="20220508 02:23:50.500" endtime="20220508 02:23:50.500"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.499" endtime="20220508 02:23:50.500"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.499" endtime="20220508 02:23:50.500"/>
+</iter>
+<status status="PASS" starttime="20220508 02:23:50.498" endtime="20220508 02:23:50.500"/>
+</for>
+<if>
+<branch type="IF" condition="&quot;${match}&quot; == &quot;False&quot;">
+<kw name="Append To List" library="Collections">
+<arg>${diff}</arg>
+<arg>${cookieNew}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="NOT RUN" starttime="20220508 02:23:50.500" endtime="20220508 02:23:50.500"/>
+</kw>
+<status status="NOT RUN" starttime="20220508 02:23:50.500" endtime="20220508 02:23:50.500"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.500" endtime="20220508 02:23:50.500"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.498" endtime="20220508 02:23:50.500"/>
+</iter>
+<iter>
+<var name="${cookieNew}">('ASPSESSIONIDQAQBQAAQ', 'KCEJJAIDKJHFKDAOGAIDCHGM')</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>False</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220508 02:23:50.500" level="INFO">${match} = False</msg>
+<status status="PASS" starttime="20220508 02:23:50.500" endtime="20220508 02:23:50.500"/>
+</kw>
+<for flavor="IN">
+<var>${cookiePrev}</var>
+<value>&amp;{cookiesPrev}</value>
+<iter>
+<var name="${cookiePrev}">('ssupp.visits', '1')</var>
+<if>
+<branch type="IF" condition="&quot;${cookieNew}&quot; == &quot;${cookiePrev}&quot;">
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20220508 02:23:50.501" endtime="20220508 02:23:50.501"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20220508 02:23:50.501" endtime="20220508 02:23:50.501"/>
+</break>
+<status status="NOT RUN" starttime="20220508 02:23:50.501" endtime="20220508 02:23:50.501"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.501" endtime="20220508 02:23:50.501"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.501" endtime="20220508 02:23:50.501"/>
+</iter>
+<iter>
+<var name="${cookiePrev}">('ssupp.vid', 'viE45HYIvC-3W')</var>
+<if>
+<branch type="IF" condition="&quot;${cookieNew}&quot; == &quot;${cookiePrev}&quot;">
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20220508 02:23:50.501" endtime="20220508 02:23:50.501"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20220508 02:23:50.501" endtime="20220508 02:23:50.501"/>
+</break>
+<status status="NOT RUN" starttime="20220508 02:23:50.501" endtime="20220508 02:23:50.501"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.501" endtime="20220508 02:23:50.501"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.501" endtime="20220508 02:23:50.501"/>
+</iter>
+<iter>
+<var name="${cookiePrev}">('_lb', '7095154655171523000')</var>
+<if>
+<branch type="IF" condition="&quot;${cookieNew}&quot; == &quot;${cookiePrev}&quot;">
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20220508 02:23:50.501" endtime="20220508 02:23:50.501"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20220508 02:23:50.501" endtime="20220508 02:23:50.501"/>
+</break>
+<status status="NOT RUN" starttime="20220508 02:23:50.501" endtime="20220508 02:23:50.501"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.501" endtime="20220508 02:23:50.501"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.501" endtime="20220508 02:23:50.502"/>
+</iter>
+<iter>
+<var name="${cookiePrev}">('I6_COMPARE_COUNT', '0')</var>
+<if>
+<branch type="IF" condition="&quot;${cookieNew}&quot; == &quot;${cookiePrev}&quot;">
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20220508 02:23:50.502" endtime="20220508 02:23:50.502"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20220508 02:23:50.502" endtime="20220508 02:23:50.502"/>
+</break>
+<status status="NOT RUN" starttime="20220508 02:23:50.502" endtime="20220508 02:23:50.502"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.502" endtime="20220508 02:23:50.502"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.502" endtime="20220508 02:23:50.502"/>
+</iter>
+<iter>
+<var name="${cookiePrev}">('ASPSESSIONIDQCSDTAAR', 'NNMHJJHDCMFFILABKOMMLELP')</var>
+<if>
+<branch type="IF" condition="&quot;${cookieNew}&quot; == &quot;${cookiePrev}&quot;">
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20220508 02:23:50.502" endtime="20220508 02:23:50.502"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20220508 02:23:50.502" endtime="20220508 02:23:50.502"/>
+</break>
+<status status="NOT RUN" starttime="20220508 02:23:50.502" endtime="20220508 02:23:50.502"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.502" endtime="20220508 02:23:50.502"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.502" endtime="20220508 02:23:50.502"/>
+</iter>
+<iter>
+<var name="${cookiePrev}">('ASPSESSIONIDQAQBQAAQ', 'KCEJJAIDKJHFKDAOGAIDCHGM')</var>
+<if>
+<branch type="IF" condition="&quot;${cookieNew}&quot; == &quot;${cookiePrev}&quot;">
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220508 02:23:50.503" level="INFO">${match} = True</msg>
+<status status="PASS" starttime="20220508 02:23:50.503" endtime="20220508 02:23:50.503"/>
+</kw>
+<break>
+<status status="PASS" starttime="20220508 02:23:50.503" endtime="20220508 02:23:50.503"/>
+</break>
+<status status="PASS" starttime="20220508 02:23:50.502" endtime="20220508 02:23:50.503"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.502" endtime="20220508 02:23:50.503"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.502" endtime="20220508 02:23:50.503"/>
+</iter>
+<status status="PASS" starttime="20220508 02:23:50.500" endtime="20220508 02:23:50.503"/>
+</for>
+<if>
+<branch type="IF" condition="&quot;${match}&quot; == &quot;False&quot;">
+<kw name="Append To List" library="Collections">
+<arg>${diff}</arg>
+<arg>${cookieNew}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="NOT RUN" starttime="20220508 02:23:50.503" endtime="20220508 02:23:50.503"/>
+</kw>
+<status status="NOT RUN" starttime="20220508 02:23:50.503" endtime="20220508 02:23:50.503"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.503" endtime="20220508 02:23:50.503"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.500" endtime="20220508 02:23:50.503"/>
+</iter>
+<iter>
+<var name="${cookieNew}">('_ga_PG4QXVWFXP', 'GS1.1.1651969425.1.0.1651969429.0')</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>False</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220508 02:23:50.503" level="INFO">${match} = False</msg>
+<status status="PASS" starttime="20220508 02:23:50.503" endtime="20220508 02:23:50.503"/>
+</kw>
+<for flavor="IN">
+<var>${cookiePrev}</var>
+<value>&amp;{cookiesPrev}</value>
+<iter>
+<var name="${cookiePrev}">('ssupp.visits', '1')</var>
+<if>
+<branch type="IF" condition="&quot;${cookieNew}&quot; == &quot;${cookiePrev}&quot;">
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20220508 02:23:50.504" endtime="20220508 02:23:50.504"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20220508 02:23:50.504" endtime="20220508 02:23:50.504"/>
+</break>
+<status status="NOT RUN" starttime="20220508 02:23:50.503" endtime="20220508 02:23:50.504"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.503" endtime="20220508 02:23:50.504"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.503" endtime="20220508 02:23:50.504"/>
+</iter>
+<iter>
+<var name="${cookiePrev}">('ssupp.vid', 'viE45HYIvC-3W')</var>
+<if>
+<branch type="IF" condition="&quot;${cookieNew}&quot; == &quot;${cookiePrev}&quot;">
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20220508 02:23:50.504" endtime="20220508 02:23:50.504"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20220508 02:23:50.504" endtime="20220508 02:23:50.504"/>
+</break>
+<status status="NOT RUN" starttime="20220508 02:23:50.504" endtime="20220508 02:23:50.504"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.504" endtime="20220508 02:23:50.504"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.504" endtime="20220508 02:23:50.504"/>
+</iter>
+<iter>
+<var name="${cookiePrev}">('_lb', '7095154655171523000')</var>
+<if>
+<branch type="IF" condition="&quot;${cookieNew}&quot; == &quot;${cookiePrev}&quot;">
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20220508 02:23:50.504" endtime="20220508 02:23:50.504"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20220508 02:23:50.504" endtime="20220508 02:23:50.504"/>
+</break>
+<status status="NOT RUN" starttime="20220508 02:23:50.504" endtime="20220508 02:23:50.504"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.504" endtime="20220508 02:23:50.504"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.504" endtime="20220508 02:23:50.504"/>
+</iter>
+<iter>
+<var name="${cookiePrev}">('I6_COMPARE_COUNT', '0')</var>
+<if>
+<branch type="IF" condition="&quot;${cookieNew}&quot; == &quot;${cookiePrev}&quot;">
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20220508 02:23:50.505" endtime="20220508 02:23:50.505"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20220508 02:23:50.505" endtime="20220508 02:23:50.505"/>
+</break>
+<status status="NOT RUN" starttime="20220508 02:23:50.505" endtime="20220508 02:23:50.505"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.504" endtime="20220508 02:23:50.505"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.504" endtime="20220508 02:23:50.505"/>
+</iter>
+<iter>
+<var name="${cookiePrev}">('ASPSESSIONIDQCSDTAAR', 'NNMHJJHDCMFFILABKOMMLELP')</var>
+<if>
+<branch type="IF" condition="&quot;${cookieNew}&quot; == &quot;${cookiePrev}&quot;">
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20220508 02:23:50.505" endtime="20220508 02:23:50.505"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20220508 02:23:50.505" endtime="20220508 02:23:50.505"/>
+</break>
+<status status="NOT RUN" starttime="20220508 02:23:50.505" endtime="20220508 02:23:50.505"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.505" endtime="20220508 02:23:50.505"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.505" endtime="20220508 02:23:50.505"/>
+</iter>
+<iter>
+<var name="${cookiePrev}">('ASPSESSIONIDQAQBQAAQ', 'KCEJJAIDKJHFKDAOGAIDCHGM')</var>
+<if>
+<branch type="IF" condition="&quot;${cookieNew}&quot; == &quot;${cookiePrev}&quot;">
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20220508 02:23:50.505" endtime="20220508 02:23:50.505"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20220508 02:23:50.505" endtime="20220508 02:23:50.506"/>
+</break>
+<status status="NOT RUN" starttime="20220508 02:23:50.505" endtime="20220508 02:23:50.506"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.505" endtime="20220508 02:23:50.506"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.505" endtime="20220508 02:23:50.506"/>
+</iter>
+<iter>
+<var name="${cookiePrev}">('i6IISId', 'B3290277%2D4AE2%2D4AAF%2DA6E0%2D4C677BCA0F25')</var>
+<if>
+<branch type="IF" condition="&quot;${cookieNew}&quot; == &quot;${cookiePrev}&quot;">
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20220508 02:23:50.506" endtime="20220508 02:23:50.506"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20220508 02:23:50.506" endtime="20220508 02:23:50.506"/>
+</break>
+<status status="NOT RUN" starttime="20220508 02:23:50.506" endtime="20220508 02:23:50.506"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.506" endtime="20220508 02:23:50.506"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.506" endtime="20220508 02:23:50.506"/>
+</iter>
+<iter>
+<var name="${cookiePrev}">('ARRAffinity', 'e78f3626da50e223f8e8600c428d540e2fb3a4b8aced97acf0eb045317f134c9')</var>
+<if>
+<branch type="IF" condition="&quot;${cookieNew}&quot; == &quot;${cookiePrev}&quot;">
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20220508 02:23:50.506" endtime="20220508 02:23:50.506"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20220508 02:23:50.506" endtime="20220508 02:23:50.506"/>
+</break>
+<status status="NOT RUN" starttime="20220508 02:23:50.506" endtime="20220508 02:23:50.506"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.506" endtime="20220508 02:23:50.506"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.506" endtime="20220508 02:23:50.506"/>
+</iter>
+<iter>
+<var name="${cookiePrev}">('datadome', 'up~_UCm~avWUhHfMszZxu3i23.U4V_~9k55bPioVQ~wqCFD5cU7HPhWpzXbf.nlGS-NLoVXVg4B-8OKOHToNP3UqZgoC0FTbd5raKJii8oKr17odinAUqIHE0.P6Ub-')</var>
+<if>
+<branch type="IF" condition="&quot;${cookieNew}&quot; == &quot;${cookiePrev}&quot;">
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20220508 02:23:50.506" endtime="20220508 02:23:50.507"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20220508 02:23:50.507" endtime="20220508 02:23:50.507"/>
+</break>
+<status status="NOT RUN" starttime="20220508 02:23:50.506" endtime="20220508 02:23:50.507"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.506" endtime="20220508 02:23:50.507"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.506" endtime="20220508 02:23:50.507"/>
+</iter>
+<iter>
+<var name="${cookiePrev}">('i6IIS%5FPermanent', 'StiOrderBy=&amp;StiShowStyle=&amp;StiPageSize=24&amp;HTTPReferrer=+%23REFERRER%3Ahttps%3A%2F%2Fwww%2Etsbohemia%2Ecz%2F%3BREMOTE%5FADDR%3A10%2E10%2E15%2E101%3BSERVERNAME%3AWWWSERVER4%3BHTTP%...</var>
+<if>
+<branch type="IF" condition="&quot;${cookieNew}&quot; == &quot;${cookiePrev}&quot;">
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20220508 02:23:50.507" endtime="20220508 02:23:50.507"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20220508 02:23:50.507" endtime="20220508 02:23:50.507"/>
+</break>
+<status status="NOT RUN" starttime="20220508 02:23:50.507" endtime="20220508 02:23:50.507"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.507" endtime="20220508 02:23:50.507"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.507" endtime="20220508 02:23:50.507"/>
+</iter>
+<iter>
+<var name="${cookiePrev}">('', 'i6empty2')</var>
+<if>
+<branch type="IF" condition="&quot;${cookieNew}&quot; == &quot;${cookiePrev}&quot;">
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20220508 02:23:50.507" endtime="20220508 02:23:50.507"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20220508 02:23:50.507" endtime="20220508 02:23:50.507"/>
+</break>
+<status status="NOT RUN" starttime="20220508 02:23:50.507" endtime="20220508 02:23:50.507"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.507" endtime="20220508 02:23:50.507"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.507" endtime="20220508 02:23:50.507"/>
+</iter>
+<status status="PASS" starttime="20220508 02:23:50.503" endtime="20220508 02:23:50.507"/>
+</for>
+<if>
+<branch type="IF" condition="&quot;${match}&quot; == &quot;False&quot;">
+<kw name="Append To List" library="Collections">
+<arg>${diff}</arg>
+<arg>${cookieNew}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20220508 02:23:50.508" endtime="20220508 02:23:50.508"/>
+</kw>
+<status status="PASS" starttime="20220508 02:23:50.508" endtime="20220508 02:23:50.508"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.507" endtime="20220508 02:23:50.508"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.503" endtime="20220508 02:23:50.508"/>
+</iter>
+<iter>
+<var name="${cookieNew}">('i6IISId', 'B3290277%2D4AE2%2D4AAF%2DA6E0%2D4C677BCA0F25')</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>False</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220508 02:23:50.508" level="INFO">${match} = False</msg>
+<status status="PASS" starttime="20220508 02:23:50.508" endtime="20220508 02:23:50.508"/>
+</kw>
+<for flavor="IN">
+<var>${cookiePrev}</var>
+<value>&amp;{cookiesPrev}</value>
+<iter>
+<var name="${cookiePrev}">('ssupp.visits', '1')</var>
+<if>
+<branch type="IF" condition="&quot;${cookieNew}&quot; == &quot;${cookiePrev}&quot;">
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20220508 02:23:50.508" endtime="20220508 02:23:50.508"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20220508 02:23:50.508" endtime="20220508 02:23:50.508"/>
+</break>
+<status status="NOT RUN" starttime="20220508 02:23:50.508" endtime="20220508 02:23:50.508"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.508" endtime="20220508 02:23:50.509"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.508" endtime="20220508 02:23:50.509"/>
+</iter>
+<iter>
+<var name="${cookiePrev}">('ssupp.vid', 'viE45HYIvC-3W')</var>
+<if>
+<branch type="IF" condition="&quot;${cookieNew}&quot; == &quot;${cookiePrev}&quot;">
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20220508 02:23:50.509" endtime="20220508 02:23:50.509"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20220508 02:23:50.509" endtime="20220508 02:23:50.509"/>
+</break>
+<status status="NOT RUN" starttime="20220508 02:23:50.509" endtime="20220508 02:23:50.509"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.509" endtime="20220508 02:23:50.509"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.509" endtime="20220508 02:23:50.509"/>
+</iter>
+<iter>
+<var name="${cookiePrev}">('_lb', '7095154655171523000')</var>
+<if>
+<branch type="IF" condition="&quot;${cookieNew}&quot; == &quot;${cookiePrev}&quot;">
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20220508 02:23:50.509" endtime="20220508 02:23:50.509"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20220508 02:23:50.509" endtime="20220508 02:23:50.509"/>
+</break>
+<status status="NOT RUN" starttime="20220508 02:23:50.509" endtime="20220508 02:23:50.509"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.509" endtime="20220508 02:23:50.509"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.509" endtime="20220508 02:23:50.509"/>
+</iter>
+<iter>
+<var name="${cookiePrev}">('I6_COMPARE_COUNT', '0')</var>
+<if>
+<branch type="IF" condition="&quot;${cookieNew}&quot; == &quot;${cookiePrev}&quot;">
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20220508 02:23:50.509" endtime="20220508 02:23:50.509"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20220508 02:23:50.509" endtime="20220508 02:23:50.509"/>
+</break>
+<status status="NOT RUN" starttime="20220508 02:23:50.509" endtime="20220508 02:23:50.510"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.509" endtime="20220508 02:23:50.510"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.509" endtime="20220508 02:23:50.510"/>
+</iter>
+<iter>
+<var name="${cookiePrev}">('ASPSESSIONIDQCSDTAAR', 'NNMHJJHDCMFFILABKOMMLELP')</var>
+<if>
+<branch type="IF" condition="&quot;${cookieNew}&quot; == &quot;${cookiePrev}&quot;">
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20220508 02:23:50.510" endtime="20220508 02:23:50.510"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20220508 02:23:50.510" endtime="20220508 02:23:50.510"/>
+</break>
+<status status="NOT RUN" starttime="20220508 02:23:50.510" endtime="20220508 02:23:50.510"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.510" endtime="20220508 02:23:50.510"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.510" endtime="20220508 02:23:50.510"/>
+</iter>
+<iter>
+<var name="${cookiePrev}">('ASPSESSIONIDQAQBQAAQ', 'KCEJJAIDKJHFKDAOGAIDCHGM')</var>
+<if>
+<branch type="IF" condition="&quot;${cookieNew}&quot; == &quot;${cookiePrev}&quot;">
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20220508 02:23:50.510" endtime="20220508 02:23:50.510"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20220508 02:23:50.510" endtime="20220508 02:23:50.510"/>
+</break>
+<status status="NOT RUN" starttime="20220508 02:23:50.510" endtime="20220508 02:23:50.510"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.510" endtime="20220508 02:23:50.510"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.510" endtime="20220508 02:23:50.510"/>
+</iter>
+<iter>
+<var name="${cookiePrev}">('i6IISId', 'B3290277%2D4AE2%2D4AAF%2DA6E0%2D4C677BCA0F25')</var>
+<if>
+<branch type="IF" condition="&quot;${cookieNew}&quot; == &quot;${cookiePrev}&quot;">
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220508 02:23:50.511" level="INFO">${match} = True</msg>
+<status status="PASS" starttime="20220508 02:23:50.510" endtime="20220508 02:23:50.511"/>
+</kw>
+<break>
+<status status="PASS" starttime="20220508 02:23:50.511" endtime="20220508 02:23:50.511"/>
+</break>
+<status status="PASS" starttime="20220508 02:23:50.510" endtime="20220508 02:23:50.511"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.510" endtime="20220508 02:23:50.511"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.510" endtime="20220508 02:23:50.511"/>
+</iter>
+<status status="PASS" starttime="20220508 02:23:50.508" endtime="20220508 02:23:50.511"/>
+</for>
+<if>
+<branch type="IF" condition="&quot;${match}&quot; == &quot;False&quot;">
+<kw name="Append To List" library="Collections">
+<arg>${diff}</arg>
+<arg>${cookieNew}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="NOT RUN" starttime="20220508 02:23:50.511" endtime="20220508 02:23:50.511"/>
+</kw>
+<status status="NOT RUN" starttime="20220508 02:23:50.511" endtime="20220508 02:23:50.511"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.511" endtime="20220508 02:23:50.511"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.508" endtime="20220508 02:23:50.511"/>
+</iter>
+<iter>
+<var name="${cookieNew}">('i6IIS%5FPermanent', 'StiOrderBy=&amp;StiShowStyle=&amp;StiPageSize=24&amp;HTTPReferrer=+%23REFERRER%3Ahttps%3A%2F%2Fwww%2Etsbohemia%2Ecz%2F%3BREMOTE%5FADDR%3A10%2E10%2E15%2E101%3BSERVERNAME%3AWWWSERVER4%3BHTTP%...</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>False</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220508 02:23:50.511" level="INFO">${match} = False</msg>
+<status status="PASS" starttime="20220508 02:23:50.511" endtime="20220508 02:23:50.511"/>
+</kw>
+<for flavor="IN">
+<var>${cookiePrev}</var>
+<value>&amp;{cookiesPrev}</value>
+<iter>
+<var name="${cookiePrev}">('ssupp.visits', '1')</var>
+<if>
+<branch type="IF" condition="&quot;${cookieNew}&quot; == &quot;${cookiePrev}&quot;">
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20220508 02:23:50.512" endtime="20220508 02:23:50.512"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20220508 02:23:50.512" endtime="20220508 02:23:50.512"/>
+</break>
+<status status="NOT RUN" starttime="20220508 02:23:50.511" endtime="20220508 02:23:50.512"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.511" endtime="20220508 02:23:50.512"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.511" endtime="20220508 02:23:50.512"/>
+</iter>
+<iter>
+<var name="${cookiePrev}">('ssupp.vid', 'viE45HYIvC-3W')</var>
+<if>
+<branch type="IF" condition="&quot;${cookieNew}&quot; == &quot;${cookiePrev}&quot;">
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20220508 02:23:50.512" endtime="20220508 02:23:50.512"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20220508 02:23:50.512" endtime="20220508 02:23:50.512"/>
+</break>
+<status status="NOT RUN" starttime="20220508 02:23:50.512" endtime="20220508 02:23:50.512"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.512" endtime="20220508 02:23:50.512"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.512" endtime="20220508 02:23:50.512"/>
+</iter>
+<iter>
+<var name="${cookiePrev}">('_lb', '7095154655171523000')</var>
+<if>
+<branch type="IF" condition="&quot;${cookieNew}&quot; == &quot;${cookiePrev}&quot;">
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20220508 02:23:50.512" endtime="20220508 02:23:50.512"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20220508 02:23:50.512" endtime="20220508 02:23:50.512"/>
+</break>
+<status status="NOT RUN" starttime="20220508 02:23:50.512" endtime="20220508 02:23:50.512"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.512" endtime="20220508 02:23:50.512"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.512" endtime="20220508 02:23:50.512"/>
+</iter>
+<iter>
+<var name="${cookiePrev}">('I6_COMPARE_COUNT', '0')</var>
+<if>
+<branch type="IF" condition="&quot;${cookieNew}&quot; == &quot;${cookiePrev}&quot;">
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20220508 02:23:50.513" endtime="20220508 02:23:50.513"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20220508 02:23:50.513" endtime="20220508 02:23:50.513"/>
+</break>
+<status status="NOT RUN" starttime="20220508 02:23:50.513" endtime="20220508 02:23:50.513"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.512" endtime="20220508 02:23:50.513"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.512" endtime="20220508 02:23:50.513"/>
+</iter>
+<iter>
+<var name="${cookiePrev}">('ASPSESSIONIDQCSDTAAR', 'NNMHJJHDCMFFILABKOMMLELP')</var>
+<if>
+<branch type="IF" condition="&quot;${cookieNew}&quot; == &quot;${cookiePrev}&quot;">
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20220508 02:23:50.513" endtime="20220508 02:23:50.513"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20220508 02:23:50.513" endtime="20220508 02:23:50.513"/>
+</break>
+<status status="NOT RUN" starttime="20220508 02:23:50.513" endtime="20220508 02:23:50.513"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.513" endtime="20220508 02:23:50.513"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.513" endtime="20220508 02:23:50.513"/>
+</iter>
+<iter>
+<var name="${cookiePrev}">('ASPSESSIONIDQAQBQAAQ', 'KCEJJAIDKJHFKDAOGAIDCHGM')</var>
+<if>
+<branch type="IF" condition="&quot;${cookieNew}&quot; == &quot;${cookiePrev}&quot;">
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20220508 02:23:50.513" endtime="20220508 02:23:50.513"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20220508 02:23:50.513" endtime="20220508 02:23:50.513"/>
+</break>
+<status status="NOT RUN" starttime="20220508 02:23:50.513" endtime="20220508 02:23:50.513"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.513" endtime="20220508 02:23:50.513"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.513" endtime="20220508 02:23:50.513"/>
+</iter>
+<iter>
+<var name="${cookiePrev}">('i6IISId', 'B3290277%2D4AE2%2D4AAF%2DA6E0%2D4C677BCA0F25')</var>
+<if>
+<branch type="IF" condition="&quot;${cookieNew}&quot; == &quot;${cookiePrev}&quot;">
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20220508 02:23:50.514" endtime="20220508 02:23:50.514"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20220508 02:23:50.514" endtime="20220508 02:23:50.514"/>
+</break>
+<status status="NOT RUN" starttime="20220508 02:23:50.514" endtime="20220508 02:23:50.514"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.514" endtime="20220508 02:23:50.514"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.513" endtime="20220508 02:23:50.514"/>
+</iter>
+<iter>
+<var name="${cookiePrev}">('ARRAffinity', 'e78f3626da50e223f8e8600c428d540e2fb3a4b8aced97acf0eb045317f134c9')</var>
+<if>
+<branch type="IF" condition="&quot;${cookieNew}&quot; == &quot;${cookiePrev}&quot;">
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20220508 02:23:50.514" endtime="20220508 02:23:50.514"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20220508 02:23:50.514" endtime="20220508 02:23:50.514"/>
+</break>
+<status status="NOT RUN" starttime="20220508 02:23:50.514" endtime="20220508 02:23:50.514"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.514" endtime="20220508 02:23:50.514"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.514" endtime="20220508 02:23:50.514"/>
+</iter>
+<iter>
+<var name="${cookiePrev}">('datadome', 'up~_UCm~avWUhHfMszZxu3i23.U4V_~9k55bPioVQ~wqCFD5cU7HPhWpzXbf.nlGS-NLoVXVg4B-8OKOHToNP3UqZgoC0FTbd5raKJii8oKr17odinAUqIHE0.P6Ub-')</var>
+<if>
+<branch type="IF" condition="&quot;${cookieNew}&quot; == &quot;${cookiePrev}&quot;">
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20220508 02:23:50.514" endtime="20220508 02:23:50.514"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20220508 02:23:50.515" endtime="20220508 02:23:50.515"/>
+</break>
+<status status="NOT RUN" starttime="20220508 02:23:50.514" endtime="20220508 02:23:50.515"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.514" endtime="20220508 02:23:50.515"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.514" endtime="20220508 02:23:50.515"/>
+</iter>
+<iter>
+<var name="${cookiePrev}">('i6IIS%5FPermanent', 'StiOrderBy=&amp;StiShowStyle=&amp;StiPageSize=24&amp;HTTPReferrer=+%23REFERRER%3Ahttps%3A%2F%2Fwww%2Etsbohemia%2Ecz%2F%3BREMOTE%5FADDR%3A10%2E10%2E15%2E101%3BSERVERNAME%3AWWWSERVER4%3BHTTP%...</var>
+<if>
+<branch type="IF" condition="&quot;${cookieNew}&quot; == &quot;${cookiePrev}&quot;">
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220508 02:23:50.515" level="INFO">${match} = True</msg>
+<status status="PASS" starttime="20220508 02:23:50.515" endtime="20220508 02:23:50.515"/>
+</kw>
+<break>
+<status status="PASS" starttime="20220508 02:23:50.515" endtime="20220508 02:23:50.515"/>
+</break>
+<status status="PASS" starttime="20220508 02:23:50.515" endtime="20220508 02:23:50.515"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.515" endtime="20220508 02:23:50.515"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.515" endtime="20220508 02:23:50.515"/>
+</iter>
+<status status="PASS" starttime="20220508 02:23:50.511" endtime="20220508 02:23:50.515"/>
+</for>
+<if>
+<branch type="IF" condition="&quot;${match}&quot; == &quot;False&quot;">
+<kw name="Append To List" library="Collections">
+<arg>${diff}</arg>
+<arg>${cookieNew}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="NOT RUN" starttime="20220508 02:23:50.515" endtime="20220508 02:23:50.515"/>
+</kw>
+<status status="NOT RUN" starttime="20220508 02:23:50.515" endtime="20220508 02:23:50.515"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.515" endtime="20220508 02:23:50.515"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.511" endtime="20220508 02:23:50.515"/>
+</iter>
+<iter>
+<var name="${cookieNew}">('_ga', 'GA1.2.2061918731.1651969426')</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>False</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220508 02:23:50.516" level="INFO">${match} = False</msg>
+<status status="PASS" starttime="20220508 02:23:50.515" endtime="20220508 02:23:50.516"/>
+</kw>
+<for flavor="IN">
+<var>${cookiePrev}</var>
+<value>&amp;{cookiesPrev}</value>
+<iter>
+<var name="${cookiePrev}">('ssupp.visits', '1')</var>
+<if>
+<branch type="IF" condition="&quot;${cookieNew}&quot; == &quot;${cookiePrev}&quot;">
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20220508 02:23:50.516" endtime="20220508 02:23:50.516"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20220508 02:23:50.516" endtime="20220508 02:23:50.516"/>
+</break>
+<status status="NOT RUN" starttime="20220508 02:23:50.516" endtime="20220508 02:23:50.516"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.516" endtime="20220508 02:23:50.516"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.516" endtime="20220508 02:23:50.516"/>
+</iter>
+<iter>
+<var name="${cookiePrev}">('ssupp.vid', 'viE45HYIvC-3W')</var>
+<if>
+<branch type="IF" condition="&quot;${cookieNew}&quot; == &quot;${cookiePrev}&quot;">
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20220508 02:23:50.516" endtime="20220508 02:23:50.516"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20220508 02:23:50.516" endtime="20220508 02:23:50.516"/>
+</break>
+<status status="NOT RUN" starttime="20220508 02:23:50.516" endtime="20220508 02:23:50.516"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.516" endtime="20220508 02:23:50.516"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.516" endtime="20220508 02:23:50.516"/>
+</iter>
+<iter>
+<var name="${cookiePrev}">('_lb', '7095154655171523000')</var>
+<if>
+<branch type="IF" condition="&quot;${cookieNew}&quot; == &quot;${cookiePrev}&quot;">
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20220508 02:23:50.517" endtime="20220508 02:23:50.517"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20220508 02:23:50.517" endtime="20220508 02:23:50.517"/>
+</break>
+<status status="NOT RUN" starttime="20220508 02:23:50.517" endtime="20220508 02:23:50.517"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.516" endtime="20220508 02:23:50.517"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.516" endtime="20220508 02:23:50.517"/>
+</iter>
+<iter>
+<var name="${cookiePrev}">('I6_COMPARE_COUNT', '0')</var>
+<if>
+<branch type="IF" condition="&quot;${cookieNew}&quot; == &quot;${cookiePrev}&quot;">
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20220508 02:23:50.517" endtime="20220508 02:23:50.517"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20220508 02:23:50.517" endtime="20220508 02:23:50.517"/>
+</break>
+<status status="NOT RUN" starttime="20220508 02:23:50.517" endtime="20220508 02:23:50.517"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.517" endtime="20220508 02:23:50.517"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.517" endtime="20220508 02:23:50.517"/>
+</iter>
+<iter>
+<var name="${cookiePrev}">('ASPSESSIONIDQCSDTAAR', 'NNMHJJHDCMFFILABKOMMLELP')</var>
+<if>
+<branch type="IF" condition="&quot;${cookieNew}&quot; == &quot;${cookiePrev}&quot;">
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20220508 02:23:50.517" endtime="20220508 02:23:50.517"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20220508 02:23:50.517" endtime="20220508 02:23:50.517"/>
+</break>
+<status status="NOT RUN" starttime="20220508 02:23:50.517" endtime="20220508 02:23:50.517"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.517" endtime="20220508 02:23:50.517"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.517" endtime="20220508 02:23:50.517"/>
+</iter>
+<iter>
+<var name="${cookiePrev}">('ASPSESSIONIDQAQBQAAQ', 'KCEJJAIDKJHFKDAOGAIDCHGM')</var>
+<if>
+<branch type="IF" condition="&quot;${cookieNew}&quot; == &quot;${cookiePrev}&quot;">
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20220508 02:23:50.518" endtime="20220508 02:23:50.518"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20220508 02:23:50.518" endtime="20220508 02:23:50.518"/>
+</break>
+<status status="NOT RUN" starttime="20220508 02:23:50.518" endtime="20220508 02:23:50.518"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.517" endtime="20220508 02:23:50.518"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.517" endtime="20220508 02:23:50.518"/>
+</iter>
+<iter>
+<var name="${cookiePrev}">('i6IISId', 'B3290277%2D4AE2%2D4AAF%2DA6E0%2D4C677BCA0F25')</var>
+<if>
+<branch type="IF" condition="&quot;${cookieNew}&quot; == &quot;${cookiePrev}&quot;">
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20220508 02:23:50.518" endtime="20220508 02:23:50.518"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20220508 02:23:50.518" endtime="20220508 02:23:50.518"/>
+</break>
+<status status="NOT RUN" starttime="20220508 02:23:50.518" endtime="20220508 02:23:50.518"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.518" endtime="20220508 02:23:50.518"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.518" endtime="20220508 02:23:50.518"/>
+</iter>
+<iter>
+<var name="${cookiePrev}">('ARRAffinity', 'e78f3626da50e223f8e8600c428d540e2fb3a4b8aced97acf0eb045317f134c9')</var>
+<if>
+<branch type="IF" condition="&quot;${cookieNew}&quot; == &quot;${cookiePrev}&quot;">
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20220508 02:23:50.518" endtime="20220508 02:23:50.518"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20220508 02:23:50.518" endtime="20220508 02:23:50.518"/>
+</break>
+<status status="NOT RUN" starttime="20220508 02:23:50.518" endtime="20220508 02:23:50.518"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.518" endtime="20220508 02:23:50.518"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.518" endtime="20220508 02:23:50.518"/>
+</iter>
+<iter>
+<var name="${cookiePrev}">('datadome', 'up~_UCm~avWUhHfMszZxu3i23.U4V_~9k55bPioVQ~wqCFD5cU7HPhWpzXbf.nlGS-NLoVXVg4B-8OKOHToNP3UqZgoC0FTbd5raKJii8oKr17odinAUqIHE0.P6Ub-')</var>
+<if>
+<branch type="IF" condition="&quot;${cookieNew}&quot; == &quot;${cookiePrev}&quot;">
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20220508 02:23:50.519" endtime="20220508 02:23:50.519"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20220508 02:23:50.519" endtime="20220508 02:23:50.519"/>
+</break>
+<status status="NOT RUN" starttime="20220508 02:23:50.519" endtime="20220508 02:23:50.519"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.519" endtime="20220508 02:23:50.519"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.518" endtime="20220508 02:23:50.519"/>
+</iter>
+<iter>
+<var name="${cookiePrev}">('i6IIS%5FPermanent', 'StiOrderBy=&amp;StiShowStyle=&amp;StiPageSize=24&amp;HTTPReferrer=+%23REFERRER%3Ahttps%3A%2F%2Fwww%2Etsbohemia%2Ecz%2F%3BREMOTE%5FADDR%3A10%2E10%2E15%2E101%3BSERVERNAME%3AWWWSERVER4%3BHTTP%...</var>
+<if>
+<branch type="IF" condition="&quot;${cookieNew}&quot; == &quot;${cookiePrev}&quot;">
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20220508 02:23:50.519" endtime="20220508 02:23:50.519"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20220508 02:23:50.519" endtime="20220508 02:23:50.519"/>
+</break>
+<status status="NOT RUN" starttime="20220508 02:23:50.519" endtime="20220508 02:23:50.519"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.519" endtime="20220508 02:23:50.519"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.519" endtime="20220508 02:23:50.519"/>
+</iter>
+<iter>
+<var name="${cookiePrev}">('', 'i6empty2')</var>
+<if>
+<branch type="IF" condition="&quot;${cookieNew}&quot; == &quot;${cookiePrev}&quot;">
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20220508 02:23:50.519" endtime="20220508 02:23:50.519"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20220508 02:23:50.519" endtime="20220508 02:23:50.519"/>
+</break>
+<status status="NOT RUN" starttime="20220508 02:23:50.519" endtime="20220508 02:23:50.519"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.519" endtime="20220508 02:23:50.519"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.519" endtime="20220508 02:23:50.519"/>
+</iter>
+<status status="PASS" starttime="20220508 02:23:50.516" endtime="20220508 02:23:50.520"/>
+</for>
+<if>
+<branch type="IF" condition="&quot;${match}&quot; == &quot;False&quot;">
+<kw name="Append To List" library="Collections">
+<arg>${diff}</arg>
+<arg>${cookieNew}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20220508 02:23:50.520" endtime="20220508 02:23:50.520"/>
+</kw>
+<status status="PASS" starttime="20220508 02:23:50.520" endtime="20220508 02:23:50.520"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.520" endtime="20220508 02:23:50.520"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.515" endtime="20220508 02:23:50.520"/>
+</iter>
+<iter>
+<var name="${cookieNew}">('', 'i6empty2')</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>False</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220508 02:23:50.520" level="INFO">${match} = False</msg>
+<status status="PASS" starttime="20220508 02:23:50.520" endtime="20220508 02:23:50.520"/>
+</kw>
+<for flavor="IN">
+<var>${cookiePrev}</var>
+<value>&amp;{cookiesPrev}</value>
+<iter>
+<var name="${cookiePrev}">('ssupp.visits', '1')</var>
+<if>
+<branch type="IF" condition="&quot;${cookieNew}&quot; == &quot;${cookiePrev}&quot;">
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20220508 02:23:50.520" endtime="20220508 02:23:50.520"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20220508 02:23:50.520" endtime="20220508 02:23:50.520"/>
+</break>
+<status status="NOT RUN" starttime="20220508 02:23:50.520" endtime="20220508 02:23:50.520"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.520" endtime="20220508 02:23:50.520"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.520" endtime="20220508 02:23:50.521"/>
+</iter>
+<iter>
+<var name="${cookiePrev}">('ssupp.vid', 'viE45HYIvC-3W')</var>
+<if>
+<branch type="IF" condition="&quot;${cookieNew}&quot; == &quot;${cookiePrev}&quot;">
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20220508 02:23:50.521" endtime="20220508 02:23:50.521"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20220508 02:23:50.521" endtime="20220508 02:23:50.521"/>
+</break>
+<status status="NOT RUN" starttime="20220508 02:23:50.521" endtime="20220508 02:23:50.521"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.521" endtime="20220508 02:23:50.521"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.521" endtime="20220508 02:23:50.521"/>
+</iter>
+<iter>
+<var name="${cookiePrev}">('_lb', '7095154655171523000')</var>
+<if>
+<branch type="IF" condition="&quot;${cookieNew}&quot; == &quot;${cookiePrev}&quot;">
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20220508 02:23:50.521" endtime="20220508 02:23:50.521"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20220508 02:23:50.521" endtime="20220508 02:23:50.521"/>
+</break>
+<status status="NOT RUN" starttime="20220508 02:23:50.521" endtime="20220508 02:23:50.521"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.521" endtime="20220508 02:23:50.521"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.521" endtime="20220508 02:23:50.521"/>
+</iter>
+<iter>
+<var name="${cookiePrev}">('I6_COMPARE_COUNT', '0')</var>
+<if>
+<branch type="IF" condition="&quot;${cookieNew}&quot; == &quot;${cookiePrev}&quot;">
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20220508 02:23:50.521" endtime="20220508 02:23:50.521"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20220508 02:23:50.522" endtime="20220508 02:23:50.522"/>
+</break>
+<status status="NOT RUN" starttime="20220508 02:23:50.521" endtime="20220508 02:23:50.522"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.521" endtime="20220508 02:23:50.522"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.521" endtime="20220508 02:23:50.522"/>
+</iter>
+<iter>
+<var name="${cookiePrev}">('ASPSESSIONIDQCSDTAAR', 'NNMHJJHDCMFFILABKOMMLELP')</var>
+<if>
+<branch type="IF" condition="&quot;${cookieNew}&quot; == &quot;${cookiePrev}&quot;">
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20220508 02:23:50.522" endtime="20220508 02:23:50.522"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20220508 02:23:50.522" endtime="20220508 02:23:50.522"/>
+</break>
+<status status="NOT RUN" starttime="20220508 02:23:50.522" endtime="20220508 02:23:50.522"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.522" endtime="20220508 02:23:50.522"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.522" endtime="20220508 02:23:50.522"/>
+</iter>
+<iter>
+<var name="${cookiePrev}">('ASPSESSIONIDQAQBQAAQ', 'KCEJJAIDKJHFKDAOGAIDCHGM')</var>
+<if>
+<branch type="IF" condition="&quot;${cookieNew}&quot; == &quot;${cookiePrev}&quot;">
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20220508 02:23:50.522" endtime="20220508 02:23:50.522"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20220508 02:23:50.522" endtime="20220508 02:23:50.522"/>
+</break>
+<status status="NOT RUN" starttime="20220508 02:23:50.522" endtime="20220508 02:23:50.522"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.522" endtime="20220508 02:23:50.522"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.522" endtime="20220508 02:23:50.522"/>
+</iter>
+<iter>
+<var name="${cookiePrev}">('i6IISId', 'B3290277%2D4AE2%2D4AAF%2DA6E0%2D4C677BCA0F25')</var>
+<if>
+<branch type="IF" condition="&quot;${cookieNew}&quot; == &quot;${cookiePrev}&quot;">
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20220508 02:23:50.523" endtime="20220508 02:23:50.523"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20220508 02:23:50.523" endtime="20220508 02:23:50.523"/>
+</break>
+<status status="NOT RUN" starttime="20220508 02:23:50.523" endtime="20220508 02:23:50.523"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.522" endtime="20220508 02:23:50.523"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.522" endtime="20220508 02:23:50.523"/>
+</iter>
+<iter>
+<var name="${cookiePrev}">('ARRAffinity', 'e78f3626da50e223f8e8600c428d540e2fb3a4b8aced97acf0eb045317f134c9')</var>
+<if>
+<branch type="IF" condition="&quot;${cookieNew}&quot; == &quot;${cookiePrev}&quot;">
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20220508 02:23:50.523" endtime="20220508 02:23:50.523"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20220508 02:23:50.523" endtime="20220508 02:23:50.523"/>
+</break>
+<status status="NOT RUN" starttime="20220508 02:23:50.523" endtime="20220508 02:23:50.523"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.523" endtime="20220508 02:23:50.523"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.523" endtime="20220508 02:23:50.523"/>
+</iter>
+<iter>
+<var name="${cookiePrev}">('datadome', 'up~_UCm~avWUhHfMszZxu3i23.U4V_~9k55bPioVQ~wqCFD5cU7HPhWpzXbf.nlGS-NLoVXVg4B-8OKOHToNP3UqZgoC0FTbd5raKJii8oKr17odinAUqIHE0.P6Ub-')</var>
+<if>
+<branch type="IF" condition="&quot;${cookieNew}&quot; == &quot;${cookiePrev}&quot;">
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20220508 02:23:50.524" endtime="20220508 02:23:50.524"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20220508 02:23:50.524" endtime="20220508 02:23:50.524"/>
+</break>
+<status status="NOT RUN" starttime="20220508 02:23:50.523" endtime="20220508 02:23:50.524"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.523" endtime="20220508 02:23:50.524"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.523" endtime="20220508 02:23:50.524"/>
+</iter>
+<iter>
+<var name="${cookiePrev}">('i6IIS%5FPermanent', 'StiOrderBy=&amp;StiShowStyle=&amp;StiPageSize=24&amp;HTTPReferrer=+%23REFERRER%3Ahttps%3A%2F%2Fwww%2Etsbohemia%2Ecz%2F%3BREMOTE%5FADDR%3A10%2E10%2E15%2E101%3BSERVERNAME%3AWWWSERVER4%3BHTTP%...</var>
+<if>
+<branch type="IF" condition="&quot;${cookieNew}&quot; == &quot;${cookiePrev}&quot;">
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20220508 02:23:50.524" endtime="20220508 02:23:50.524"/>
+</kw>
+<break>
+<status status="NOT RUN" starttime="20220508 02:23:50.524" endtime="20220508 02:23:50.524"/>
+</break>
+<status status="NOT RUN" starttime="20220508 02:23:50.524" endtime="20220508 02:23:50.524"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.524" endtime="20220508 02:23:50.524"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.524" endtime="20220508 02:23:50.524"/>
+</iter>
+<iter>
+<var name="${cookiePrev}">('', 'i6empty2')</var>
+<if>
+<branch type="IF" condition="&quot;${cookieNew}&quot; == &quot;${cookiePrev}&quot;">
+<kw name="Set Variable" library="BuiltIn">
+<var>${match}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220508 02:23:50.524" level="INFO">${match} = True</msg>
+<status status="PASS" starttime="20220508 02:23:50.524" endtime="20220508 02:23:50.524"/>
+</kw>
+<break>
+<status status="PASS" starttime="20220508 02:23:50.524" endtime="20220508 02:23:50.524"/>
+</break>
+<status status="PASS" starttime="20220508 02:23:50.524" endtime="20220508 02:23:50.524"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.524" endtime="20220508 02:23:50.524"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.524" endtime="20220508 02:23:50.524"/>
+</iter>
+<status status="PASS" starttime="20220508 02:23:50.520" endtime="20220508 02:23:50.524"/>
+</for>
+<if>
+<branch type="IF" condition="&quot;${match}&quot; == &quot;False&quot;">
+<kw name="Append To List" library="Collections">
+<arg>${diff}</arg>
+<arg>${cookieNew}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="NOT RUN" starttime="20220508 02:23:50.525" endtime="20220508 02:23:50.525"/>
+</kw>
+<status status="NOT RUN" starttime="20220508 02:23:50.525" endtime="20220508 02:23:50.525"/>
+</branch>
+<status status="PASS" starttime="20220508 02:23:50.524" endtime="20220508 02:23:50.525"/>
+</if>
+<status status="PASS" starttime="20220508 02:23:50.520" endtime="20220508 02:23:50.525"/>
+</iter>
+<status status="PASS" starttime="20220508 02:23:50.459" endtime="20220508 02:23:50.525"/>
+</for>
+<kw name="Log List" library="Collections">
+<arg>list_=${diff}</arg>
+<arg>level=INFO</arg>
+<doc>Logs the length and contents of the ``list`` using given ``level``.</doc>
+<msg timestamp="20220508 02:23:50.525" level="INFO">List length is 7 and it contains following items:
+0: ('_gat_UA-2333423-4', '1')
+1: ('_gid', 'GA1.2.267322494.1651969430')
+2: ('_gcl_au', '1.1.1637678786.1651969430')
+3: ('cookiehub', 'eyJhbnN3ZXJlZCI6dHJ1ZSwicHJlY29uc2VudCI6ZmFsc2UsInJldmlzaW9uIjoxLCJkbnQiOmZhbHNlLCJhbGxvd1NhbGUiOnRydWUsImltcGxpY3QiOmZhbHNlLCJyZWdpb24iOiIiLCJ0b2tlbiI6InJHMWpwTExkRHBEV2k1UzNTVEh6bFUzTkpKN1RUejNTVVQ2Q3o2dDh5eTdnVnNNVmV4OUNIb01xS1FPb2Q2eFAiLCJ0aW1lc3RhbXAiOiIyMDIyLTA1LTA4VDAwOjIzOjQ1LjQ3OVoiLCJjYXRlZ29yaWVzIjpbeyJjaWQiOjEsImlkIjoibmVjZXNzYXJ5IiwidmFsdWUiOnRydWUsInByZWNvbnNlbnQiOnRydWUsImZpcmVkIjp0cnVlfSx7ImNpZCI6MiwiaWQiOiJwcmVmZXJlbmNlcyIsInZhbHVlIjp0cnVlLCJwcmVjb25zZW50IjpmYWxzZSwiZmlyZWQiOmZhbHNlfSx7ImNpZCI6MywiaWQiOiJhbmFseXRpY3MiLCJ2YWx1ZSI6dHJ1ZSwicHJlY29uc2VudCI6ZmFsc2UsImZpcmVkIjpmYWxzZX0seyJjaWQiOjQsImlkIjoibWFya2V0aW5nIiwidmFsdWUiOnRydWUsInByZWNvbnNlbnQiOmZhbHNlLCJmaXJlZCI6ZmFsc2V9LHsiY2lkIjo1LCJpZCI6InVuY2F0ZWdvcml6ZWQiLCJ2YWx1ZSI6dHJ1ZSwicHJlY29uc2VudCI6ZmFsc2UsImZpcmVkIjpmYWxzZX1dfQ==')
+4: ('_fbp', 'fb.1.1651969430130.2114141844')
+5: ('_ga_PG4QXVWFXP', 'GS1.1.1651969425.1.0.1651969429.0')
+6: ('_ga', 'GA1.2.2061918731.1651969426')</msg>
+<status status="PASS" starttime="20220508 02:23:50.525" endtime="20220508 02:23:50.525"/>
+</kw>
+<status status="PASS" starttime="20220508 02:23:48.541" endtime="20220508 02:23:50.525"/>
+</kw>
+<kw name="Close web browser and clear cache" library="postConditions" type="TEARDOWN">
+<kw name="Delete All Cookies" library="SeleniumLibrary">
+<doc>Deletes all cookies.</doc>
+<status status="PASS" starttime="20220508 02:23:50.526" endtime="20220508 02:23:50.880"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220508 02:23:52.882" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220508 02:23:50.880" endtime="20220508 02:23:52.882"/>
+</kw>
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20220508 02:23:52.882" endtime="20220508 02:23:55.184"/>
+</kw>
+<status status="PASS" starttime="20220508 02:23:50.525" endtime="20220508 02:23:55.184"/>
+</kw>
+<tag>button</tag>
+<tag>testCase</tag>
+<status status="PASS" starttime="20220508 02:23:34.106" endtime="20220508 02:23:55.184"/>
+</test>
+<doc>A test suite testing cookies popUp element functionality.
+
+This test has a workflow that is created using keywords &amp;
+variables in the imported resource files.</doc>
+<status status="PASS" starttime="20220508 02:22:48.035" endtime="20220508 02:23:55.185"/>
+</suite>
+<statistics>
+<total>
+<stat pass="3" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">button</stat>
+<stat pass="1" fail="0" skip="0">container</stat>
+<stat pass="1" fail="0" skip="0">link</stat>
+<stat pass="3" fail="0" skip="0">testCase</stat>
+</tag>
+<suite>
+<stat pass="3" fail="0" skip="0" id="s1" name="TS01 cookiesPopUp">TS01 cookiesPopUp</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

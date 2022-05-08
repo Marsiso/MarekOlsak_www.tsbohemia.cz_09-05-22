@@ -119,6 +119,3 @@ Check link forgotten password functionality
     END
 
     Return from keyword                     ${False}
-
-Check link user registration functionality
-    [arguments]

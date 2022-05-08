@@ -1,0 +1,1168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0 (Python 3.10.2 on win32)" generated="20220508 02:27:18.364" rpa="false" schemaversion="3">
+<suite id="s1" name="TS03 mainNavigationPanel" source="C:\Users\m_ols\PycharmProjects\MarekOlsak_www.tsbohemia.cz_09_05_22\testSuites\TS03_mainNavigationPanel.robot">
+<test id="s1-t1" name="TC0301 Brand functionality" line="29">
+<kw name="Open web browser at domain's homepage and hide cookies popUp" library="preConditions">
+<arg>${browser}</arg>
+<arg>${urlHomePage}</arg>
+<arg>${driverPath}</arg>
+<arg>${popUpBtnAgreeXPath}</arg>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>"${browserName}" == "Chrome"</arg>
+<arg>Open chrome browser</arg>
+<arg>${driverPath}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Open chrome browser" library="preConditions">
+<arg>${driverPath}</arg>
+<kw name="Create Webdriver" library="SeleniumLibrary">
+<arg>Chrome</arg>
+<arg>executable_path=${driverPath}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<msg timestamp="20220508 02:27:18.565" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<status status="PASS" starttime="20220508 02:27:18.564" endtime="20220508 02:27:19.552"/>
+</kw>
+<status status="PASS" starttime="20220508 02:27:18.564" endtime="20220508 02:27:19.553"/>
+</kw>
+<status status="PASS" starttime="20220508 02:27:18.564" endtime="20220508 02:27:19.553"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>"${browserName}" == "Edge"</arg>
+<arg>Open edge browser</arg>
+<arg>${driverPath}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20220508 02:27:19.553" endtime="20220508 02:27:19.553"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>"${browserName}" == "IE"</arg>
+<arg>Open ie browser</arg>
+<arg>${driverPath}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20220508 02:27:19.553" endtime="20220508 02:27:19.554"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220508 02:27:19.554" endtime="20220508 02:27:19.679"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220508 02:27:19.679" level="INFO">Opening url 'https://www.tsbohemia.cz/'</msg>
+<status status="PASS" starttime="20220508 02:27:19.679" endtime="20220508 02:27:21.289"/>
+</kw>
+<kw name="Manually manage to bypass captcha" library="preConditions">
+<kw name="Sleep" library="BuiltIn">
+<arg>12s</arg>
+<arg>Bypassing captcha</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220508 02:27:33.291" level="INFO">Slept 12 seconds</msg>
+<msg timestamp="20220508 02:27:33.291" level="INFO">Bypassing captcha</msg>
+<status status="PASS" starttime="20220508 02:27:21.290" endtime="20220508 02:27:33.291"/>
+</kw>
+<status status="PASS" starttime="20220508 02:27:21.289" endtime="20220508 02:27:33.291"/>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<arg>0.25 seconds</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" starttime="20220508 02:27:33.291" endtime="20220508 02:27:33.291"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${button}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220508 02:27:33.291" endtime="20220508 02:27:33.856"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${button}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220508 02:27:33.856" level="INFO">Clicking button '//*[contains(concat(' ',normalize-space(@class),' '),'ch2-dialog')][contains(concat(' ',normalize-space(@class),' '),'ch2-visible')][@role="dialog"]//*[contains(text(),"Souhlasím")][contains(concat(' ',normalize-space(@class),' '),'ch2-btn')]'.</msg>
+<status status="PASS" starttime="20220508 02:27:33.856" endtime="20220508 02:27:35.233"/>
+</kw>
+<kw name="Wait Until Element Is Not Visible" library="SeleniumLibrary">
+<arg>${button}</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" starttime="20220508 02:27:35.233" endtime="20220508 02:27:35.500"/>
+</kw>
+<status status="PASS" starttime="20220508 02:27:18.563" endtime="20220508 02:27:35.500"/>
+</kw>
+<kw name="Check main navigation panel brand functionality" library="mainNavigationPanel">
+<arg>${mainNavPanelLogoLinkXPath}</arg>
+<arg>${categoriesListXPath}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>xpath=${logoXPath}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220508 02:27:35.501" endtime="20220508 02:27:36.029"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${x}</var>
+<arg>${1}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220508 02:27:36.029" level="INFO">${x} = 1</msg>
+<status status="PASS" starttime="20220508 02:27:36.029" endtime="20220508 02:27:36.030"/>
+</kw>
+<while condition="${x} &lt; 6">
+<iter>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>xpath=${categoriesListXPath}/*[${x}]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220508 02:27:36.030" endtime="20220508 02:27:36.611"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${x}</var>
+<arg>${x} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220508 02:27:36.611" level="INFO">${x} = 2</msg>
+<status status="PASS" starttime="20220508 02:27:36.611" endtime="20220508 02:27:36.611"/>
+</kw>
+<status status="PASS" starttime="20220508 02:27:36.030" endtime="20220508 02:27:36.611"/>
+</iter>
+<iter>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>xpath=${categoriesListXPath}/*[${x}]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220508 02:27:36.611" endtime="20220508 02:27:37.144"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${x}</var>
+<arg>${x} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220508 02:27:37.144" level="INFO">${x} = 3</msg>
+<status status="PASS" starttime="20220508 02:27:37.144" endtime="20220508 02:27:37.144"/>
+</kw>
+<status status="PASS" starttime="20220508 02:27:36.611" endtime="20220508 02:27:37.144"/>
+</iter>
+<iter>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>xpath=${categoriesListXPath}/*[${x}]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220508 02:27:37.144" endtime="20220508 02:27:37.677"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${x}</var>
+<arg>${x} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220508 02:27:37.677" level="INFO">${x} = 4</msg>
+<status status="PASS" starttime="20220508 02:27:37.677" endtime="20220508 02:27:37.677"/>
+</kw>
+<status status="PASS" starttime="20220508 02:27:37.144" endtime="20220508 02:27:37.677"/>
+</iter>
+<iter>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>xpath=${categoriesListXPath}/*[${x}]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220508 02:27:37.677" endtime="20220508 02:27:38.208"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${x}</var>
+<arg>${x} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220508 02:27:38.208" level="INFO">${x} = 5</msg>
+<status status="PASS" starttime="20220508 02:27:38.208" endtime="20220508 02:27:38.208"/>
+</kw>
+<status status="PASS" starttime="20220508 02:27:37.677" endtime="20220508 02:27:38.208"/>
+</iter>
+<iter>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>xpath=${categoriesListXPath}/*[${x}]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220508 02:27:38.209" endtime="20220508 02:27:38.738"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${x}</var>
+<arg>${x} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220508 02:27:38.738" level="INFO">${x} = 6</msg>
+<status status="PASS" starttime="20220508 02:27:38.738" endtime="20220508 02:27:38.738"/>
+</kw>
+<status status="PASS" starttime="20220508 02:27:38.208" endtime="20220508 02:27:38.738"/>
+</iter>
+<status status="PASS" starttime="20220508 02:27:36.030" endtime="20220508 02:27:38.738"/>
+</while>
+<kw name="Get Location" library="SeleniumLibrary">
+<var>${homePageUrl}</var>
+<doc>Returns the current browser window URL.</doc>
+<msg timestamp="20220508 02:27:39.003" level="INFO">${homePageUrl} = https://www.tsbohemia.cz/</msg>
+<status status="PASS" starttime="20220508 02:27:38.738" endtime="20220508 02:27:39.003"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath=${categoriesListXPath}/*[1]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220508 02:27:39.003" level="INFO">Clicking element 'xpath=//*[@id='ul_0']/*[1]'.</msg>
+<status status="PASS" starttime="20220508 02:27:39.003" endtime="20220508 02:27:40.886"/>
+</kw>
+<kw name="Get Location" library="SeleniumLibrary">
+<var>${electroUrl}</var>
+<doc>Returns the current browser window URL.</doc>
+<msg timestamp="20220508 02:27:41.151" level="INFO">${electroUrl} = https://www.tsbohemia.cz/elektronika_c44669.html</msg>
+<status status="PASS" starttime="20220508 02:27:40.886" endtime="20220508 02:27:41.151"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>"${homePageUrl}"=="${electroUrl}"</arg>
+<arg>Fail</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20220508 02:27:41.151" endtime="20220508 02:27:41.151"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${logoXPath}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220508 02:27:41.151" level="INFO">Clicking element '//*[@class='middle']//*[@class='logo']'.</msg>
+<status status="PASS" starttime="20220508 02:27:41.151" endtime="20220508 02:27:49.668"/>
+</kw>
+<kw name="Location Should Be" library="SeleniumLibrary">
+<arg>${homePageUrl}</arg>
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<msg timestamp="20220508 02:27:49.933" level="INFO">Current location is 'https://www.tsbohemia.cz/'.</msg>
+<status status="PASS" starttime="20220508 02:27:49.668" endtime="20220508 02:27:49.933"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${logoXPath}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220508 02:27:49.933" level="INFO">Clicking element '//*[@class='middle']//*[@class='logo']'.</msg>
+<status status="PASS" starttime="20220508 02:27:49.933" endtime="20220508 02:27:51.517"/>
+</kw>
+<kw name="Location Should Be" library="SeleniumLibrary">
+<arg>${homePageUrl}</arg>
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<msg timestamp="20220508 02:27:51.771" level="INFO">Current location is 'https://www.tsbohemia.cz/'.</msg>
+<status status="PASS" starttime="20220508 02:27:51.517" endtime="20220508 02:27:51.771"/>
+</kw>
+<status status="PASS" starttime="20220508 02:27:35.500" endtime="20220508 02:27:51.771"/>
+</kw>
+<kw name="Close web browser and clear cache" library="postConditions" type="TEARDOWN">
+<kw name="Delete All Cookies" library="SeleniumLibrary">
+<doc>Deletes all cookies.</doc>
+<status status="PASS" starttime="20220508 02:27:51.772" endtime="20220508 02:27:52.182"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220508 02:27:54.183" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220508 02:27:52.182" endtime="20220508 02:27:54.183"/>
+</kw>
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20220508 02:27:54.183" endtime="20220508 02:27:56.481"/>
+</kw>
+<status status="PASS" starttime="20220508 02:27:51.771" endtime="20220508 02:27:56.481"/>
+</kw>
+<tag>elements</tag>
+<tag>testCase</tag>
+<status status="PASS" starttime="20220508 02:27:18.563" endtime="20220508 02:27:56.481"/>
+</test>
+<test id="s1-t2" name="TC0302 Link's subSelection visibility during state mouse: hover" line="36">
+<kw name="Open web browser at domain's homepage and hide cookies popUp" library="preConditions">
+<arg>${browser}</arg>
+<arg>${urlHomePage}</arg>
+<arg>${driverPath}</arg>
+<arg>${popUpBtnAgreeXPath}</arg>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>"${browserName}" == "Chrome"</arg>
+<arg>Open chrome browser</arg>
+<arg>${driverPath}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Open chrome browser" library="preConditions">
+<arg>${driverPath}</arg>
+<kw name="Create Webdriver" library="SeleniumLibrary">
+<arg>Chrome</arg>
+<arg>executable_path=${driverPath}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<msg timestamp="20220508 02:27:56.483" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<status status="PASS" starttime="20220508 02:27:56.483" endtime="20220508 02:27:57.445"/>
+</kw>
+<status status="PASS" starttime="20220508 02:27:56.483" endtime="20220508 02:27:57.445"/>
+</kw>
+<status status="PASS" starttime="20220508 02:27:56.483" endtime="20220508 02:27:57.445"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>"${browserName}" == "Edge"</arg>
+<arg>Open edge browser</arg>
+<arg>${driverPath}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20220508 02:27:57.445" endtime="20220508 02:27:57.446"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>"${browserName}" == "IE"</arg>
+<arg>Open ie browser</arg>
+<arg>${driverPath}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20220508 02:27:57.446" endtime="20220508 02:27:57.446"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220508 02:27:57.446" endtime="20220508 02:27:57.565"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220508 02:27:57.565" level="INFO">Opening url 'https://www.tsbohemia.cz/'</msg>
+<status status="PASS" starttime="20220508 02:27:57.565" endtime="20220508 02:27:59.311"/>
+</kw>
+<kw name="Manually manage to bypass captcha" library="preConditions">
+<kw name="Sleep" library="BuiltIn">
+<arg>12s</arg>
+<arg>Bypassing captcha</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220508 02:28:11.319" level="INFO">Slept 12 seconds</msg>
+<msg timestamp="20220508 02:28:11.319" level="INFO">Bypassing captcha</msg>
+<status status="PASS" starttime="20220508 02:27:59.311" endtime="20220508 02:28:11.319"/>
+</kw>
+<status status="PASS" starttime="20220508 02:27:59.311" endtime="20220508 02:28:11.319"/>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<arg>0.25 seconds</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" starttime="20220508 02:28:11.319" endtime="20220508 02:28:11.319"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${button}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220508 02:28:11.319" endtime="20220508 02:28:11.884"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${button}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220508 02:28:11.884" level="INFO">Clicking button '//*[contains(concat(' ',normalize-space(@class),' '),'ch2-dialog')][contains(concat(' ',normalize-space(@class),' '),'ch2-visible')][@role="dialog"]//*[contains(text(),"Souhlasím")][contains(concat(' ',normalize-space(@class),' '),'ch2-btn')]'.</msg>
+<status status="PASS" starttime="20220508 02:28:11.884" endtime="20220508 02:28:13.257"/>
+</kw>
+<kw name="Wait Until Element Is Not Visible" library="SeleniumLibrary">
+<arg>${button}</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" starttime="20220508 02:28:13.257" endtime="20220508 02:28:13.528"/>
+</kw>
+<status status="PASS" starttime="20220508 02:27:56.482" endtime="20220508 02:28:13.528"/>
+</kw>
+<kw name="Check link's subSelection visibility during state mouse: hover" library="mainNavigationPanel">
+<arg>${notebookImgXPath}</arg>
+<arg>${categoriesListXPath}</arg>
+<kw name="Element Should Not Be Visible" library="SeleniumLibrary">
+<arg>${notebookImgXPath}</arg>
+<doc>Verifies that the element identified by ``locator`` is NOT visible.</doc>
+<msg timestamp="20220508 02:28:13.792" level="INFO">Element '//*[@class='image']//*[@alt='Notebooky']' did not exist.</msg>
+<status status="PASS" starttime="20220508 02:28:13.529" endtime="20220508 02:28:13.792"/>
+</kw>
+<kw name="Mouse Over" library="SeleniumLibrary">
+<arg>xpath=${categoriesListXPath}/*[1]</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<msg timestamp="20220508 02:28:13.792" level="INFO">Simulating Mouse Over on element 'xpath=//*[@id='ul_0']/*[1]'.</msg>
+<status status="PASS" starttime="20220508 02:28:13.792" endtime="20220508 02:28:14.641"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${notebookImgXPath}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220508 02:28:14.641" endtime="20220508 02:28:15.174"/>
+</kw>
+<kw name="Mouse Over" library="SeleniumLibrary">
+<arg>xpath=${categoriesListXPath}/*[2]</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<msg timestamp="20220508 02:28:15.174" level="INFO">Simulating Mouse Over on element 'xpath=//*[@id='ul_0']/*[2]'.</msg>
+<status status="PASS" starttime="20220508 02:28:15.174" endtime="20220508 02:28:15.973"/>
+</kw>
+<kw name="Wait Until Element Is Not Visible" library="SeleniumLibrary">
+<arg>${notebookImgXPath}</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" starttime="20220508 02:28:15.973" endtime="20220508 02:28:16.503"/>
+</kw>
+<status status="PASS" starttime="20220508 02:28:13.528" endtime="20220508 02:28:16.503"/>
+</kw>
+<kw name="Close web browser and clear cache" library="postConditions" type="TEARDOWN">
+<kw name="Delete All Cookies" library="SeleniumLibrary">
+<doc>Deletes all cookies.</doc>
+<status status="PASS" starttime="20220508 02:28:16.504" endtime="20220508 02:28:16.862"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220508 02:28:18.872" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220508 02:28:16.862" endtime="20220508 02:28:18.872"/>
+</kw>
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20220508 02:28:18.872" endtime="20220508 02:28:21.183"/>
+</kw>
+<status status="PASS" starttime="20220508 02:28:16.503" endtime="20220508 02:28:21.183"/>
+</kw>
+<tag>subSelection</tag>
+<tag>testCase</tag>
+<status status="PASS" starttime="20220508 02:27:56.482" endtime="20220508 02:28:21.183"/>
+</test>
+<test id="s1-t3" name="TC0303 Link's subSelection visibility during state mouse: hover" line="43">
+<kw name="Open web browser at domain's homepage and hide cookies popUp" library="preConditions">
+<arg>${browser}</arg>
+<arg>${urlHomePage}</arg>
+<arg>${driverPath}</arg>
+<arg>${popUpBtnAgreeXPath}</arg>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>"${browserName}" == "Chrome"</arg>
+<arg>Open chrome browser</arg>
+<arg>${driverPath}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Open chrome browser" library="preConditions">
+<arg>${driverPath}</arg>
+<kw name="Create Webdriver" library="SeleniumLibrary">
+<arg>Chrome</arg>
+<arg>executable_path=${driverPath}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<msg timestamp="20220508 02:28:21.185" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<status status="PASS" starttime="20220508 02:28:21.185" endtime="20220508 02:28:22.150"/>
+</kw>
+<status status="PASS" starttime="20220508 02:28:21.185" endtime="20220508 02:28:22.150"/>
+</kw>
+<status status="PASS" starttime="20220508 02:28:21.185" endtime="20220508 02:28:22.150"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>"${browserName}" == "Edge"</arg>
+<arg>Open edge browser</arg>
+<arg>${driverPath}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20220508 02:28:22.150" endtime="20220508 02:28:22.151"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>"${browserName}" == "IE"</arg>
+<arg>Open ie browser</arg>
+<arg>${driverPath}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20220508 02:28:22.151" endtime="20220508 02:28:22.151"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220508 02:28:22.151" endtime="20220508 02:28:22.266"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220508 02:28:22.266" level="INFO">Opening url 'https://www.tsbohemia.cz/'</msg>
+<status status="PASS" starttime="20220508 02:28:22.266" endtime="20220508 02:28:23.648"/>
+</kw>
+<kw name="Manually manage to bypass captcha" library="preConditions">
+<kw name="Sleep" library="BuiltIn">
+<arg>12s</arg>
+<arg>Bypassing captcha</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220508 02:28:35.650" level="INFO">Slept 12 seconds</msg>
+<msg timestamp="20220508 02:28:35.650" level="INFO">Bypassing captcha</msg>
+<status status="PASS" starttime="20220508 02:28:23.648" endtime="20220508 02:28:35.650"/>
+</kw>
+<status status="PASS" starttime="20220508 02:28:23.648" endtime="20220508 02:28:35.650"/>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<arg>0.25 seconds</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" starttime="20220508 02:28:35.650" endtime="20220508 02:28:35.650"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${button}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220508 02:28:35.650" endtime="20220508 02:28:36.211"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${button}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220508 02:28:36.212" level="INFO">Clicking button '//*[contains(concat(' ',normalize-space(@class),' '),'ch2-dialog')][contains(concat(' ',normalize-space(@class),' '),'ch2-visible')][@role="dialog"]//*[contains(text(),"Souhlasím")][contains(concat(' ',normalize-space(@class),' '),'ch2-btn')]'.</msg>
+<status status="PASS" starttime="20220508 02:28:36.211" endtime="20220508 02:28:37.586"/>
+</kw>
+<kw name="Wait Until Element Is Not Visible" library="SeleniumLibrary">
+<arg>${button}</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" starttime="20220508 02:28:37.586" endtime="20220508 02:28:37.855"/>
+</kw>
+<status status="PASS" starttime="20220508 02:28:21.184" endtime="20220508 02:28:37.855"/>
+</kw>
+<kw name="Check link's subSelection visibility during state mouse: hover" library="mainNavigationPanel">
+<arg>${notebookImgXPath}</arg>
+<arg>${categoriesListXPath}</arg>
+<kw name="Element Should Not Be Visible" library="SeleniumLibrary">
+<arg>${notebookImgXPath}</arg>
+<doc>Verifies that the element identified by ``locator`` is NOT visible.</doc>
+<msg timestamp="20220508 02:28:38.121" level="INFO">Element '//*[@class='image']//*[@alt='Notebooky']' did not exist.</msg>
+<status status="PASS" starttime="20220508 02:28:37.856" endtime="20220508 02:28:38.121"/>
+</kw>
+<kw name="Mouse Over" library="SeleniumLibrary">
+<arg>xpath=${categoriesListXPath}/*[1]</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<msg timestamp="20220508 02:28:38.121" level="INFO">Simulating Mouse Over on element 'xpath=//*[@id='ul_0']/*[1]'.</msg>
+<status status="PASS" starttime="20220508 02:28:38.121" endtime="20220508 02:28:38.925"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${notebookImgXPath}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220508 02:28:38.925" endtime="20220508 02:28:40.677"/>
+</kw>
+<kw name="Mouse Over" library="SeleniumLibrary">
+<arg>xpath=${categoriesListXPath}/*[2]</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<msg timestamp="20220508 02:28:40.677" level="INFO">Simulating Mouse Over on element 'xpath=//*[@id='ul_0']/*[2]'.</msg>
+<status status="PASS" starttime="20220508 02:28:40.677" endtime="20220508 02:28:41.473"/>
+</kw>
+<kw name="Wait Until Element Is Not Visible" library="SeleniumLibrary">
+<arg>${notebookImgXPath}</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" starttime="20220508 02:28:41.473" endtime="20220508 02:28:42.003"/>
+</kw>
+<status status="PASS" starttime="20220508 02:28:37.855" endtime="20220508 02:28:42.003"/>
+</kw>
+<kw name="Close web browser and clear cache" library="postConditions" type="TEARDOWN">
+<kw name="Delete All Cookies" library="SeleniumLibrary">
+<doc>Deletes all cookies.</doc>
+<status status="PASS" starttime="20220508 02:28:42.004" endtime="20220508 02:28:42.392"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220508 02:28:44.407" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220508 02:28:42.392" endtime="20220508 02:28:44.407"/>
+</kw>
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20220508 02:28:44.407" endtime="20220508 02:28:46.716"/>
+</kw>
+<status status="PASS" starttime="20220508 02:28:42.003" endtime="20220508 02:28:46.716"/>
+</kw>
+<tag>subSelection</tag>
+<tag>testCase</tag>
+<status status="PASS" starttime="20220508 02:28:21.184" endtime="20220508 02:28:46.716"/>
+</test>
+<test id="s1-t4" name="TC0304 Categories visibility during mobile's viewport size" line="50">
+<kw name="Open web browser at domain's homepage and hide cookies popUp" library="preConditions">
+<arg>${browser}</arg>
+<arg>${urlHomePage}</arg>
+<arg>${driverPath}</arg>
+<arg>${popUpBtnAgreeXPath}</arg>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>"${browserName}" == "Chrome"</arg>
+<arg>Open chrome browser</arg>
+<arg>${driverPath}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Open chrome browser" library="preConditions">
+<arg>${driverPath}</arg>
+<kw name="Create Webdriver" library="SeleniumLibrary">
+<arg>Chrome</arg>
+<arg>executable_path=${driverPath}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<msg timestamp="20220508 02:28:46.718" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<status status="PASS" starttime="20220508 02:28:46.718" endtime="20220508 02:28:47.687"/>
+</kw>
+<status status="PASS" starttime="20220508 02:28:46.718" endtime="20220508 02:28:47.687"/>
+</kw>
+<status status="PASS" starttime="20220508 02:28:46.718" endtime="20220508 02:28:47.687"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>"${browserName}" == "Edge"</arg>
+<arg>Open edge browser</arg>
+<arg>${driverPath}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20220508 02:28:47.687" endtime="20220508 02:28:47.688"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>"${browserName}" == "IE"</arg>
+<arg>Open ie browser</arg>
+<arg>${driverPath}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20220508 02:28:47.688" endtime="20220508 02:28:47.688"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220508 02:28:47.688" endtime="20220508 02:28:47.815"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220508 02:28:47.816" level="INFO">Opening url 'https://www.tsbohemia.cz/'</msg>
+<status status="PASS" starttime="20220508 02:28:47.815" endtime="20220508 02:28:49.386"/>
+</kw>
+<kw name="Manually manage to bypass captcha" library="preConditions">
+<kw name="Sleep" library="BuiltIn">
+<arg>12s</arg>
+<arg>Bypassing captcha</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220508 02:29:01.398" level="INFO">Slept 12 seconds</msg>
+<msg timestamp="20220508 02:29:01.398" level="INFO">Bypassing captcha</msg>
+<status status="PASS" starttime="20220508 02:28:49.386" endtime="20220508 02:29:01.398"/>
+</kw>
+<status status="PASS" starttime="20220508 02:28:49.386" endtime="20220508 02:29:01.398"/>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<arg>0.25 seconds</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" starttime="20220508 02:29:01.398" endtime="20220508 02:29:01.398"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${button}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220508 02:29:01.398" endtime="20220508 02:29:01.963"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${button}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220508 02:29:01.963" level="INFO">Clicking button '//*[contains(concat(' ',normalize-space(@class),' '),'ch2-dialog')][contains(concat(' ',normalize-space(@class),' '),'ch2-visible')][@role="dialog"]//*[contains(text(),"Souhlasím")][contains(concat(' ',normalize-space(@class),' '),'ch2-btn')]'.</msg>
+<status status="PASS" starttime="20220508 02:29:01.963" endtime="20220508 02:29:03.338"/>
+</kw>
+<kw name="Wait Until Element Is Not Visible" library="SeleniumLibrary">
+<arg>${button}</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" starttime="20220508 02:29:03.338" endtime="20220508 02:29:03.603"/>
+</kw>
+<status status="PASS" starttime="20220508 02:28:46.717" endtime="20220508 02:29:03.603"/>
+</kw>
+<kw name="Check categories visibility during mobile's viewport size" library="mainNavigationPanel">
+<arg>${mobileViewPortWidth}</arg>
+<arg>${mainNavPnlDropDownMenuBtnXPath}</arg>
+<arg>${categoriesListXPath}</arg>
+<arg>${screenshotDirectory}</arg>
+<arg>${DATETIME}</arg>
+<kw name="Get Window Size" library="SeleniumLibrary">
+<var>${maxWidth}</var>
+<var>${maxHeight}</var>
+<doc>Returns current window width and height as integers.</doc>
+<msg timestamp="20220508 02:29:03.866" level="INFO">${maxWidth} = 2576</msg>
+<msg timestamp="20220508 02:29:03.866" level="INFO">${maxHeight} = 1456</msg>
+<status status="PASS" starttime="20220508 02:29:03.604" endtime="20220508 02:29:03.866"/>
+</kw>
+<if>
+<branch type="IF" condition="${maxWidth}&gt;=${mobileViewPortWidth}">
+<kw name="Wait Until Element Is Not Visible" library="SeleniumLibrary">
+<arg>${menuBtnXPath}</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" starttime="20220508 02:29:03.866" endtime="20220508 02:29:04.394"/>
+</kw>
+<kw name="Set Window Size" library="SeleniumLibrary">
+<arg>${mobileViewPortWidth}</arg>
+<arg>${maxHeight}</arg>
+<doc>Sets current windows size to given ``width`` and ``height``.</doc>
+<status status="PASS" starttime="20220508 02:29:04.394" endtime="20220508 02:29:04.933"/>
+</kw>
+<status status="PASS" starttime="20220508 02:29:03.866" endtime="20220508 02:29:04.933"/>
+</branch>
+<status status="PASS" starttime="20220508 02:29:03.866" endtime="20220508 02:29:04.933"/>
+</if>
+<kw name="Set Screenshot Directory" library="SeleniumLibrary">
+<arg>${screenShotDirectory}\\${DATETIME}</arg>
+<doc>Sets the directory for captured screenshots.</doc>
+<status status="PASS" starttime="20220508 02:29:04.933" endtime="20220508 02:29:04.933"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${menuBtnXPath}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220508 02:29:04.933" endtime="20220508 02:29:05.467"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<var>${path}</var>
+<arg>filename=TS03_Mobile_ViewPort_MainMenu.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20220508 02:29:06.038" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../../screenshots/2022_05_08_02_22/TS03_Mobile_ViewPort_MainMenu.png"&gt;&lt;img src="../../screenshots/2022_05_08_02_22/TS03_Mobile_ViewPort_MainMenu.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20220508 02:29:06.038" level="INFO">${path} = C:\Users\m_ols\PycharmProjects\MarekOlsak_www.tsbohemia.cz_09_05_22\screenshots\2022_05_08_02_22\TS03_Mobile_ViewPort_MainMenu.png</msg>
+<status status="PASS" starttime="20220508 02:29:05.467" endtime="20220508 02:29:06.038"/>
+</kw>
+<kw name="File Should Exist" library="OperatingSystem">
+<arg>${path}</arg>
+<doc>Fails unless the given ``path`` points to an existing file.</doc>
+<msg timestamp="20220508 02:29:06.038" level="INFO" html="true">File '&lt;a href="file://C:\Users\m_ols\PycharmProjects\MarekOlsak_www.tsbohemia.cz_09_05_22\screenshots\2022_05_08_02_22\TS03_Mobile_ViewPort_MainMenu.png"&gt;C:\Users\m_ols\PycharmProjects\MarekOlsak_www.tsbohemia.cz_09_05_22\screenshots\2022_05_08_02_22\TS03_Mobile_ViewPort_MainMenu.png&lt;/a&gt;' exists.</msg>
+<status status="PASS" starttime="20220508 02:29:06.038" endtime="20220508 02:29:06.038"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${menuBtnXPath}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220508 02:29:06.039" level="INFO">Clicking element '//*[@class='middle']//*[@data-menu-main]'.</msg>
+<status status="PASS" starttime="20220508 02:29:06.039" endtime="20220508 02:29:06.585"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${x}</var>
+<arg>${1}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220508 02:29:06.585" level="INFO">${x} = 1</msg>
+<status status="PASS" starttime="20220508 02:29:06.585" endtime="20220508 02:29:06.586"/>
+</kw>
+<while condition="${x} &lt; 6">
+<iter>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>xpath=${categoriesListXPath}/*[${x}]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220508 02:29:06.586" endtime="20220508 02:29:07.114"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${x}</var>
+<arg>${x} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220508 02:29:07.114" level="INFO">${x} = 2</msg>
+<status status="PASS" starttime="20220508 02:29:07.114" endtime="20220508 02:29:07.114"/>
+</kw>
+<status status="PASS" starttime="20220508 02:29:06.586" endtime="20220508 02:29:07.114"/>
+</iter>
+<iter>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>xpath=${categoriesListXPath}/*[${x}]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220508 02:29:07.114" endtime="20220508 02:29:07.645"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${x}</var>
+<arg>${x} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220508 02:29:07.645" level="INFO">${x} = 3</msg>
+<status status="PASS" starttime="20220508 02:29:07.645" endtime="20220508 02:29:07.645"/>
+</kw>
+<status status="PASS" starttime="20220508 02:29:07.114" endtime="20220508 02:29:07.646"/>
+</iter>
+<iter>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>xpath=${categoriesListXPath}/*[${x}]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220508 02:29:07.646" endtime="20220508 02:29:08.178"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${x}</var>
+<arg>${x} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220508 02:29:08.178" level="INFO">${x} = 4</msg>
+<status status="PASS" starttime="20220508 02:29:08.178" endtime="20220508 02:29:08.178"/>
+</kw>
+<status status="PASS" starttime="20220508 02:29:07.646" endtime="20220508 02:29:08.178"/>
+</iter>
+<iter>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>xpath=${categoriesListXPath}/*[${x}]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220508 02:29:08.178" endtime="20220508 02:29:08.710"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${x}</var>
+<arg>${x} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220508 02:29:08.710" level="INFO">${x} = 5</msg>
+<status status="PASS" starttime="20220508 02:29:08.710" endtime="20220508 02:29:08.710"/>
+</kw>
+<status status="PASS" starttime="20220508 02:29:08.178" endtime="20220508 02:29:08.710"/>
+</iter>
+<iter>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>xpath=${categoriesListXPath}/*[${x}]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220508 02:29:08.710" endtime="20220508 02:29:09.239"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${x}</var>
+<arg>${x} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220508 02:29:09.239" level="INFO">${x} = 6</msg>
+<status status="PASS" starttime="20220508 02:29:09.239" endtime="20220508 02:29:09.239"/>
+</kw>
+<status status="PASS" starttime="20220508 02:29:08.710" endtime="20220508 02:29:09.239"/>
+</iter>
+<status status="PASS" starttime="20220508 02:29:06.586" endtime="20220508 02:29:09.239"/>
+</while>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<var>${path}</var>
+<arg>filename=TS03_Mobile_ViewPort_ToggledMainMenu.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20220508 02:29:09.700" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../../screenshots/2022_05_08_02_22/TS03_Mobile_ViewPort_ToggledMainMenu.png"&gt;&lt;img src="../../screenshots/2022_05_08_02_22/TS03_Mobile_ViewPort_ToggledMainMenu.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20220508 02:29:09.701" level="INFO">${path} = C:\Users\m_ols\PycharmProjects\MarekOlsak_www.tsbohemia.cz_09_05_22\screenshots\2022_05_08_02_22\TS03_Mobile_ViewPort_ToggledMainMenu.png</msg>
+<status status="PASS" starttime="20220508 02:29:09.239" endtime="20220508 02:29:09.701"/>
+</kw>
+<kw name="File Should Exist" library="OperatingSystem">
+<arg>${path}</arg>
+<doc>Fails unless the given ``path`` points to an existing file.</doc>
+<msg timestamp="20220508 02:29:09.701" level="INFO" html="true">File '&lt;a href="file://C:\Users\m_ols\PycharmProjects\MarekOlsak_www.tsbohemia.cz_09_05_22\screenshots\2022_05_08_02_22\TS03_Mobile_ViewPort_ToggledMainMenu.png"&gt;C:\Users\m_ols\PycharmProjects\MarekOlsak_www.tsbohemia.cz_09_05_22\screenshots\2022_05_08_02_22\TS03_Mobile_ViewPort_ToggledMainMenu.png&lt;/a&gt;' exists.</msg>
+<status status="PASS" starttime="20220508 02:29:09.701" endtime="20220508 02:29:09.701"/>
+</kw>
+<status status="PASS" starttime="20220508 02:29:03.603" endtime="20220508 02:29:09.701"/>
+</kw>
+<kw name="Close web browser and clear cache" library="postConditions" type="TEARDOWN">
+<kw name="Delete All Cookies" library="SeleniumLibrary">
+<doc>Deletes all cookies.</doc>
+<status status="PASS" starttime="20220508 02:29:09.702" endtime="20220508 02:29:10.062"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220508 02:29:12.075" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220508 02:29:10.062" endtime="20220508 02:29:12.075"/>
+</kw>
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20220508 02:29:12.075" endtime="20220508 02:29:14.379"/>
+</kw>
+<status status="PASS" starttime="20220508 02:29:09.702" endtime="20220508 02:29:14.380"/>
+</kw>
+<tag>dropdown</tag>
+<tag>testCase</tag>
+<status status="PASS" starttime="20220508 02:28:46.717" endtime="20220508 02:29:14.380"/>
+</test>
+<test id="s1-t5" name="TC0305 Visiblity of dropdown items when menu item is toggled" line="59">
+<kw name="Open web browser at domain's homepage and hide cookies popUp" library="preConditions">
+<arg>${browser}</arg>
+<arg>${urlHomePage}</arg>
+<arg>${driverPath}</arg>
+<arg>${popUpBtnAgreeXPath}</arg>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>"${browserName}" == "Chrome"</arg>
+<arg>Open chrome browser</arg>
+<arg>${driverPath}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Open chrome browser" library="preConditions">
+<arg>${driverPath}</arg>
+<kw name="Create Webdriver" library="SeleniumLibrary">
+<arg>Chrome</arg>
+<arg>executable_path=${driverPath}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<msg timestamp="20220508 02:29:14.383" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<status status="PASS" starttime="20220508 02:29:14.382" endtime="20220508 02:29:15.344"/>
+</kw>
+<status status="PASS" starttime="20220508 02:29:14.382" endtime="20220508 02:29:15.344"/>
+</kw>
+<status status="PASS" starttime="20220508 02:29:14.382" endtime="20220508 02:29:15.344"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>"${browserName}" == "Edge"</arg>
+<arg>Open edge browser</arg>
+<arg>${driverPath}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20220508 02:29:15.344" endtime="20220508 02:29:15.345"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>"${browserName}" == "IE"</arg>
+<arg>Open ie browser</arg>
+<arg>${driverPath}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20220508 02:29:15.345" endtime="20220508 02:29:15.345"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220508 02:29:15.345" endtime="20220508 02:29:15.465"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220508 02:29:15.465" level="INFO">Opening url 'https://www.tsbohemia.cz/'</msg>
+<status status="PASS" starttime="20220508 02:29:15.465" endtime="20220508 02:29:17.115"/>
+</kw>
+<kw name="Manually manage to bypass captcha" library="preConditions">
+<kw name="Sleep" library="BuiltIn">
+<arg>12s</arg>
+<arg>Bypassing captcha</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220508 02:29:29.115" level="INFO">Slept 12 seconds</msg>
+<msg timestamp="20220508 02:29:29.115" level="INFO">Bypassing captcha</msg>
+<status status="PASS" starttime="20220508 02:29:17.115" endtime="20220508 02:29:29.115"/>
+</kw>
+<status status="PASS" starttime="20220508 02:29:17.115" endtime="20220508 02:29:29.115"/>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<arg>0.25 seconds</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" starttime="20220508 02:29:29.115" endtime="20220508 02:29:29.115"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${button}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220508 02:29:29.115" endtime="20220508 02:29:29.680"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${button}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220508 02:29:29.681" level="INFO">Clicking button '//*[contains(concat(' ',normalize-space(@class),' '),'ch2-dialog')][contains(concat(' ',normalize-space(@class),' '),'ch2-visible')][@role="dialog"]//*[contains(text(),"Souhlasím")][contains(concat(' ',normalize-space(@class),' '),'ch2-btn')]'.</msg>
+<status status="PASS" starttime="20220508 02:29:29.680" endtime="20220508 02:29:31.058"/>
+</kw>
+<kw name="Wait Until Element Is Not Visible" library="SeleniumLibrary">
+<arg>${button}</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" starttime="20220508 02:29:31.058" endtime="20220508 02:29:31.326"/>
+</kw>
+<status status="PASS" starttime="20220508 02:29:14.381" endtime="20220508 02:29:31.326"/>
+</kw>
+<kw name="Check visiblity of dropdown items when menu item is toggled" library="mainNavigationPanel">
+<arg>${categoriesListXPath}</arg>
+<arg>${screenshotDirectory}</arg>
+<arg>${DATETIME}</arg>
+<arg>${mobileViewPortWidth}</arg>
+<arg>${mainNavPnlDropDownMenuBtnXPath}</arg>
+<kw name="Get Window Size" library="SeleniumLibrary">
+<var>${maxWidth}</var>
+<var>${maxHeight}</var>
+<doc>Returns current window width and height as integers.</doc>
+<msg timestamp="20220508 02:29:31.591" level="INFO">${maxWidth} = 2576</msg>
+<msg timestamp="20220508 02:29:31.591" level="INFO">${maxHeight} = 1456</msg>
+<status status="PASS" starttime="20220508 02:29:31.327" endtime="20220508 02:29:31.591"/>
+</kw>
+<if>
+<branch type="IF" condition="${maxWidth}&gt;=${mobileViewPortWidth}">
+<kw name="Wait Until Element Is Not Visible" library="SeleniumLibrary">
+<arg>${menuBtnXPath}</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" starttime="20220508 02:29:31.591" endtime="20220508 02:29:32.123"/>
+</kw>
+<kw name="Set Window Size" library="SeleniumLibrary">
+<arg>${mobileViewPortWidth}</arg>
+<arg>${maxHeight}</arg>
+<doc>Sets current windows size to given ``width`` and ``height``.</doc>
+<status status="PASS" starttime="20220508 02:29:32.123" endtime="20220508 02:29:32.646"/>
+</kw>
+<status status="PASS" starttime="20220508 02:29:31.591" endtime="20220508 02:29:32.646"/>
+</branch>
+<status status="PASS" starttime="20220508 02:29:31.591" endtime="20220508 02:29:32.646"/>
+</if>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${menuBtnXPath}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220508 02:29:32.646" endtime="20220508 02:29:33.179"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${menuBtnXPath}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220508 02:29:33.179" level="INFO">Clicking element '//*[@class='middle']//*[@data-menu-main]'.</msg>
+<status status="PASS" starttime="20220508 02:29:33.179" endtime="20220508 02:29:33.731"/>
+</kw>
+<kw name="Set Screenshot Directory" library="SeleniumLibrary">
+<arg>${screenShotDirectory}\\${DATETIME}</arg>
+<doc>Sets the directory for captured screenshots.</doc>
+<status status="PASS" starttime="20220508 02:29:33.731" endtime="20220508 02:29:33.732"/>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>xpath=${categoriesListXPath}/*[3]</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20220508 02:29:33.732" endtime="20220508 02:29:34.523"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath=${categoriesListXPath}/*[3]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220508 02:29:34.523" level="INFO">Clicking element 'xpath=//*[@id='ul_0']/*[3]'.</msg>
+<status status="PASS" starttime="20220508 02:29:34.523" endtime="20220508 02:29:35.090"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<var>${path}</var>
+<arg>filename=TS03_Mobile_ViewPort_Hobby.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20220508 02:29:35.623" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../../screenshots/2022_05_08_02_22/TS03_Mobile_ViewPort_Hobby.png"&gt;&lt;img src="../../screenshots/2022_05_08_02_22/TS03_Mobile_ViewPort_Hobby.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20220508 02:29:35.623" level="INFO">${path} = C:\Users\m_ols\PycharmProjects\MarekOlsak_www.tsbohemia.cz_09_05_22\screenshots\2022_05_08_02_22\TS03_Mobile_ViewPort_Hobby.png</msg>
+<status status="PASS" starttime="20220508 02:29:35.090" endtime="20220508 02:29:35.623"/>
+</kw>
+<kw name="File Should Exist" library="OperatingSystem">
+<arg>${path}</arg>
+<doc>Fails unless the given ``path`` points to an existing file.</doc>
+<msg timestamp="20220508 02:29:35.623" level="INFO" html="true">File '&lt;a href="file://C:\Users\m_ols\PycharmProjects\MarekOlsak_www.tsbohemia.cz_09_05_22\screenshots\2022_05_08_02_22\TS03_Mobile_ViewPort_Hobby.png"&gt;C:\Users\m_ols\PycharmProjects\MarekOlsak_www.tsbohemia.cz_09_05_22\screenshots\2022_05_08_02_22\TS03_Mobile_ViewPort_Hobby.png&lt;/a&gt;' exists.</msg>
+<status status="PASS" starttime="20220508 02:29:35.623" endtime="20220508 02:29:35.624"/>
+</kw>
+<status status="PASS" starttime="20220508 02:29:31.326" endtime="20220508 02:29:35.624"/>
+</kw>
+<kw name="Close web browser and clear cache" library="postConditions" type="TEARDOWN">
+<kw name="Delete All Cookies" library="SeleniumLibrary">
+<doc>Deletes all cookies.</doc>
+<status status="PASS" starttime="20220508 02:29:35.624" endtime="20220508 02:29:35.981"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220508 02:29:37.994" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220508 02:29:35.981" endtime="20220508 02:29:37.994"/>
+</kw>
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20220508 02:29:37.994" endtime="20220508 02:29:40.281"/>
+</kw>
+<status status="PASS" starttime="20220508 02:29:35.624" endtime="20220508 02:29:40.281"/>
+</kw>
+<tag>dropdown</tag>
+<tag>testCase</tag>
+<status status="PASS" starttime="20220508 02:29:14.381" endtime="20220508 02:29:40.282"/>
+</test>
+<test id="s1-t6" name="TC0306 Visiblity of dropdown items when previous menu item is toggled" line="68">
+<kw name="Open web browser at domain's homepage and hide cookies popUp" library="preConditions">
+<arg>${browser}</arg>
+<arg>${urlHomePage}</arg>
+<arg>${driverPath}</arg>
+<arg>${popUpBtnAgreeXPath}</arg>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>"${browserName}" == "Chrome"</arg>
+<arg>Open chrome browser</arg>
+<arg>${driverPath}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Open chrome browser" library="preConditions">
+<arg>${driverPath}</arg>
+<kw name="Create Webdriver" library="SeleniumLibrary">
+<arg>Chrome</arg>
+<arg>executable_path=${driverPath}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<msg timestamp="20220508 02:29:40.285" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<status status="PASS" starttime="20220508 02:29:40.285" endtime="20220508 02:29:41.252"/>
+</kw>
+<status status="PASS" starttime="20220508 02:29:40.284" endtime="20220508 02:29:41.252"/>
+</kw>
+<status status="PASS" starttime="20220508 02:29:40.284" endtime="20220508 02:29:41.252"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>"${browserName}" == "Edge"</arg>
+<arg>Open edge browser</arg>
+<arg>${driverPath}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20220508 02:29:41.252" endtime="20220508 02:29:41.253"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>"${browserName}" == "IE"</arg>
+<arg>Open ie browser</arg>
+<arg>${driverPath}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20220508 02:29:41.253" endtime="20220508 02:29:41.253"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220508 02:29:41.253" endtime="20220508 02:29:41.370"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220508 02:29:41.370" level="INFO">Opening url 'https://www.tsbohemia.cz/'</msg>
+<status status="PASS" starttime="20220508 02:29:41.370" endtime="20220508 02:29:42.753"/>
+</kw>
+<kw name="Manually manage to bypass captcha" library="preConditions">
+<kw name="Sleep" library="BuiltIn">
+<arg>12s</arg>
+<arg>Bypassing captcha</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220508 02:29:54.763" level="INFO">Slept 12 seconds</msg>
+<msg timestamp="20220508 02:29:54.763" level="INFO">Bypassing captcha</msg>
+<status status="PASS" starttime="20220508 02:29:42.754" endtime="20220508 02:29:54.763"/>
+</kw>
+<status status="PASS" starttime="20220508 02:29:42.754" endtime="20220508 02:29:54.763"/>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<arg>0.25 seconds</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" starttime="20220508 02:29:54.763" endtime="20220508 02:29:54.763"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${button}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220508 02:29:54.764" endtime="20220508 02:29:55.342"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${button}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220508 02:29:55.342" level="INFO">Clicking button '//*[contains(concat(' ',normalize-space(@class),' '),'ch2-dialog')][contains(concat(' ',normalize-space(@class),' '),'ch2-visible')][@role="dialog"]//*[contains(text(),"Souhlasím")][contains(concat(' ',normalize-space(@class),' '),'ch2-btn')]'.</msg>
+<status status="PASS" starttime="20220508 02:29:55.342" endtime="20220508 02:29:56.715"/>
+</kw>
+<kw name="Wait Until Element Is Not Visible" library="SeleniumLibrary">
+<arg>${button}</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" starttime="20220508 02:29:56.715" endtime="20220508 02:29:56.985"/>
+</kw>
+<status status="PASS" starttime="20220508 02:29:40.284" endtime="20220508 02:29:56.985"/>
+</kw>
+<kw name="Check visiblity of dropdown items when previous menu item is toggled" library="mainNavigationPanel">
+<arg>${categoriesListXPath}</arg>
+<arg>${screenshotDirectory}</arg>
+<arg>${DATETIME}</arg>
+<arg>${mobileViewPortWidth}</arg>
+<arg>${mainNavPnlDropDownMenuBtnXPath}</arg>
+<kw name="Get Window Size" library="SeleniumLibrary">
+<var>${maxWidth}</var>
+<var>${maxHeight}</var>
+<doc>Returns current window width and height as integers.</doc>
+<msg timestamp="20220508 02:29:57.252" level="INFO">${maxWidth} = 2576</msg>
+<msg timestamp="20220508 02:29:57.252" level="INFO">${maxHeight} = 1456</msg>
+<status status="PASS" starttime="20220508 02:29:56.986" endtime="20220508 02:29:57.252"/>
+</kw>
+<if>
+<branch type="IF" condition="${maxWidth}&gt;=${mobileViewPortWidth}">
+<kw name="Wait Until Element Is Not Visible" library="SeleniumLibrary">
+<arg>${menuBtnXPath}</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" starttime="20220508 02:29:57.252" endtime="20220508 02:29:57.791"/>
+</kw>
+<kw name="Set Window Size" library="SeleniumLibrary">
+<arg>${mobileViewPortWidth}</arg>
+<arg>${maxHeight}</arg>
+<doc>Sets current windows size to given ``width`` and ``height``.</doc>
+<status status="PASS" starttime="20220508 02:29:57.791" endtime="20220508 02:29:58.315"/>
+</kw>
+<status status="PASS" starttime="20220508 02:29:57.252" endtime="20220508 02:29:58.315"/>
+</branch>
+<status status="PASS" starttime="20220508 02:29:57.252" endtime="20220508 02:29:58.315"/>
+</if>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${menuBtnXPath}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220508 02:29:58.315" endtime="20220508 02:29:58.854"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${menuBtnXPath}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220508 02:29:58.854" level="INFO">Clicking element '//*[@class='middle']//*[@data-menu-main]'.</msg>
+<status status="PASS" starttime="20220508 02:29:58.854" endtime="20220508 02:29:59.404"/>
+</kw>
+<kw name="Set Screenshot Directory" library="SeleniumLibrary">
+<arg>${screenShotDirectory}\\${DATETIME}</arg>
+<doc>Sets the directory for captured screenshots.</doc>
+<status status="PASS" starttime="20220508 02:29:59.404" endtime="20220508 02:29:59.404"/>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>xpath=${categoriesListXPath}/*[4]</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20220508 02:29:59.404" endtime="20220508 02:30:00.200"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath=${categoriesListXPath}/*[4]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220508 02:30:00.200" level="INFO">Clicking element 'xpath=//*[@id='ul_0']/*[4]'.</msg>
+<status status="PASS" starttime="20220508 02:30:00.200" endtime="20220508 02:30:00.749"/>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>xpath=${categoriesListXPath}/*[1]</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20220508 02:30:00.749" endtime="20220508 02:30:01.549"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<var>${path}</var>
+<arg>filename=TS03_Mobile_ViewPort_Sport.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20220508 02:30:02.023" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../../screenshots/2022_05_08_02_22/TS03_Mobile_ViewPort_Sport.png"&gt;&lt;img src="../../screenshots/2022_05_08_02_22/TS03_Mobile_ViewPort_Sport.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20220508 02:30:02.023" level="INFO">${path} = C:\Users\m_ols\PycharmProjects\MarekOlsak_www.tsbohemia.cz_09_05_22\screenshots\2022_05_08_02_22\TS03_Mobile_ViewPort_Sport.png</msg>
+<status status="PASS" starttime="20220508 02:30:01.549" endtime="20220508 02:30:02.023"/>
+</kw>
+<kw name="File Should Exist" library="OperatingSystem">
+<arg>${path}</arg>
+<doc>Fails unless the given ``path`` points to an existing file.</doc>
+<msg timestamp="20220508 02:30:02.023" level="INFO" html="true">File '&lt;a href="file://C:\Users\m_ols\PycharmProjects\MarekOlsak_www.tsbohemia.cz_09_05_22\screenshots\2022_05_08_02_22\TS03_Mobile_ViewPort_Sport.png"&gt;C:\Users\m_ols\PycharmProjects\MarekOlsak_www.tsbohemia.cz_09_05_22\screenshots\2022_05_08_02_22\TS03_Mobile_ViewPort_Sport.png&lt;/a&gt;' exists.</msg>
+<status status="PASS" starttime="20220508 02:30:02.023" endtime="20220508 02:30:02.023"/>
+</kw>
+<status status="PASS" starttime="20220508 02:29:56.985" endtime="20220508 02:30:02.023"/>
+</kw>
+<kw name="Close web browser and clear cache" library="postConditions" type="TEARDOWN">
+<kw name="Delete All Cookies" library="SeleniumLibrary">
+<doc>Deletes all cookies.</doc>
+<status status="PASS" starttime="20220508 02:30:02.024" endtime="20220508 02:30:02.380"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220508 02:30:04.380" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220508 02:30:02.380" endtime="20220508 02:30:04.380"/>
+</kw>
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20220508 02:30:04.380" endtime="20220508 02:30:06.674"/>
+</kw>
+<status status="PASS" starttime="20220508 02:30:02.024" endtime="20220508 02:30:06.674"/>
+</kw>
+<tag>dropdown</tag>
+<tag>testCase</tag>
+<status status="PASS" starttime="20220508 02:29:40.283" endtime="20220508 02:30:06.674"/>
+</test>
+<doc>A test suite testing cookies popUp element functionality.
+
+This test has a workflow that is created using keywords &amp;
+variables in the imported resource files.</doc>
+<status status="PASS" starttime="20220508 02:27:18.365" endtime="20220508 02:30:06.675"/>
+</suite>
+<statistics>
+<total>
+<stat pass="6" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="3" fail="0" skip="0">dropdown</stat>
+<stat pass="1" fail="0" skip="0">elements</stat>
+<stat pass="2" fail="0" skip="0">subSelection</stat>
+<stat pass="6" fail="0" skip="0">testCase</stat>
+</tag>
+<suite>
+<stat pass="6" fail="0" skip="0" id="s1" name="TS03 mainNavigationPanel">TS03 mainNavigationPanel</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

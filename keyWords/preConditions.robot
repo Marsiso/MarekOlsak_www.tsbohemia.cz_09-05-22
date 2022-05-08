@@ -22,7 +22,7 @@ Open web browser and visit domain's homepage
     Maximize browser window
     Go to   ${url}
     Manually manage to bypass captcha
-    Set selenium speed   0.5 seconds
+    Set selenium speed   0.25 seconds
 
 Open web browser at domain's homepage and hide cookies popUp
     [arguments]   ${browserName}   ${url}   ${driverPath}   ${button}
@@ -32,7 +32,7 @@ Open web browser at domain's homepage and hide cookies popUp
     Maximize browser window
     Go to   ${url}
     Manually manage to bypass captcha
-    Set selenium speed   0.5 seconds
+    Set selenium speed   0.25 seconds
     Wait until element is visible   ${button}
     Click button   ${button}
     Wait until element is not visible   ${button}

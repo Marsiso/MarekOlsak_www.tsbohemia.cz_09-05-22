@@ -301,7 +301,7 @@ Check catalog data updates when localization changed
 
     # Change currency CZK-->EUR
     Click element   ${form}
-    Scroll element into view and set focus   ${counter}
+    Wait until element is visible   ${save}
     Select from list by value   ${localization}   14
     Click element   ${save}
     #Scroll element into view and set focus   ${counter}

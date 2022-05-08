@@ -62,6 +62,7 @@ TC0305 Visiblity of dropdown items when menu item is toggled
     ...                                                                     ${driverPath}                       ${popUpBtnAgreeXPath}
     Check visiblity of dropdown items when menu item is toggled             ${categoriesListXPath}              ${screenshotDirectory}
     ...                                                                     ${DATETIME}
+    ...                                                                     ${mobileViewPortWidth}              ${mainNavPnlDropDownMenuBtnXPath}
     [teardown]                                                              Close web browser and clear cache
 
 TC0306 Visiblity of dropdown items when previous menu item is toggled
@@ -70,4 +71,5 @@ TC0306 Visiblity of dropdown items when previous menu item is toggled
     ...                                                                     ${driverPath}                       ${popUpBtnAgreeXPath}
     Check visiblity of dropdown items when previous menu item is toggled    ${categoriesListXPath}              ${screenshotDirectory}
     ...                                                                     ${DATETIME}
+    ...                                                                     ${mobileViewPortWidth}              ${mainNavPnlDropDownMenuBtnXPath}
     [teardown]                                                              Close web browser and clear cache
